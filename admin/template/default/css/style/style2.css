@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+/*链接根据页面要求全局自定义*/
+body,button,input,select,textarea{font:12px/1.5 '宋体',Arial,Verdana,tahoma,Helvetica,sans-serif}
+a,input{outline:none}
+a{text-decoration:none;color:#000;outline:none}
+a{-webkit-transition:all 0.5s linear;-moz-transition:all 0.5s linear;-ms-transition:all 0.5s linear;-o-transition:all 0.5s linear}
+/*链接*/
+.a:link{text-decoration:none;color:#000000}
+/*被访问过链接*/
+.a:visited{text-decoration:none;color:#000000}
+/*鼠标经过*/
+.a:hover{text-decoration:none;color:#643b05}
+/*链接被按下*/
+a:active{text-decoration:none;color:#643b05}
+/*链接橙色*/
+a.orange{color:#8e5f07}
+/*链接灰色*/
+a.gray{color:#6d6d6d}

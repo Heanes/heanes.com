@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+/*定义字体*/
+/* 导入bootstrap样式 */
+@import url(../bootstrap/3.2.0/css/bootstrap.min.css);
+body,button,input,select,textarea{font:12px/1.3 'Microsoft Yahei',Arial,Verdana,tahoma,Helvetica,sans-serif}
+/*链接根据页面要求全局自定义*/
+/*链接*/
+a{text-decoration:none;}
+a.other{color:#000;outline:none}
+a.slow{-webkit-transition:all 0.5s linear;-moz-transition:all 0.5s linear;-ms-transition:all 0.5s linear;-o-transition:all 0.5s linear}
+.a.other:link{text-decoration:none;color:#000000}
+/*被访问过链接*/
+.a.other:visited{text-decoration:none;color:#000000}
+/*鼠标经过*/
+.a.other:hover{text-decoration:none;color:#643b05}
+/*链接被按下*/
+a.other:active{text-decoration:none;color:#643b05}
+/*链接橙色*/
+a.orange{color:#8e5f07}
+/*链接灰色*/
+a.gray{color:#6d6d6d}

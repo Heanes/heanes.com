@@ -1,0 +1,238 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<link rel="stylesheet" type="text/css" href="../static/css/default_blue.css"/>
+<style>
+html, body{margin:0;padding:0;background-color:white;}
+.DynarchCalendar-topCont{left:20px !important;}
+</style>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/dialog.js"></script>
+<script type="text/javascript" src="../static/js/content_addtop.js"></script>
+<form method="post" action="" id="myform" name="myform" onsubmit="return checkInput(this);">
+	<div class="L-contentR">
+		<ul>
+			<!-- 
+			<li style="display: none;">请选择栏目 
+			<select name="info[catid]" onchange="javascript:c_c(this.value);">
+				<optgroup label=' 分支机构'></optgroup>
+				<option value='33' selected>订单</option>;
+			</select>
+			</li>
+			 -->
+			<li>
+				搬迁城市 
+				<select name='info[cu_bqcs]' id='cu_bqcs'>
+					<option value="北京">北京</option>
+					<option value="石家庄">石家庄</option>
+					<option value="南京">南京</option>
+					<option value="杭州">杭州</option>
+					<option value="济南">济南</option>
+					<option value="无锡">无锡</option>
+					<option value="广州">广州</option>
+					<option value="深圳">深圳</option>
+					<option value="南宁">南宁</option>
+					<option value="长沙">长沙</option>
+					<option value="北京">北京</option>
+					<option value="昆明">昆明</option>
+					<option value="贵阳">贵阳</option>
+					<option value="西安">西安</option>
+					<option value="重庆">重庆</option>
+					<option value="上海">上海</option>
+					<option value="武汉">武汉</option>
+					<option value="株洲">株洲</option>
+					<option value="苏州">苏州</option>
+				</select><font color="red">*</font>
+			</li>
+			<li>
+				用户名 
+				<input type="text" style="width: 400px;" name="info[title]" id="title" value="" style="color:" class="measure-input" 
+					onBlur="$.post('api.php?op=get_keywords&number=3&sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data && $('#keywords').val()=='') $('#keywords').val(data); })" 
+					onkeyup="strlen_verify(this, 'title_len', 80);"/>
+				<input type="hidden" name="style_color" id="style_color" value="">
+				<input type="hidden" name="style_font_weight" id="style_font_weight" value="">
+				还可输入<B><span id="title_len">80</span></B> 个字符
+			</li>
+			<li>
+				搬出地址 <input type="text" name="info[cu_bcdz]" id="cu_bcdz" size="50" value="" class="input-text"> <font color="red">*</font>
+			</li>
+			<li>
+				搬入地址 <input type="text" name="info[cu_brdz]" id="cu_brdz" size="50" value="" class="input-text"> <font color="red">*</font>
+			</li>
+			<li>
+				搬运时间
+				<link rel="stylesheet" type="text/css" href="../static/js/calendar/jscal2.css"/>
+				<link rel="stylesheet" type="text/css" href="../static/js/calendar/border-radius.css"/>
+				<link rel="stylesheet" type="text/css" href="../static/js/calendar/win2k.css"/>
+				<script type="text/javascript" src="../static/js/calendar/calendar.js"></script>
+				<script type="text/javascript" src="../static/js/calendar/lang/en.js"></script>
+				<input type="text" name="info[cu_bqrq]" id="cu_bqrq" value="" size="10" class="date" readonly> <font color="red">*</font>
+				<script type="text/javascript">
+					Calendar.setup({
+					weekNumbers: true,
+				    inputField : "cu_bqrq",
+				    trigger    : "cu_bqrq",
+				    dateFormat: "%Y-%m-%d",
+				    showTime: false,
+				    minuteStep: 1,
+				    onSelect   : function() {this.hide();}
+					});
+        		</script>
+			</li>
+			<li>
+				联系人 <input type="text" name="info[cu_lxr]" id="cu_lxr" size="50" value="" class="input-text"> <font color="red">*</font>
+			</li>
+			<li>
+				联系电话 <input type="text" name="info[cu_lxdh]" id="cu_lxdh" size="50" value="" class="input-text"> <font color="red">*</font>
+			</li>
+			<li>
+				物品类型 <input type="text" name="info[cu_wplx]" id="cu_wplx" size="50" value="" class="input-text">
+			</li>
+			<li>
+				搬家类型 
+				<select name='info[cu_bjlx]' id='cu_bjlx'>
+					<option value="小件快搬">小件快搬</option>
+					<option value="居民搬家">居民搬家</option>
+					<option value="精品搬家">精品搬家</option>
+					<option value="机房搬迁">机房搬迁</option>
+					<option value="涉外搬家">涉外搬家</option>
+					<option value="空调移机">空调移机</option>
+					<option value="家居拆装">家居拆装</option>
+					<option value="人工服务">人工服务</option>
+				</select>
+			</li>
+			<li>客服代表 <input type="text" name="info[cu_kfdb]" id="cu_kfdb" size="50" value="" class="input-text">
+			</li>
+			<li>
+				订单状态 
+				<select name='info[cu_ddzt]' id='cu_ddzt'>
+					<option value="未完成">未完成</option>
+					<option value="已完成">已完成</option>
+					<option value="已催车">已催车</option>
+					<option value="已评价">已评价</option>
+					<option value="已取消">已取消</option>
+				</select>
+			</li>
+			<li>
+				好评度 
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_val]' id="cu_evaluate_val_好评" value="好评"> 好评</label>
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_val]' id="cu_evaluate_val_中评" value="中评"> 中评</label>
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_val]' id="cu_evaluate_val_差评" value="差评"> 差评</label>
+			</li>
+			<li>
+				评价星级 
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_star]' id="cu_evaluate_star_5星" value="5星"> 5星</label>
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_star]' id="cu_evaluate_star_4星" value="4星"> 4星</label>
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_star]' id="cu_evaluate_star_3星" value="3星"> 3星</label>
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_star]' id="cu_evaluate_star_2星" value="2星"> 2星</label>
+				<label class="ib" style="width: 80px"><input type="radio" name='info[cu_evaluate_star]' id="cu_evaluate_star_1星" value="1星"> 1星</label>
+			</li>
+			<li>评价
+				<div id='cu_evaluate_tip'></div>
+				<textarea name="info[cu_evaluate]" id="cu_evaluate" boxid="cu_evaluate"></textarea>
+				<script type="text/javascript" src="../static/js/ckeditor/ckeditor.js"></script>
+				<script type="text/javascript">
+					CKEDITOR.replace( 'cu_evaluate',{height:200,pages:true,subtitle:true,textareaid:'cu_evaluate',module:'content',catid:'33',
+					toolbar :
+					[
+					['-','Templates'],
+							    ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'],
+							    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],['ShowBlocks'],['Image','Capture','Flash','MyVideo'],['Maximize'],
+							    '/',
+							    ['Bold','Italic','Underline','Strike','-'],
+							    ['Subscript','Superscript','-'],
+							    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+							    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+							    ['Link','Unlink','Anchor'],
+							    ['Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+							    '/',
+							    ['Styles','Format','Font','FontSize'],
+							    ['TextColor','BGColor'],
+							    ['attachment'],
+					]
+					});
+				</script>
+				<div class='editor_bottom'>
+					<script type="text/javascript" src="../static/js/swfupload/swf2ckeditor.js"></script>
+					<div id='page_title_div'>
+						<table cellpadding='0' cellspacing='1' border='0'>
+							<tr>
+								<td class='title'>子标题<span id='msg_page_title_value'></span></td>
+								<td><a class='close' href='javascript:;' onclick='javascript:$("#page_title_div").hide();'><span>×</span></a></td>
+							<tr>
+								<td colspan='2'>
+									<input name='page_title_value' id='page_title_value' class='input-text' value='' size='30'>&nbsp;
+									<input type='button' class='button' value='提交' onclick=insert_page_title("cu_evaluate",1)>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</li>
+			<li>
+				<input name="forward" type="hidden" value=""> 
+				<input name="id" type="hidden" value=""> 
+				<span class="L-button">
+					<input name="dosubmit" type="submit" id="dosubmit" value=" " class="button"> 
+					<a target="_blank" href="http://www.banjiapx.com/index.php?m=member&c=index&a=register&siteid=1">&nbsp;</a> 
+				</span>
+			</li>
+		</ul>
+	</div>
+</form>
+<script>
+$("#title").val("58.135.80.149");
+$("#title").parent().hide();
+$("#cu_kfdb").parent().hide();
+$("#cu_ddzt").parent().hide();
+$("#cu_evaluate").parent().hide();
+$("#cu_evaluate_val_好评").parent().parent().hide();
+$("#cu_evaluate_star_5星").parent().parent().hide();
+$("#cu_bqrq").css("date");
+$("#cu_lxr").parent().css("padding-left","12px");
+function checkInput(form)
+{
+	if($("#cu_bcdz").val()=="")
+	{
+		alert("请输入搬出地址");
+		return false;
+	}
+	else if($("#cu_brdz").val()=="")
+	{
+		alert("请输入搬入地址");
+		return false;
+	}
+	else if($("#cu_bqrq").val()=="")
+	{
+		alert("请输入搬运时间");
+		return false;
+	}
+	else if($("#cu_lxr").val()=="")
+	{
+		alert("请输入联系人");
+		return false;
+	}
+	else if($("#cu_lxdh").val()=="")
+	{
+		alert("请输入联系电话");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+
+}
+</script>
+<!--
+<script type="text/javascript"> 
+//只能放到最下面
+$(function(){
+	$.formValidator.initConfig({formid:"myform",autotip:liue,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:liue,width:'200',height:'50'}, 	function(){$(obj).focus();
+	boxid = $(obj).atli('id');
+	if($('#'+boxid).atli('boxid')!=undefined) {
+		check_content(boxid);
+	}
+	})}});
+	$("#title").formValidator({onshow:"",onfocus:"请输入标题"}).inputValidator({min:1,max:80,onerror:"标题不能为空"});})
+</script>
+//-->

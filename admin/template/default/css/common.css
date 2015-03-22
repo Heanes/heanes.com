@@ -1,0 +1,131 @@
+@CHARSET "UTF-8";
+/* 后台公共样式 */
+/* 导入重设样式 */
+@import url(reset/reset.css);
+/* 导入基础简写样式库 */
+@import url(reset/short.css);
+/* 导入font-awesome字体文件 */
+@import url(font-awesome/4.2.0/css/font-awesome.min.css);
+/* 导入全局显示样式控制 */
+@import url(style/style1.css);
+/* bootstrap表格样式附加样式 */
+table thead{background:#efefef;font-weight:bold;color:#323D53}
+table thead th{text-align:center;}
+.input-condensed table tr td input[type=text]{height:auto;}
+/* bootstrap表格样式附加样式 */
+/* ueditor编辑器会改变换行 */
+/* 页内公共样式 */
+body.color_page{background-color:#DDEEF2;padding:10px}
+.container{margin:0px auto;padding:10px;vertical-align:middle;width:auto}
+.main{padding-top:10px}
+.center{margin:0px auto;padding:0px;text-align:center;vertical-align:middle}
+/* 外链图标样式 */
+a.external-link{cursor:alias;}
+a.external-link:after{content:"\f08e";display:inline-block;font-family:FontAwesome,sans-serif;font-weight:400;font-style:normal;vertical-align:middle;}
+/* 每页页首标题样式 */
+.page_title{background:#daf3ff;border:1px solid #d2e8fa;color:#666;padding:5px 5px 5px 10px;font-weight:bold;font-size:14px;text-align:left}
+.page_title span.first{font-size:14px;}
+.page_title span.second{font-size:15px;color:black}
+/* 每页页首标题样式结束 */
+
+/* 右上角操作区域 */
+.topCorner{position:absolute;top:10px;right:45px}
+.text_operate b{font-weight:normal;margin:3px 5px;}
+.text_operate .increaseFont{font-size:30px;cursor:-webkit-zoom-in;}
+.text_operate .decreaseFont{font-size:30px;cursor:-webkit-zoom-out;}
+.text_operate .resetFont:before{content:'\21BB';font-size:18px;font-weight:bold;}
+.text_operate .resetFont{cursor:pointer;}
+
+/* 信息展示表搜索区域 */
+.data_list_search{margin-bottom:15px;}
+.data_list_search input[type=text]{width:150px;height:auto;}
+.data_list_search select{width:auto;border-radius:3px;}
+.data_list_search table th{text-align:right;}
+.data_list_search table td{padding:5px 10px;text-align:right;}
+/* 信息展示表样式 */
+.info_table,.table-data-list{background-color:white;margin-bottom:10px;color:black}
+.table-data-list th{width:auto;text-align:center;}
+.info_table thead,.table-data-list thead tr td{background-color:#eaf8ff}
+.table-data-list thead tr td{text-align:center;font-size:15px;}
+.table-data-list tbody tr th{background-color:#BBDDE5}
+.info_table tbody tr td{width:25%}
+.list_select{line-height:15px;}
+/* 数据选择区域样式 */
+.checked_count{color:red;font-size:14px;font-weight:bold;}
+
+/* 数据编辑页面 */
+.table-data-eidt th{text-align:right;}
+
+/* 日期时间选择器 */
+input.date_time_picker{background:url(../image/common/dateTimePicker/iconDate.gif) center right no-repeat #f7f7f7;_padding-right:20px;}
+/* 分页区域样式 */
+.turn_page .page_link{margin:5px 10px;padding:5px 10px}
+.turn_page span{margin-right:15px;}
+.turn_page input[type=text],.turn_page select{font:13px "courier new";color:blue}
+.turn_page input[type=text]{width:20px;height:15px;margin:0 4px;}
+.turn_page select{width:auto;height:26px;margin-left:6px;padding:0;border-radius:3px;}
+.page_link a{padding:3px 8px;margin-left:3px;margin-right:3px;border:1px solid #ccc;border-radius:3px;color:#005aa0;text-decoration:none;}
+.page_link a:hover{background:#005aa0;color:white;}
+.page_link a.current{margin:0 5px;color:#999;text-decoration:none;font-weight:bold;cursor:text;border:none}
+.page_link a.current:hover{background:none}
+
+/*可折叠分类树样式*/
+b.lap-tree-icon{margin:0px 10px;padding:0px 3px;border:1px solid #666;color:#666;}
+.data-lap-tree ul li{margin-left:10px}
+_table{width:100%;border:1px solid #888;}
+_table.table-data-lap tr td:first-child{width:3%;}
+_table.table-data-lap tr td:last-child{width:98%;}
+_table.table-data-lap-cell tr td:first-child{width:50%;}
+.table-data-lap table td{padding-left:15px;}/* 大表格内部左空大小 */
+table.table-data-lap tr:nth-child(2){display:none;}/* 默认折叠状态 */
+
+/* 结果提示页面 */
+.message_result{padding:15px;background-color:#EFFDCD;border:1px solid #D9DD3B;}
+.message_result a{font-weight:600;}
+.message_result_success{background-color:#83c567;padding:15px;border:1px solid #d6e9c6;border-radius:6px;}
+.message_result_success hr{border-top:1px solid Green;border-bottom:0px}
+.message_result_success p{margin-top:10px;font-size:14px;}
+.message_result_failed{background-color:#f2dede;padding:15px;border:1px solid #eed3d7;border-radius:6px;}
+.message_result_failed hr{border-top:1px solid Tomato;border-bottom:0px}
+.message_result_failed p{margin-top:10px;font-size:14px;}
+.message_result_failed fieldset{border:1px solid Crimson;padding:10px;}
+.message_result_failed fieldset legend{width:auto;font-size:16px;padding:0 2px}
+
+/* 后台起始默认页面区块 */
+.admin_default_block_list{width:100%;margin:0 auto;}
+.admin_default_block_list table{width:100%;}
+.admin_default_block_list table td{padding:5px 30px;}
+.admin_default_block_info{display:table-cell;width:500px;height:auto;margin:10px;border:1px solid #ddd;border-radius:0px;text-align:left;}
+.admin_default_block_info .block_title{background-color:#eee;padding:10px;font-size:15px;}
+.admin_default_block_info .block_content{padding:10px;}
+.admin_default_block_info .block_content{padding:10px;}
+/* 后台起始默认页面 信息展示表 */
+.admin_copyright{margin:10px;}
+.admin_copyright .admin_copyright_about table{width:100%;}
+.admin_copyright .admin_copyright_about table thead th{text-align:left;}
+.admin_copyright .admin_copyright_about table tbody tr{margin-bottom:20px;}
+.admin_copyright .admin_copyright_about table tbody th{width:100px;text-align:left;font-weight:bold;padding-left:15px;border-right:1px dashed #ddd;}
+.admin_copyright .admin_copyright_about table tbody td{text-align:left;padding:5px 10px;}
+.admin_copyright .admin_copyright_about table h4{background-color:#EFF6FD;padding:8px;border-bottom:1px dashed #c9e0f8;}
+
+/* 相册列表页 */
+.ablum_list{display:inline-block;width:100%}
+.ablum_one{width:150px;height:220px;float:left;margin:10px;border:1px solid #e3e3e3;padding:8px;border-radius:5px;box-shadow:2px 2px 6px lightGray;overflow:hidden;}
+.ablum_one:hover{box-shadow:4px 4px 15px #888;}
+.ablum_one .ablum_src{position:relative;}
+.ablum_one .ablum_cover{display:block;width:100%;height:100%;overflow:hidden;}
+.ablum_one img{width:150px;height:150px;margin-bottom:8px;border:1px solid #e8e8e8;cursor:pointer;}
+.ablum_one .ablum_photo_num{position:absolute;width:100%;bottom:0;left:0;text-align:right;font-size:26px;color:white;background-color:rgba(26,26,26,.04);padding-right:1px;padding-bottom:10px;}
+.ablum_one .ablum_photo_categroy{position:absolute;top:-10px;left:5px;width:40px;text-align:center;font-size:16px;color:white;background-color:#49a0e1;padding-top:3px;}
+.ablum_one .ablum_photo_categroy .ablum_photo_categroy_border{position:absolute;left:0;top:23px;border-width:10px 20px;border-style:solid solid dashed solid;border-color:#49a0e1;border-bottom-color:transparent;}
+.ablum_one .ablum_info a{display:block;height:40px;line-height:20px;overflow:hidden;color:black;margin-bottom:6px;font-size:14px;text-align:justify;}
+.ablum_one .ablum_name:before{content:"\f02c";width:10px;height:10px;line-height:10px;display:inline-block;margin:0 5px;font-family:FontAwesome,sans-serif;font-weight:lighter;font-style:normal;font-size:12px;vertical-align:middle;}
+.ablum_one .ablum_upload_time{height:18px;overflow:auto;font-size:10px;text-align:right;color:gray;}
+.ablum_one .ablum_upload_time:before{content:"\f08d";width:10px;height:10px;line-height:10px;display:inline-block;margin-right:5px;font-family:FontAwesome,sans-serif;font-weight:lighter;font-style:normal;font-size:12px;vertical-align:middle;}
+
+
+/* 视频播放 */
+/* 右下角样式 E */
+
+/*开灯关灯效果*/
+.turnoff{display:block;width:100%;height:100%;top:0;left:0;z-index:1000;position:fixed;background:#000000 repeat;opacity:0.9;-moz-opacity:0.9}

@@ -1,0 +1,11 @@
+#----------pre_表--------------------------------------------------------
+/* 
+ * @doc 
+ * @author Heanes
+ * @time 2015-02-09 14:19:41
+*/
+drop table if exists pre_;
+create table pre_(
+ int unsigned auto_increment comment'自增ID，主键',
+primary key()
+)engine=innodb auto_increment=1 default charset=utf8 comment'';

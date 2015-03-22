@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0}
+ul,li,dl,dt,dd{ list-style:none;}
+img{border:none;}
+a:link,a:visited{text-decoration:none; color:#333333;/* font-size:12px;*/ font-family:"微软雅黑";}
+a:hover{text-decoration:underline;}
+body{font-size:16px; font-family:"微软雅黑"; color:#333333;}
+
+/*Banner*/
+.banner{height:385px;overflow:hidden;}
+.banner .d1{width:100%;height:385px;display:block;left:0px;top:0px;}
+.banner .d2{width:100%;height:30px;clear:both;position:absolute;z-index:100;left:0px;top:470px;}
+.banner .d2 ul{float:left;position:absolute;left:50%;top:0;margin:0 0 0 -35px;display:inline;}
+.banner .d2 li{width:17px;height:20px;overflow:hidden;cursor:pointer;background:url(../image/img1.png) no-repeat center;float:left;margin:0 3px;display:inline; position:relative;}
+.banner .d2 li.nuw{background:url(../image/img1_1.png) no-repeat center;}
+/*nav2*/
+.L-nav2{width:1024px; height:185px; margin:0 auto;}
+.L-nav2 ul{width:990px;height:185px; padding:0 17px 0 17px;}
+.L-nav2 ul li{width:108px;height:185px;float:left;}
+.L-nav2 ul li a{display:block;width:220px;height:185px;;}
+.L-nav2 ul li.L-one{background:url(../image/other/nav2-bg.jpg) no-repeat -17px 0px; padding-right:112px;}
+.L-nav2 ul li.L-two{background:url(../image/other/nav2-bg.jpg) no-repeat -236px 0px;padding-right:112px;}
+.L-nav2 ul li.L-three{background:url(../image/other/nav2-bg.jpg) no-repeat -455px 0px;padding-right:112px;}
+.L-nav2 ul li.L-four{background:url(../image/other/nav2-bg.jpg) no-repeat -673px 0px;padding-right:112px;}
+.L-nav2 ul li.L-five{background:url(../image/other/nav2-bg.jpg) no-repeat -894px 0px;}
+
+.L-contentwap{width:1024px; overflow:hidden; margin:0 auto;padding-top:50px;}
+.L-contentL{width:731px; overflow:hidden; float:left; position:relative;}
+.L-contentL ul{width:731px; height:205px;}
+.L-contentL ul li.L-a{width:343px; height:157px; background:url(../image/other/cnt-1.png) no-repeat; float:left; padding-top:48px; padding-left:14px; line-height:24px;position:relative;}
+.L-contentL ul li.L-b{width:343px; height:157px; background:url(../image/other/cnt-2.png) no-repeat; float:right;padding-top:48px; padding-left:14px; line-height:24px;position:relative;}
+.L-contentL ul li.L-c{width:343px; height:157px; background:url(../image/other/cnt-3.png) no-repeat; float:left;padding-top:48px; padding-left:14px; line-height:24px;position:relative;}
+.L-contentL ul li.L-d{width:343px; height:157px; background:url(../image/other/cnt-4.png) no-repeat; float:right;padding-top:48px; padding-left:14px; line-height:24px;position:relative;}
+.L-contentL ul.L-ts1{ margin:5px 0 0 0;}
+.L-a span{width:15px;height:17px; display:block; position:absolute; left:14px; bottom:14px;}
+.L-b span{width:15px;height:17px; display:block; position:absolute; left:14px; bottom:14px;}
+.L-c span{width:15px;height:17px; display:block; position:absolute; left:14px; bottom:14px;}
+.L-d span{width:15px;height:17px; display:block; position:absolute; left:14px; bottom:14px;}
+.L-contentR{height:335px; background:url(../image/other/cnt-5.png) no-repeat;float:left; padding-top:80px; padding-left:40px; position:relative; margin-left:5px; width:285px;}
+.L-contentR ul li{font-family:"宋体"; font-size:12px; margin:0 0 12px 0;}
+.L-contentR ul li .input-text{ width:150px;}
+.L-contentR ul li .date{ width:145px;}
+.L-contentR ul li #cu_bjlx{ width:151px;}
+.L-contentR ul li #cu_bqcs{ width:151px;}
+.L-contentR .L-button{width:300px; height:30px; display:block; padding:25px 0 0 10px;}
+.L-contentR .L-button a{ border:none;width:84px;height:30px; background:url(../image/L-reg1.png) no-repeat; cursor:pointer; float:left; margin-top:-25px; margin-left:10px;}
+.L-contentR .L-button a:hover{text-decoration:none}
+.L-contentR .L-button input{border:none;width:84px;height:30px; background:url(../image/other/but.png) no-repeat; cursor:pointer; float:left; margin-top:-25px;}
+.L-contentR .no_allowed{font-size:12px; font-family:'宋体'; margin-top:30px; float:left;}
+.publish_index{margin:0; padding:0; float:right; width:290px; height:418px;}
+
+/*最新添加开始*/
+.L-a ul{width:210px; overflow:hidden; height:152px; float:left;}
+.L-b ul{width:337px; overflow:hidden; height:152px;float:left;}
+.L-c ul{width:337px; overflow:hidden; height:152px;float:left;}
+.L-d ul{width:337px; overflow:hidden; height:152px;float:left;}
+.L-a ul li{width:210px; overflow:hidden;}
+.L-b ul li{width:210px; overflow:hidden;}
+.L-c ul li{width:210px; overflow:hidden;}
+.L-d ul li{width:210px; overflow:hidden;}
+/*最新添加结束*/
+
+.indexgg{ position:absolute; right:11px; top:8px;}
+
+/* 底部Scroll */
+.scrollpic{margin:20px auto;width:1000px;height:190px;border:1px solid #999;text-align:center;padding:10px;background:#eee}
+#pic{width:1000px;float:left;overflow:hidden;height:100%}
+#pic li{float:left;margin:5px}
+#pic li img{width:300px;height:300px;}
+#left,#right{display:block;width:22px;height:100%;float:left;margin:0 5px;}
+#left{background:url(../image/scroll/icon/icon_l.gif) no-repeat center}
+#right{background:url(../image/scroll/icon/icon_r.gif) no-repeat center}
