@@ -43,17 +43,16 @@ $(document).ready(function() {
  */
 function lap_menu() {
 	var list = document.getElementById('list').getElementsByTagName('li');
-	var div = document.getElementById('menu_content').getElementsByTagName(
-			'div');
+	var div = document.getElementById('menu_content').getElementsByTagName('div');
 	var dd = document.getElementById('menu_content').getElementsByTagName('dd');
-	var arr = new Array();
-	var arr2 = new Array();
-	var arr3 = new Array();
+	var arr = [];
+	var arr2 = [];
+	var arr3 = [];
 
 	for (var i = 0; i < div.length; i++) {
 		if (div[i].className == 'fct') {
 			var n = arr.length;
-			arr.splice(n, 1, i)
+			arr.splice(n, 1, i);
 		}
 	}
 
@@ -74,8 +73,8 @@ function lap_menu() {
 	for (var i = 0; i < div.length; i++) {
 		if (div[i].className == 'box') {
 			var n = arr2.length;
-			arr2.splice(n, 1, i)
-			arr3.splice(n, 1, 0)
+			arr2.splice(n, 1, i);
+			arr3.splice(n, 1, 0);
 		}
 	}
 
@@ -92,7 +91,7 @@ function lap_menu() {
 						// div[arr2[j]].className = 'box_close';
 						// div[arr2[j]].getElementsByTagName('dt')[0].className
 						// = 'dt_title'
-						arr3.splice(j, 1, 1)
+						arr3.splice(j, 1, 1);
 						// console.log(arr3)
 					} else {
 						if (div[arr2[j]].className == 'box') {
@@ -103,7 +102,7 @@ function lap_menu() {
 						// div[arr2[j]].className = 'box';
 						// div[arr2[j]].getElementsByTagName('dt')[0].className
 						// = 'dt_title_open'
-						arr3.splice(j, 1, 0)
+						arr3.splice(j, 1, 0);
 						// console.log(arr3)
 					}
 				}

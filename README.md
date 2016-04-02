@@ -1,2 +1,1 @@
-# heanes.com
-通用网站管理系统
+## my self php mvc framework,learn from CodeIgniter,Thinkphp,YiiFramework. ##

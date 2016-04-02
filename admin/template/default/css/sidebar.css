@@ -1,12 +1,12 @@
 @CHARSET "UTF-8";
 /* 侧栏常用样式 */
 /* 导入font-awesome字体文件 */
-@import url(font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(/public/static/libs/fonts/font-awesome/4.2.0/css/font-awesome.min.css);
 /* 右下角样式 S */
 /* 常用导航 使用了font-awesome字体 */
 .right_corner_nav{width:60px;float:left;position:fixed;right:50px;bottom:80px;}
-.right_corner_nav button{margin-bottom:3px;color:#2D96E9;background-color:#8cc5f2;}
-.right_corner_nav button:hover{color:white;background-color:#2D96E9;}
+.right_corner_nav button{margin-bottom:3px;color:#eee;background-color:rgba(45, 150, 233, 0.29);}
+.right_corner_nav button:hover{color:#fff;background-color:#2D96E9;}
 .self-icon-goto_home:after{content:"\f015";width:60px;height:60px;line-height:60px;display:table-cell;font-family:FontAwesome,sans-serif;font-weight:lighter;font-style:normal;font-size:36px;vertical-align:middle;}
 .self-icon-back-top:after{content:"\f077";width:60px;height:60px;line-height:60px;display:table-cell;font-family:FontAwesome,sans-serif;font-weight:lighter;font-style:normal;font-size:36px;vertical-align:middle;}
 .self-icon-reload:after{content:"\f021";width:60px;height:60px;line-height:60px;display:table-cell;font-family:FontAwesome,sans-serif;font-weight:lighter;font-style:normal;font-size:36px;vertical-align:middle;}

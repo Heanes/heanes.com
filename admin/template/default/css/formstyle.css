@@ -1,0 +1,112 @@
+.submitform .need , .input-condensed .need {
+    color: #b20202;
+    width: 10px;
+}
+/*==========以下部分是Validform必须的===========*/
+.Validform_checktip{
+	/*margin-left:8px;*/
+	line-height:20px;
+	height:20px;
+	overflow:hidden;
+	color:#999;
+	font-size:12px;
+	position: absolute;
+}
+.Validform_right{
+	color:#71b83d;
+	padding-left:20px;
+	background:url(../image/formstyle/right.png) no-repeat left center;
+}
+.Validform_wrong{
+	color:red;
+	padding-left:20px;
+	white-space:nowrap;
+	background:url(../image/formstyle/error.png) no-repeat left center;
+}
+.Validform_loading{
+	padding-left:20px;
+	background:url(../image/formstyle/onLoad.gif) no-repeat left center;
+}
+.Validform_error{
+	background-color:#ffe7e7;
+}
+#Validform_msg{color:#7d8289; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:280px; -webkit-box-shadow:2px 2px 3px #aaa; -moz-box-shadow:2px 2px 3px #aaa; background:#fff; position:absolute; top:0px; right:50px; z-index:99999; display:none;filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');}
+#Validform_msg .iframe{position:absolute; left:0px; top:-1px; z-index:-1;}
+#Validform_msg .Validform_title{line-height:25px; height:25px; text-align:left; font-weight:bold; padding:0 8px; color:#fff; position:relative; background-color:#000;}
+#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:22px; position:absolute; right:8px; top:0px; color:#fff; text-decoration:none;}
+#Validform_msg a.Validform_close:hover{color:#cc0;}
+#Validform_msg .Validform_info{padding:8px;border:1px solid #000; border-top:none; text-align:left;}
+
+/*添加客户页面 弹窗*/
+#choose-box-wrapper1,#choose-box-wrapper2{
+	width: 652px;
+	background-color:#000;
+	filter:alpha(opacity=50);
+	background-color: rgba(0, 0, 0, 0.5);
+	padding:10px;
+	border-radius:5px;
+	display:none;
+}
+#choose-box1,#choose-box2{
+	border: 1px solid #005EAC;
+	width:650px;
+	background-color:white;
+}
+.choose-box-title{
+	background:#3777BC;
+	color: white;
+	padding: 4px 10px 5px;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0;
+}
+.choose-box-title span{
+	font-family: Tahoma, Verdana, STHeiTi, simsun, sans-serif;
+}
+#choose-a-name1,#choose-a-name2{
+	margin:5px 8px 10px 8px;
+	border: 1px solid #C3C3C3;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 200px;
+}
+#choose-a-name1 a,#choose-a-name2 a{
+	height: 18px;
+	line-height: 18px;
+	color:#005EAC;
+	text-decoration: none;
+	font-size: 9pt;
+	font-family: Tahoma, Verdana, STHeiTi, simsun, sans-serif;
+	float: left;
+	width: 160px;
+	margin: 4px 12px;
+	padding-left:10px;
+	background:url(../image/formstyle/square.gif) no-repeat 0 9px;
+}
+#choose-a-name1 a:hover,#choose-a-name2 a:hover{
+	background-color:#005EAC;
+	color:white;
+	cursor:pointer;
+}
+.choose-box-bottom{
+	background: #F0F5F8;
+	padding: 8px;
+	text-align: right;
+	border-top: 1px solid #CCC;
+	height:40px;
+}
+.choose-box-bottom input{
+	vertical-align: middle;
+	text-align: center;
+	background-color:#005EAC;
+	color:white;
+	border-top: 1px solid #B8D4E8;
+	border-left: 1px solid #B8D4E8;
+	border-right: 1px solid #114680;
+	border-bottom: 1px solid #114680;
+	cursor: pointer;
+	width: 60px;
+	height: 25px;
+	margin-top: 6px;
+	margin-right: 6px;
+}

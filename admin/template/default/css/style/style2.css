@@ -3,7 +3,9 @@
 body,button,input,select,textarea{font:12px/1.5 '宋体',Arial,Verdana,tahoma,Helvetica,sans-serif}
 a,input{outline:none}
 a{text-decoration:none;color:#000;outline:none}
-a{-webkit-transition:all 0.5s linear;-moz-transition:all 0.5s linear;-ms-transition:all 0.5s linear;-o-transition:all 0.5s linear}
+a.other{color:#000;outline:none}
+a.slow{-webkit-transition:all 0.5s linear;-moz-transition:all 0.5s linear;-ms-transition:all 0.5s linear;-o-transition:all 0.5s linear}
+.a.other:link{text-decoration:none;color:#000000}
 /*链接*/
 .a:link{text-decoration:none;color:#000000}
 /*被访问过链接*/

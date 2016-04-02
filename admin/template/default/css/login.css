@@ -1,15 +1,25 @@
 @CHARSET "UTF-8";
 /* 后台登录页样式 */
 html,body{height:100%;width:100%}
-body{display:block;background:url(../image/login/cloud.jpg) repeat 50% 50%;overflow:hidden;font-family:微软雅黑}
-.loginmain{z-index:888;height:340px;width:540px;position:absolute;margin-left:-270px;margin-top:-170px;left:50%;top:50%;background:#808080;opacity:.3;border-top-left-radius:30px;border-bottom-right-radius:30px;background:-moz-linear-gradient(left,#F00,#0F0,#00F,#FF0,#0FF,#FF00FF);background:-webkit-linear-gradient(left,#F00,#0F0,#00F,#FF0,#0FF,#FF00FF);background:-o-linear-gradient(left,#F00,#0F0,#00F,#FF0,#0FF,#FF00FF)}
-.admin_login_box{z-index:889;text-align:center;opacity:.8;height:320px;width:520px;position:absolute;margin-left:-260px;margin-top:-160px;left:50%;top:50%;background:#FFF;border-top-left-radius:30px;border-bottom-right-radius:30px;background:-moz-linear-gradient(top,#FFF,#CCC);background:-webkit-linear-gradient(top,#FFF,#CCC);background:-o-linear-gradient(top,#FFF,#CCC)}
+a{text-decoration:none}
+body{display:block;background:url(../image/login/cloud.jpg) no-repeat 50% 50%;background-size:cover;overflow:hidden;font-family:"微软雅黑"}
 .stage{height:350px;background:url(../image/login/cloud1.png) no-repeat transparent}
-.admin_login_box h1{padding:25px 0;color:#0b9cd3;font-family:微软雅黑}
-.admin_login_box hr{width:80%;border:none;margin:10px auto;height:1px;background:-moz-linear-gradient(left,#CDDBE1,#FFF,#CDDBE1);background:-webkit-linear-gradient(left,#CDDBE1,#FFF,#CDDBE1);background:-o-linear-gradient(left,#CDDBE1,#f00,#CDDBE1)}
-.admin_login_box .tip{color:red}
-.pcode{margin-left:-35px}
-.code{width:55px}
-.btn{width:95px}
-.imgcode{margin-top:-8px;margin-left:10px;margin-right:8px}
-input[type="text"],input[type="password"]{font-family:微软雅黑}
+.admin_login_box_background{z-index:888;height:380px;width:540px;position:absolute;margin-left:-270px;margin-top:-190px;left:50%;top:50%;background:#808080;opacity:.3;border-top-left-radius:30px;border-bottom-right-radius:30px;background:-moz-linear-gradient(left,#F00,#0F0,#00F,#FF0,#0FF,#FF00FF);background:-webkit-linear-gradient(left,#F00,#0F0,#00F,#FF0,#0FF,#FF00FF);background:-o-linear-gradient(left,#F00,#0F0,#00F,#FF0,#0FF,#FF00FF)}
+.admin_login_box{z-index:889;text-align:center;opacity:.8;height:360px;width:520px;position:absolute;margin-left:-260px;margin-top:-180px;left:50%;top:50%;background:#FFF;border-top-left-radius:30px;border-bottom-right-radius:30px;background:-moz-linear-gradient(top,#FFF,#CCC);background:-webkit-linear-gradient(top,#FFF,#CCC);background:-o-linear-gradient(top,#FFF,#CCC)}
+.admin_login_box label{display:inline-block;width:80px;text-align:right;}
+.admin_login_box h1{padding:9px 0;color:#0b9cd3;}
+
+.login-block .login-field{margin:10px}
+.login-block .login-field input{height:35px;border:1px solid #6FA1F5;padding:1px 5px;border-radius:5px;font-size:16px;}
+.login-field input:focus{outline:none;box-shadow:0 0 8px #6FA1F5}
+.login-field input:hover{border:1px solid #6FA1F5;box-shadow:0 0 5px #6FA1F5}
+.login-block .login-handle{margin-top:20px}
+.login-handle-field{text-align:center;margin-top:20px}
+.login-block .login-submit{width:100px;height:45px;margin:6px;background:#0074cc;color:#fff;border-radius:4px;font-size:16px;font-weight:bold;cursor:pointer;border:none;}
+.forget-password{margin-top:10px;padding:0 10%;text-align:right}
+.forget-password .href-duck{color:#666}
+.login-redirect{text-align:center;}
+.captcha-code{width:100px;height:40px;border:1px solid #ddd;cursor:pointer}
+span.captcha-wrap{display:inline-block;text-align:center;vertical-align:middle;}
+.login-captcha input{width:100px}
+.input-error-notice{display:none;color:#ff4e00;font-size:14px;margin:0}

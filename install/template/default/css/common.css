@@ -1,0 +1,158 @@
+@CHARSET "UTF-8";
+/**
+ * @doc 前台公共样式
+ * @author Heanes
+ * @time 2015-06-22 09:33:19
+ */
+.default-background{
+	background:#f2f2f2;
+}
+.w-wrap{
+	margin:0 auto;
+}
+
+
+.install-setup-title{
+	padding:20px 0;
+}
+.install-title{
+	text-align:center;
+}
+
+.install-setup-block{
+	width:680px;
+	margin:0 auto;
+	padding:20px;
+	background:#fff;
+	border:1px solid #cfcfcf
+}
+
+.input-row{
+	padding:15px 10px;
+	vertical-align:middle;
+	line-height:22px;
+}
+
+.input-field{
+	display:inline-block;
+	width:320px;
+}
+.input-field label{
+	display:inline-block;
+	width:100px;
+	text-align:right;
+	vertical-align: middle;
+}
+.install-normal-input{
+	line-height:25px;
+}
+.input-tips{
+	display:inline-block;
+	width:280px;
+	padding-left:20px;
+	vertical-align: middle;
+}
+
+.form-handle{
+	padding:20px;
+	text-align:center;
+}
+.setup-submit{
+	width:100px;
+	height:50px;
+	background:#0059F7;
+	color:#fff;
+	border-radius:5px;
+}
+.setup-submit:hover{
+	background:#f72614;
+}
+
+.install-row{
+	padding:15px 0;
+}
+.install-row p{
+	padding:15px 0;
+}
+.install-normal-p{
+	text-indent:2em;
+	line-height:30px;
+}
+.href-to-install,.href-to-login{
+	display:inline-block;
+	width:90px;
+	height:45px;
+	line-height:45px;
+	text-align:center;
+	background:#0059F7;
+	color:#fff;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+
+.install-processing-block{
+	width:600px;
+	margin:0 auto;
+	padding:20px;
+	background:#fff;
+	border:1px solid #cfcfcf
+}
+.install-processing-task{
+	line-height:24px;
+	font-size:14px;
+}
+.install-processing-task li{
+	padding:4px 15px;
+	border-bottom:1px dashed #838383;
+}
+
+.install-processing-handle-field{
+	text-align:center;
+	padding:20px 0;
+}
+.success-title{
+	padding-bottom:10px;
+	border-bottom:1px solid #E4E4E4;
+}
+.success-p-half-left{
+	display:inline-block;
+	width:100px;
+}
+.success-p-half-right{
+	display:inline-block;
+	width:200px;
+}
+/* 响应式 */
+/* iPhone 3 4 5 */
+@media screen and (min-width:320px) and (max-width:374px) {
+	
+}
+/* iPhone 6 */
+@media screen and (min-width:375px) and (max-width:413px) {
+
+}
+/* iPhone 6plus */
+@media screen and (min-width:414px) and (max-width:479px) {
+
+}
+/* Android and + */
+@media screen and (min-width:480px) and (max-width:639px) {
+
+}
+/* Android and + */
+@media screen and (min-width:640px) and (max-width:767px) {
+
+}
+/* iPad */
+@media screen and (min-width:767px) and (max-width:1139px) {
+
+}
+/* PC */
+@media screen and (min-width:1366px) {
+
+}
+/* 设备分辨率媒体查询,screen and (max-moz-device-pixel-ratio:2) */
+@media screen and (-webkit-min-device-pixel-ratio:2){
+
+}

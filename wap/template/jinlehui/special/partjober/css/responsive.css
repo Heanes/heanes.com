@@ -1,0 +1,61 @@
+.center{margin:0 auto}
+.left{text-align:left}
+.right{text-align:right}
+.text-center{text-align:center}
+.text-left{text-align:left}
+.text-right{text-align:right}
+.fix{position:fixed;z-index:100}
+.clear{clear:both;content:" ";display:block}
+.clear-left{clear:left;content:" ";display:block}
+.clear-right{clear:right;content:" ";display:block}
+.wrap{width:100%;margin:0 auto}
+.main,.footer{margin:0 auto;padding:0}
+.main-content{margin:0 auto;}
+div.blank{display:block;height:1px}
+/* iPhone 3 4 5 */
+@media screen and (min-width:320px) and (max-width:374px) {
+	body {
+		background-color:#fff;
+	}
+}
+/* iPhone 6 */
+@media screen and (min-width:375px) and (max-width:413px) {
+	body {
+		background-color:#fff;
+	}
+}
+/* iPhone 6plus */
+@media screen and (min-width:414px) and (max-width:479px) {
+	body {
+		background-color:#fff;
+	}
+}
+/* Android and + */
+@media screen and (min-width:480px) and (max-width:639px) {
+	body {
+		background-color:#fff;
+	}
+}
+/* Android and + */
+@media screen and (min-width:640px) and (max-width:767px) {
+	body {
+		background-color:#fff;
+	}
+}
+/* ipad */
+@media screen and (min-width:767px) and (max-width:1139px) {
+	body {
+		background-color:#fff;
+	}
+}
+/* PC */
+@media screen and (min-width:1366px) {
+	.main-content, .footer-nav-bar {
+		width: 414px;
+		min-width: 210px
+	}
+	.w-wrap {
+		width: 414px;
+		min-width: 210px
+	}
+}

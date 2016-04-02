@@ -1,24 +1,22 @@
 @CHARSET "UTF-8";
 /* 后台公共样式 */
-/* 导入重设样式 */
-@import url(reset/reset.css);
-/* 导入基础简写样式库 */
-@import url(reset/short.css);
-/* 导入font-awesome字体文件 */
-@import url(font-awesome/4.2.0/css/font-awesome.min.css);
+
 /* 导入全局显示样式控制 */
 @import url(style/style1.css);
 /* bootstrap表格样式附加样式 */
 table thead{background:#efefef;font-weight:bold;color:#323D53}
 table thead th{text-align:center;}
-.input-condensed table tr td input[type=text]{height:auto;}
+table td{vertical-align:middle;}
+.table-condensed th,.table-condensed td{vertical-align:middle}
+input[type="text"],input[type="checkbox"]{height:auto;font-size:12px;margin:0}
+select,textarea{margin:0}
 /* bootstrap表格样式附加样式 */
 /* ueditor编辑器会改变换行 */
 /* 页内公共样式 */
 body.color_page{background-color:#DDEEF2;padding:10px}
-.container{margin:0px auto;padding:10px;vertical-align:middle;width:auto}
-.main{padding-top:10px}
-.center{margin:0px auto;padding:0px;text-align:center;vertical-align:middle}
+.wrap{margin:0 auto;vertical-align:middle;width:auto}
+.main{margin:0 auto;padding-top:10px;}
+.center{margin:0 auto;padding:0;text-align:center;vertical-align:middle}
 /* 外链图标样式 */
 a.external-link{cursor:alias;}
 a.external-link:after{content:"\f08e";display:inline-block;font-family:FontAwesome,sans-serif;font-weight:400;font-style:normal;vertical-align:middle;}
@@ -29,8 +27,8 @@ a.external-link:after{content:"\f08e";display:inline-block;font-family:FontAweso
 /* 每页页首标题样式结束 */
 
 /* 右上角操作区域 */
-.topCorner{position:absolute;top:10px;right:45px}
-.text_operate b{font-weight:normal;margin:3px 5px;}
+.topCorner{position:absolute;top:0;right:45px}
+.text_operate b{font-weight:normal;margin:3px 5px;line-height:28px;}
 .text_operate .increaseFont{font-size:30px;cursor:-webkit-zoom-in;}
 .text_operate .decreaseFont{font-size:30px;cursor:-webkit-zoom-out;}
 .text_operate .resetFont:before{content:'\21BB';font-size:18px;font-weight:bold;}
@@ -38,11 +36,12 @@ a.external-link:after{content:"\f08e";display:inline-block;font-family:FontAweso
 
 /* 信息展示表搜索区域 */
 .data_list_search{margin-bottom:15px;}
-.data_list_search input[type=text]{width:150px;height:auto;}
+.data_list_search input[type=text]{width:160px;height:auto;}
 .data_list_search select{width:auto;border-radius:3px;}
 .data_list_search table th{text-align:right;}
 .data_list_search table td{padding:5px 10px;text-align:right;}
 /* 信息展示表样式 */
+.data-list-href{text-align:left;padding:10px;}
 .info_table,.table-data-list{background-color:white;margin-bottom:10px;color:black}
 .table-data-list th{width:auto;text-align:center;}
 .info_table thead,.table-data-list thead tr td{background-color:#eaf8ff}
@@ -54,7 +53,14 @@ a.external-link:after{content:"\f08e";display:inline-block;font-family:FontAweso
 .checked_count{color:red;font-size:14px;font-weight:bold;}
 
 /* 数据编辑页面 */
-.table-data-eidt th{text-align:right;}
+.table-data-edit th{text-align:right;}
+.edit-form-handle{
+	text-align: center;
+}
+.edit-form-handle .handle-field{
+	display:inline-block;
+	margin:0 20px;
+}
 
 /* 日期时间选择器 */
 input.date_time_picker{background:url(../image/common/dateTimePicker/iconDate.gif) center right no-repeat #f7f7f7;_padding-right:20px;}
@@ -62,31 +68,34 @@ input.date_time_picker{background:url(../image/common/dateTimePicker/iconDate.gi
 .turn_page .page_link{margin:5px 10px;padding:5px 10px}
 .turn_page span{margin-right:15px;}
 .turn_page input[type=text],.turn_page select{font:13px "courier new";color:blue}
-.turn_page input[type=text]{width:20px;height:15px;margin:0 4px;}
+.turn_page input[type=text]{width:30px;height:22px;margin:0 4px;text-align:center;}
 .turn_page select{width:auto;height:26px;margin-left:6px;padding:0;border-radius:3px;}
 .page_link a{padding:3px 8px;margin-left:3px;margin-right:3px;border:1px solid #ccc;border-radius:3px;color:#005aa0;text-decoration:none;}
 .page_link a:hover{background:#005aa0;color:white;}
 .page_link a.current{margin:0 5px;color:#999;text-decoration:none;font-weight:bold;cursor:text;border:none}
 .page_link a.current:hover{background:none}
+.page_link label{display:inline-block;padding:2px 6px;border:1px solid #C2D5E3;border-radius:5px;margin:0;}
+.page_link label input[type=button].mini{padding:1px 3px;}
+
 
 /*可折叠分类树样式*/
-b.lap-tree-icon{margin:0px 10px;padding:0px 3px;border:1px solid #666;color:#666;}
+b.lap-tree-icon{margin:0 10px;padding:0 3px;border:1px solid #666;color:#666;}
 .data-lap-tree ul li{margin-left:10px}
-_table{width:100%;border:1px solid #888;}
-_table.table-data-lap tr td:first-child{width:3%;}
-_table.table-data-lap tr td:last-child{width:98%;}
-_table.table-data-lap-cell tr td:first-child{width:50%;}
-.table-data-lap table td{padding-left:15px;}/* 大表格内部左空大小 */
+._table{width:100%;border:1px solid #888;}
+._table.table-data-lap tr td:first-child{width:3%;}
+._table.table-data-lap tr td:last-child{width:98%;}
+._table.table-data-lap-cell tr td:first-child{width:50%;}
+._table-data-lap table td{padding-left:15px;}/* 大表格内部左空大小 */
 table.table-data-lap tr:nth-child(2){display:none;}/* 默认折叠状态 */
 
 /* 结果提示页面 */
-.message_result{padding:15px;background-color:#EFFDCD;border:1px solid #D9DD3B;}
+.message_result{max-width:600px;margin:0 auto;padding:15px;background-color:#EFFDCD;border:1px solid #D9DD3B;}
 .message_result a{font-weight:600;}
-.message_result_success{background-color:#83c567;padding:15px;border:1px solid #d6e9c6;border-radius:6px;}
-.message_result_success hr{border-top:1px solid Green;border-bottom:0px}
+.message_result_success{background-color:#94E870;padding:15px;border:1px solid #d6e9c6;border-radius:6px;color:#000}
+.message_result_success hr{border-top:1px solid Green;border-bottom:0}
 .message_result_success p{margin-top:10px;font-size:14px;}
 .message_result_failed{background-color:#f2dede;padding:15px;border:1px solid #eed3d7;border-radius:6px;}
-.message_result_failed hr{border-top:1px solid Tomato;border-bottom:0px}
+.message_result_failed hr{border-top:1px solid Tomato;border-bottom:0}
 .message_result_failed p{margin-top:10px;font-size:14px;}
 .message_result_failed fieldset{border:1px solid Crimson;padding:10px;}
 .message_result_failed fieldset legend{width:auto;font-size:16px;padding:0 2px}
@@ -95,7 +104,7 @@ table.table-data-lap tr:nth-child(2){display:none;}/* 默认折叠状态 */
 .admin_default_block_list{width:100%;margin:0 auto;}
 .admin_default_block_list table{width:100%;}
 .admin_default_block_list table td{padding:5px 30px;}
-.admin_default_block_info{display:table-cell;width:500px;height:auto;margin:10px;border:1px solid #ddd;border-radius:0px;text-align:left;}
+.admin_default_block_info{display:table-cell;width:500px;height:auto;margin:10px;border:1px solid #ddd;border-radius:0;text-align:left;}
 .admin_default_block_info .block_title{background-color:#eee;padding:10px;font-size:15px;}
 .admin_default_block_info .block_content{padding:10px;}
 .admin_default_block_info .block_content{padding:10px;}

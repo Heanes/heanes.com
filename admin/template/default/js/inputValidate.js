@@ -10,34 +10,34 @@ $(function() {
 	/**
 	 * 管理后台登录
 	 */
-	$('#admin_keyword').focus(function() {
+	$('input[name="user_name"]').focus(function() {
 		if ($(this).val() == '请输入管理员账号') {
 			$(this).val("");
 		}
 	});
 
-	$('#admin_keyword').blur(function() {
+	$('input[name="user_name"]').blur(function() {
 		if ($(this).val() == "") {
 			$(this).val('请输入管理员账号');
 		}
 	});
 
-	$('#keypwd').focus(function() {
+	$('input[name="user_pwd"]').focus(function() {
 		if ($(this).val() == '请输入密码') {
 			$(this).val("");
 		}
 		document.getElementById("keypwd").type = "password";
 	});
 
-	$('#keypwd').blur(function() {
+	$('input[name="user_pwd"]').blur(function() {
 		if ($(this).val() == "") {
 			$(this).val('请输入密码');
 			document.getElementById("keypwd").type = "text";
 		}
 	});
 	
-	$('.login').click(function () {
-        if ($('#admin_keyword').val() == "" || $('#keypwd').val() == "" || $('#code').val() == "") { $('.tip').html('用户名或密码不可为空！');}
+	$('input[type="submit"]').click(function () {
+        if ($("#admin_keyword").val() == "" || $("#keypwd").val() == "" || $("#code").val() == "") { $(".tip").html('用户名或密码不可为空！');}
         else {
             location.href = 'index.html';
         }

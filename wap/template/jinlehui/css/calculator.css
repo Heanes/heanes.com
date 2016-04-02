@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+/*贷款计算器*/
+.calculator-block{padding:14px 0;}
+.calculator-type-block,
+.result-title-block{border-bottom:1px solid #ddd;}
+.calculator-type-block .type-title,
+.result-title-block .result-title{height:40px;line-height:40px;font-size:16px;padding:10px;}
+.calculator-input-block{border-bottom:1px solid #ddd;}
+.result-content-block{padding:10px 26px;}
+.result-content-block .result-p{height:40px;line-height:40px;border-bottom:1px #ddd dashed;}
+.calculator-input-error{line-height:40px;color:#f00;}
+.hide{display:none;}
+.text-red{color:#f00;}
+.calculate-result{display:none;}

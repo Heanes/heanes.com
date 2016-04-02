@@ -74,7 +74,7 @@ $(document).ready(function() {
  * 通过id="time"来调用
  * Time 2014.06.23
  */
-function showDynamicDateAndTime(selector) {
+function showDynamicDateAndTime() {
 	var now = new Date();// 获取当前时间
 	var year = now.getFullYear();// 年
 	var month = now.getMonth() + 1;// 月
@@ -107,7 +107,7 @@ function showDynamicDateAndTime(selector) {
 		date = "0" + date;
 	if (month < 10)
 		month = "0" + month;
-	dateAndTimeString=year + "." + month + "." + date + "&nbsp;" + day + "&nbsp;" + hour + ":" + minute + ":" + second;
+	var dateAndTimeString=year + "." + month + "." + date + "&nbsp;" + day + "&nbsp;" + hour + ":" + minute + ":" + second;
 	document.getElementById('js_time_now').innerHTML = year + "." + month + "." + date
 			+ "&nbsp;" + day + "&nbsp;" + hour + ":" + minute + ":" + second;
 	// 刷新时间

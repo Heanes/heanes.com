@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+/**
+ * @doc 表格样式
+ * @filesource file
+ * @copyright heanes.com
+ * @author Heanes
+ * @time 2015-05-21 14:44:19
+ */
+.data-edit-table tr{
+	border-bottom:1px solid #ddd;
+	height: 50px;
+}
