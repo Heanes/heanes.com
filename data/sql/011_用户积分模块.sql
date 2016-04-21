@@ -8,16 +8,18 @@ set foreign_key_checks = 0;
 */
 drop table if exists `pre_user_rank_type`;
 create table `pre_user_rank_type` (
-	`id`          int unsigned auto_increment comment '自增ID，主键',
-	`code`        varchar(255) comment '积分Code',
-	`name`        varchar(63) comment '积分名称',
-	`unit`        varchar(63) comment '积分单位',
-	`insert_time` int(10) comment '添加时间',
-	`update_time` int(10) comment '更新时间',
-	`order`       int unsigned comment '排序',
-	`is_enable`   tinyint unsigned default 1 comment '是否启用（显示）',
-	`is_delete`   tinyint unsigned default 0 comment '是否删除',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `code`          varchar(255) comment '积分Code',
+    `name`          varchar(63) comment '积分名称',
+    `unit`          varchar(63) comment '积分单位',
+    `order`         int unsigned comment '排序',
+    `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
+    `is_deleted`    tinyint unsigned default 0 comment '是否删除',
+    `insert_time`   int(10) comment '添加时间',
+    `update_time`   int(10) comment '更新时间',
+    `create_user`   int unsigned comment '创建人',
+    `update_user`   int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -32,13 +34,17 @@ comment '用户积分类型设置表';
 */
 drop table if exists `pre_user_rank`;
 create table `pre_user_rank` (
-	`id`           int unsigned auto_increment comment '自增ID，主键',
-	`user_id`      int unsigned comment '用户ID',
-	`type_id`      int unsigned comment '积分类型ID',
-	`value`        int unsigned comment '积分个数',
-	`insert_time`  int(10) comment '日志插入时间',
-	`update_time`  int(10) comment '日志更新时间',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `user_id`       int unsigned comment '用户ID',
+    `type_id`       int unsigned comment '积分类型ID',
+    `value`         int unsigned comment '积分个数',
+    `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
+    `is_deleted`    tinyint unsigned default 0 comment '是否删除',
+    `insert_time`   int(10) comment '日志插入时间',
+    `update_time`   int(10) comment '日志更新时间',
+    `create_user`   int unsigned comment '创建人',
+    `update_user`   int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -53,13 +59,14 @@ comment '用户积分表';
 */
 drop table if exists `pre_user_rank_log`;
 create table `pre_user_rank_log` (
-	`id`           int unsigned auto_increment comment '自增ID，主键',
-	`user_rank_id` int unsigned comment '用户ID',
-	`chang_sign`   tinyint comment '积分变更标识，1-增加，-1-减少',
-	`value`        int comment '积分变更值',
-	`change_thing` varchar(255) comment '积分变更事件描述',
-	`insert_time`  int(10) comment '日志插入时间',
-	primary key (`id`)
+    `id`           int unsigned auto_increment comment '自增ID，主键',
+    `user_rank_id` int unsigned comment '用户ID',
+    `chang_sign`   tinyint comment '积分变更标识，1-增加，-1-减少',
+    `value`        int comment '积分变更值',
+    `change_thing` varchar(255) comment '积分变更事件描述',
+    `insert_time`  int(10) comment '日志插入时间',
+    `create_user`   int unsigned comment '创建人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1

@@ -9,8 +9,8 @@ set foreign_key_checks = 0;
 /*
 drop table if exists `pre_`;
 create table `pre_` (
-	`id` int unsigned auto_increment comment '自增ID，主键',
-	primary key (`id`)
+    `id` int unsigned auto_increment comment '自增ID，主键',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1

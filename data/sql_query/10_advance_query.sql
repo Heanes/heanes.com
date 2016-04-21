@@ -54,11 +54,19 @@ SELECT auto_increment FROM `information_schema`.`TABLES` WHERE `TABLE_SCHEMA`='h
  * @time 2015-07-29 11:10:34
  */
 /*
-create user 'webdb'@'localhost'
+create user 'webdb'@'%'
 	identified by 'p()P]aHqCEfwVY@7';
 
-grant all privileges on *.* to 'webdb'@'localhost'
+grant all privileges on *.* to 'webdb'@'%'
 identified by 'p()P]aHqCEfwVY@7'
+with grant option;
+Flush privileges;
+
+create user 'user_web_r'@'%'
+identified by '123456';
+
+grant select on *.* to 'user_web_r'@'%'
+identified by '123456'
 with grant option;
 Flush privileges;
 */

@@ -8,20 +8,22 @@ set foreign_key_checks = 0;
 */
 drop table if exists `pre_department`;
 create table `pre_department` (
-	`id`             int unsigned auto_increment comment '自增ID，主键',
-	`pid`            int comment '所属父部门',
-	`name`           varchar(255) comment '部门名称',
-	`english_name`   varchar(255) comment '英文名称',
-	`short_name`     varchar(255) comment '部门名称缩写',
-	`img_src`        varchar(255) comment '部门图片logo地址',
-	`description`    text comment '部门介绍',
-	`manager_job_id` int unsigned comment '部门管理职位ID，员工表中某员工的职位ID与此相同，则表明该员工为部门管理员',
-	`order`          int comment '排序',
-	`insert_time`    int(10) comment '添加时间',
-	`update_time`    int(10) comment '更新时间',
-	`is_enable`      tinyint default 1 comment '是否有效',
-	`is_delete`      tinyint default 0 comment '是否删除',
-	primary key (`id`)
+    `id`                int unsigned auto_increment comment '自增ID，主键',
+    `pid`               int comment '所属父部门',
+    `name`              varchar(255) comment '部门名称',
+    `english_name`      varchar(255) comment '英文名称',
+    `short_name`        varchar(255) comment '部门名称缩写',
+    `img_src`           varchar(255) comment '部门图片logo地址',
+    `description`       text comment '部门介绍',
+    `manager_job_id`    int unsigned comment '部门管理职位ID，员工表中某员工的职位ID与此相同，则表明该员工为部门管理员',
+    `order`             int comment '排序',
+    `is_enable`         tinyint default 1 comment '是否有效',
+    `is_deleted`        tinyint default 0 comment '是否删除',
+    `insert_time`       int(10) comment '添加时间',
+    `update_time`       int(10) comment '更新时间',
+    `create_user`       int unsigned comment '创建人',
+    `update_user`       int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -36,24 +38,26 @@ comment '部门表';
 */
 drop table if exists `pre_department_fields`;
 create table `pre_department_fields` (
-	`id`                        int unsigned auto_increment comment '自增ID，主键',
-	`type_id`                   int unsigned comment '类型ID，为0表示通用类型',
-	`name`                      varchar(127) comment '属性名称',
-	`input_type`                varchar(15) comment '属性输入类型',
-	`input_value`               text comment '输入备选值',
-	`value_unit`                varchar(255) comment '值的单位',
-	`accept_type`               varchar(255) comment '允许上传的文件类型',
-	`is_required`               tinyint unsigned default 0 comment '是否必须的',
-	`allow_read_role`           varchar(255) default 0 comment '允许查看的角色ID,以逗号为分隔符',
-	`allow_read_min_role_level` int unsigned default 0 comment '允许查看的最小角色ID',
-	`as_filter`                 tinyint unsigned default 0 comment '是否作为筛选条件',
-	`is_show`                   tinyint unsigned default 1 comment '是否显示',
-	`order`                     int unsigned comment '排序',
-	`insert_time`               int(10) comment '添加时间',
-	`update_time`               int(10) comment '更新时间',
-	`is_enable`                 tinyint unsigned default 1 comment '是否启用',
-	`is_delete`                 tinyint unsigned default 0 comment '是否删除',
-	primary key (`id`)
+    `id`                        int unsigned auto_increment comment '自增ID，主键',
+    `type_id`                   int unsigned comment '类型ID，为0表示通用类型',
+    `name`                      varchar(127) comment '属性名称',
+    `input_type`                varchar(15) comment '属性输入类型',
+    `input_value`               text comment '输入备选值',
+    `value_unit`                varchar(255) comment '值的单位',
+    `accept_type`               varchar(255) comment '允许上传的文件类型',
+    `is_required`               tinyint unsigned default 0 comment '是否必须的',
+    `allow_read_role`           varchar(255) default 0 comment '允许查看的角色ID,以逗号为分隔符',
+    `allow_read_min_role_level` int unsigned default 0 comment '允许查看的最小角色ID',
+    `as_filter`                 tinyint unsigned default 0 comment '是否作为筛选条件',
+    `is_show`                   tinyint unsigned default 1 comment '是否显示',
+    `order`                     int unsigned comment '排序',
+    `is_enable`                 tinyint unsigned default 1 comment '是否启用',
+    `is_deleted`                tinyint unsigned default 0 comment '是否删除',
+    `insert_time`               int(10) comment '添加时间',
+    `update_time`               int(10) comment '更新时间',
+    `create_user`               int unsigned comment '创建人',
+    `update_user`               int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -68,14 +72,18 @@ comment '部门额外数据信息表';
 */
 drop table if exists `pre_department_fields_data`;
 create table `pre_department_fields_data` (
-	`id`           int unsigned auto_increment comment '自增ID，主键',
-	`fields_id`    int unsigned comment '属性ID',
-	`borrow_id`    int unsigned comment '类型ID，为0表示通用类型',
-	`fields_value` varchar(255) comment '借款属性值',
-	`fields_price` decimal(10, 2) comment '属性价格',
-	`insert_time`  int(10) comment '属性添加时间',
-	`update_time`  int(10) comment '属性更新时间',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `fields_id`     int unsigned comment '属性ID',
+    `borrow_id`     int unsigned comment '类型ID，为0表示通用类型',
+    `fields_value`  varchar(255) comment '借款属性值',
+    `fields_price`  decimal(10, 2) comment '属性价格',
+    `is_enable`     tinyint unsigned default 1 comment '是否启用',
+    `is_deleted`    tinyint unsigned default 0 comment '是否删除',
+    `insert_time`   int(10) comment '添加时间',
+    `update_time`   int(10) comment '更新时间',
+    `create_user`   int unsigned comment '创建人',
+    `update_user`   int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -90,14 +98,16 @@ comment '部门额外数据信息表';
 */
 drop table if exists `pre_department_manager`;
 create table `pre_department_manager` (
-	`id`            int unsigned auto_increment comment '自增ID，主键',
-	`department_id` int unsigned comment '部门ID',
-	`user_id`       int unsigned comment '用户ID',
-	`insert_time`   int(10) comment '插入时间',
-	`update_time`   int(10) comment '更新时间',
-	`is_enable`     tinyint default 1 comment '是否有效',
-	`is_delete`     tinyint default 0 comment '是否删除',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `department_id` int unsigned comment '部门ID',
+    `user_id`       int unsigned comment '用户ID',
+    `is_enable`     tinyint default 1 comment '是否有效',
+    `is_deleted`    tinyint default 0 comment '是否删除',
+    `insert_time`   int(10) comment '插入时间',
+    `update_time`   int(10) comment '更新时间',
+    `create_user`   int unsigned comment '创建人',
+    `update_user`   int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -112,18 +122,20 @@ comment '部门管理员表';
 */
 drop table if exists `pre_employee`;
 create table `pre_employee` (
-	`id`            int unsigned auto_increment comment '自增ID，主键',
-	`user_id`       int unsigned comment '用户ID',
-	`department_id` int unsigned comment '部门ID',
-	`job_id`        int unsigned comment '职位ID',
-	`leader_eid`    int unsigned comment '上级领导员工ID',
-	`recommend_eid` int unsigned comment '推荐人员工ID',
-	`insert_time`   int(10) comment '添加时间',
-	`update_time`   int(10) comment '更新时间',
-	`apply_status`  tinyint default 0 comment '审核状态，0-审核中，1-通过，-1拒绝',
-	`is_enable`     tinyint default 1 comment '是否有效',
-	`is_delete`     tinyint default 0 comment '是否删除',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `user_id`       int unsigned comment '用户ID',
+    `department_id` int unsigned comment '部门ID',
+    `job_id`        int unsigned comment '职位ID',
+    `leader_eid`    int unsigned comment '上级领导员工ID',
+    `recommend_eid` int unsigned comment '推荐人员工ID',
+    `apply_status`  tinyint default 0 comment '审核状态，0-审核中，1-通过，-1拒绝',
+    `is_enable`     tinyint default 1 comment '是否有效',
+    `is_deleted`    tinyint default 0 comment '是否删除',
+    `insert_time`   int(10) comment '添加时间',
+    `update_time`   int(10) comment '更新时间',
+    `create_user`   int unsigned comment '创建人',
+    `update_user`   int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -138,16 +150,17 @@ comment '员工表';
 */
 drop table if exists `pre_employee_apply_status_log`;
 create table `pre_employee_apply_status_log` (
-	`id`            int unsigned auto_increment comment '自增ID，主键',
-	`employee_id`   int unsigned comment '用户ID',
-	`actor_user_id` int unsigned comment '部门ID',
-	`status`        tinyint default 0 comment '审核状态，0-审核中，1-通过，-1拒绝',
-	`reason`        text comment '处理原因',
-	`description`   text comment '操作留下的备注信息,留给系统查看',
-	`insert_time`   int(10) comment '添加时间',
-	`is_enable`     tinyint default 1 comment '是否有效',
-	`is_delete`     tinyint default 0 comment '是否删除',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `employee_id`   int unsigned comment '用户ID',
+    `actor_user_id` int unsigned comment '部门ID',
+    `status`        tinyint default 0 comment '审核状态，0-审核中，1-通过，-1拒绝',
+    `reason`        text comment '处理原因',
+    `description`   text comment '操作留下的备注信息,留给系统查看',
+    `is_enable`     tinyint default 1 comment '是否有效',
+    `is_deleted`    tinyint default 0 comment '是否删除',
+    `insert_time`   int(10) comment '添加时间',
+    `create_user`   int unsigned comment '创建人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -162,17 +175,19 @@ comment '员工职位申请状态操作记录表';
 */
 drop table if exists `pre_job`;
 create table `pre_job` (
-	`id`              int unsigned auto_increment comment '自增ID，主键',
-	`category_id` int unsigned comment '职位分类',
-	`name`        varchar(255) comment '职位名称',
-	`code`        varchar(255) comment '职位代码，一般即缩写',
-	`description`     text comment '职位描述',
-	`insert_time`     int(10) comment '添加时间',
-	`update_time`     int(10) comment '更新时间',
-	`order`           int comment '排序',
-	`is_enable`       tinyint default 1 comment '是否有效',
-	`is_delete`       tinyint default 0 comment '是否删除',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `category_id`   int unsigned comment '职位分类',
+    `name`          varchar(255) comment '职位名称',
+    `code`          varchar(255) comment '职位代码，一般即缩写',
+    `description`   text comment '职位描述',
+    `order`         int comment '排序',
+    `is_enable`     tinyint default 1 comment '是否有效',
+    `is_deleted`    tinyint default 0 comment '是否删除',
+    `insert_time`   int(10) comment '添加时间',
+    `update_time`   int(10) comment '更新时间',
+    `create_user`   int unsigned comment '创建人',
+    `update_user`   int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1
@@ -187,15 +202,17 @@ comment '职位表';
 */
 drop table if exists `pre_job_category`;
 create table `pre_job_category` (
-	`id`            int unsigned auto_increment comment '自增ID，主键',
-	`category_name` varchar(255) comment '分类名称',
-	`category_code` varchar(255) comment '分类代码，一般即缩写',
-	`description`   text comment '职位描述',
-	`insert_time`   int(10) comment '添加时间',
-	`update_time`   int(10) comment '更新时间',
-	`is_enable`     tinyint default 1 comment '是否有效',
-	`is_delete`     tinyint default 0 comment '是否删除',
-	primary key (`id`)
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `category_name` varchar(255) comment '分类名称',
+    `category_code` varchar(255) comment '分类代码，一般即缩写',
+    `description`   text comment '职位描述',
+    `is_enable`     tinyint default 1 comment '是否有效',
+    `is_deleted`    tinyint default 0 comment '是否删除',
+    `insert_time`   int(10) comment '添加时间',
+    `update_time`   int(10) comment '更新时间',
+    `create_user`   int unsigned comment '创建人',
+    `update_user`   int unsigned comment '更新人',
+    primary key (`id`)
 )
 engine = innodb
 auto_increment = 1

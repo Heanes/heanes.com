@@ -10,8 +10,8 @@
 */
 drop database if exists `heanes.com`;
 create database if not exists `heanes.com`
-	default character set `utf8`
-	collate `utf8_general_ci`;
+    default character set `utf8`
+    collate `utf8_general_ci`;
 use `heanes.com`;
 /*
 show databases;
