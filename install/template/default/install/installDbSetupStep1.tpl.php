@@ -26,7 +26,7 @@
 			<div class="input-row">
 				<div class="input-field">
 					<label for="db_pwd">密码</label>
-					<input type="text" name="db_pwd" id="db_pwd" value="123456" class="install-normal-input" title="密码" placeholder="密码" required readonly/>
+					<input type="text" name="db_pwd" id="db_pwd" value="7316" class="install-normal-input" title="密码" placeholder="密码" required readonly/>
 				</div>
 				<div class="input-tips">
 					<span class="tips">数据库密码</span>
@@ -52,7 +52,7 @@
 			</div>
 			<div class="form-handle">
 				<div class="form-handle-field">
-					<input type="submit" name="install_setup_step1" class="setup-submit" name="install_setup_form_submit" value="提交" />
+					<input type="submit" name="install_setup_step1" class="setup-submit" value="提交" />
 				</div>
 			</div>
 		</form>

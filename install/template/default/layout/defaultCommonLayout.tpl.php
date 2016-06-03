@@ -26,13 +26,14 @@ defined('InHeanes') or exit('Access Invalid!');?>
 	<!-- S Stylesheet S -->
 	<link rel="stylesheet" type="text/css" href="<?php echo SYS_HOST?>public/static/libs/css/reset/reset.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo SYS_HOST?>public/static/libs/css/base/base.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="<?php /*echo SYS_HOST*/?>public/static/libs/ui-framework/bootstrap/2.3.2/css/bootstrap.min.css"/>-->
 	<link rel="stylesheet" type="text/css" href="css/style/style1.css"/>
 	<link rel="stylesheet" type="text/css" href="css/common.css"/>
 	<link rel="stylesheet" type="text/css" href="css/css.css"/>
 	<!-- E Stylesheet E -->
 
 	<!-- S js S -->
-	<script type="text/javascript" src="<?php echo SYS_HOST?>public/static/libs/js/jquery/2.1.3/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="<?php echo SYS_HOST?>public/static/libs/js/jquery/2.2.3/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo SYS_HOST?>public/static/libs/js/validation/jquery-validation/1.13.1/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="<?php echo SYS_HOST?>public/static/libs/js/Excolo-Slider/1.1.0/jquery.excoloSlider.js"></script>
 	<script type="text/javascript" src="<?php echo SYS_HOST?>public/static/libs/js/showDialog/lhgDialog/4.2.0/lhgdialog.min.js?skin=blue"></script>

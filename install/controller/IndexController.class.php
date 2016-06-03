@@ -46,6 +46,7 @@ class IndexController extends BaseInstallController {
 	 * @time 2015-06-23 13:14:12
 	 */
 	public function databaseInitialize(){
+        // 检测连接配置是否正确，正确则做处理，否则报错
 		//1.创建数据库，初始化表
 		$sql_file_list=File::getFileList(PATH_ABS_BASE_DATA.'sql');
 		//print_arr($sql_file_list);

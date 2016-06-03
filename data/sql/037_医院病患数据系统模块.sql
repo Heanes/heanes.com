@@ -1,4 +1,4 @@
-use `doctor.heanes.com`;
+# use `doctor.heanes.com`;
 set foreign_key_checks = 0;
 
 #----------pre_medical_record--------------------------------------------------------

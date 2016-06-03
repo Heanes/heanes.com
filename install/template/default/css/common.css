@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 /**
- * @doc Ç°Ì¨¹«¹²ÑùÊ½
+ * @doc å‰å°å…¬å…±æ ·å¼
  * @author Heanes
  * @time 2015-06-22 09:33:19
  */
@@ -32,6 +32,9 @@
 	vertical-align:middle;
 	line-height:22px;
 }
+input[type="text"]{background-color:#fff;border:1px solid #ccc;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border linear .2s,box-shadow linear .2s;-moz-transition:border linear .2s,box-shadow linear .2s;-o-transition:border linear .2s,box-shadow linear .2s;transition:border linear .2s,box-shadow linear .2s;
+	display:inline-block;padding:4px 6px;font-size:14px;line-height:20px;color:#555;vertical-align:middle;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+input[type="text"]:focus{border-color:rgba(82,168,236,0.8);outline:0;outline:thin dotted \9;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);}
 
 .input-field{
 	display:inline-block;
@@ -123,10 +126,10 @@
 	display:inline-block;
 	width:200px;
 }
-/* ÏìÓ¦Ê½ */
+/* å“åº”å¼ */
 /* iPhone 3 4 5 */
 @media screen and (min-width:320px) and (max-width:374px) {
-	
+
 }
 /* iPhone 6 */
 @media screen and (min-width:375px) and (max-width:413px) {
@@ -152,7 +155,7 @@
 @media screen and (min-width:1366px) {
 
 }
-/* Éè±¸·Ö±æÂÊÃ½Ìå²éÑ¯,screen and (max-moz-device-pixel-ratio:2) */
+/* è®¾å¤‡åˆ†è¾¨ç‡åª’ä½“æŸ¥è¯¢,screen and (max-moz-device-pixel-ratio:2) */
 @media screen and (-webkit-min-device-pixel-ratio:2){
 
 }
