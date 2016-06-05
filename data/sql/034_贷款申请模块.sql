@@ -28,11 +28,11 @@ create table `pre_money_quick_apply` (
     `handle_time`       int(10) comment '处理时间',
     `is_recycle`        tinyint unsigned default 0 comment '是否放入回收站',
     `is_top`            tinyint(10) comment '是否置顶',
-    `order`             int unsigned comment '排序',
+    `order_number`      int unsigned comment '排序',
     `is_enable`         tinyint unsigned default 1 comment '是否启用',
     `is_deleted`        tinyint unsigned default 0 comment '是否删除',
-    `insert_time`       int(10) comment '添加时间',
-    `update_time`       int(10) comment '更新时间',
+    `insert_time`       int(10) unsigned comment '添加时间',
+    `update_time`       int(10) unsigned comment '更新时间',
     `create_user`       int unsigned comment '创建人',
     `update_user`       int unsigned comment '更新人',
     primary key (`id`)
@@ -57,7 +57,7 @@ create table `pre_money_quick_apply_log` (
     `handle_desc`   varchar(255) comment '处理结果备注',
     `log_desc`      text comment '日志说明',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
     `create_user`   int unsigned comment '创建人',
     primary key (`id`)
 )
@@ -77,11 +77,11 @@ create table `pre_loan_usage` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
     `name`          varchar(255) comment '用途名称',
     `description`   text comment '用途描述',
-    `order`         int unsigned comment '排序',
+    `order_number`  int unsigned comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
-    `update_time`   int(10) comment '更新时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
+    `update_time`   int(10) unsigned comment '更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)

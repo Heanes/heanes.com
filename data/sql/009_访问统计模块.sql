@@ -18,8 +18,8 @@ create table `pre_web_visitor` (
     `country`     varchar(63) comment '访客所在国家',
     `province`    varchar(63) comment '访客所在省',
     `city`        varchar(63) comment '访客所在市',
-    `come_time`   int(10) comment '访问时间',
-    `leave_time`  int(10) comment '访客离开时间',
+    `visit_time`  int(10) unsigned comment '访问时间',
+    `leave_time`  int(10) unsigned comment '访客离开时间',
     `visit_times` int unsigned comment '访问次数',
     primary key (`id`)
 )

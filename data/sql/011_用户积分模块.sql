@@ -12,11 +12,11 @@ create table `pre_user_rank_type` (
     `code`          varchar(255) comment '积分Code',
     `name`          varchar(63) comment '积分名称',
     `unit`          varchar(63) comment '积分单位',
-    `order`         int unsigned comment '排序',
+    `order_number`  int unsigned comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
-    `update_time`   int(10) comment '更新时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
+    `update_time`   int(10) unsigned comment '更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)
@@ -40,8 +40,8 @@ create table `pre_user_rank` (
     `value`         int unsigned comment '积分个数',
     `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '日志插入时间',
-    `update_time`   int(10) comment '日志更新时间',
+    `insert_time`   int(10) unsigned comment '日志插入时间',
+    `update_time`   int(10) unsigned comment '日志更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)
@@ -64,8 +64,8 @@ create table `pre_user_rank_log` (
     `chang_sign`   tinyint comment '积分变更标识，1-增加，-1-减少',
     `value`        int comment '积分变更值',
     `change_thing` varchar(255) comment '积分变更事件描述',
-    `insert_time`  int(10) comment '日志插入时间',
-    `create_user`   int unsigned comment '创建人',
+    `insert_time`  int(10) unsigned comment '日志插入时间',
+    `create_user`  int unsigned comment '创建人',
     primary key (`id`)
 )
 engine = innodb

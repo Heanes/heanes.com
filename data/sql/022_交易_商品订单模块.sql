@@ -17,8 +17,8 @@ create table `pre_order_info` (
     `status`            tinyint comment '订单状态',
     `is_enable`         tinyint unsigned default 1 comment '是否启用',
     `is_deleted`        tinyint unsigned default 0 comment '是否删除',
-    `insert_time`       int(10) comment '添加时间',
-    `update_time`       int(10) comment '更新时间',
+    `insert_time`       int(10) unsigned comment '添加时间',
+    `update_time`       int(10) unsigned comment '更新时间',
     `create_user`       int unsigned comment '创建人',
     `update_user`       int unsigned comment '更新人',
     primary key (`id`)
@@ -57,8 +57,8 @@ create table `pre_order_goods` (
     `goods_pwd`             varchar(64) comment '查看密码',
     `is_enable`             tinyint unsigned default 1 comment '是否启用',
     `is_deleted`            tinyint unsigned default 0 comment '是否删除',
-    `insert_time`           int(10) comment '添加时间',
-    `update_time`           int(10) comment '更新时间',
+    `insert_time`           int(10) unsigned comment '添加时间',
+    `update_time`           int(10) unsigned comment '更新时间',
     `create_user`           int unsigned comment '创建人',
     `update_user`           int unsigned comment '更新人',
     primary key (`id`)
@@ -76,13 +76,13 @@ comment '订单包含商品表';
 */
 drop table if exists `pre_order_act_log`;
 create table `pre_order_act_log` (
-    `id`          int unsigned auto_increment comment '自增ID，主键',
-    `order_id`    int unsigned comment '对应订单ID',
-    `user_id`     int unsigned comment '操作用户ID',
-    `reason`      text comment '操作原因',
-    `description` text comment '操作留下的备注信息',
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `order_id`      int unsigned comment '对应订单ID',
+    `user_id`       int unsigned comment '操作用户ID',
+    `reason`        text comment '操作原因',
+    `description`   text comment '操作留下的备注信息',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
     `create_user`   int unsigned comment '创建人',
     primary key (`id`)
 )

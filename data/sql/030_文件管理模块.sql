@@ -14,8 +14,8 @@ create table `pre_file_type` (
     `description`   text comment '备注介绍',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
-    `update_time`   int(10) comment '更新时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
+    `update_time`   int(10) unsigned comment '更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)
@@ -42,11 +42,11 @@ create table `pre_file_category` (
     `user_role_id`  int unsigned comment '允许访问角色',
     `pwd`           varchar(64) comment '访问密码',
     `description`   text comment '备注介绍',
-    `order`         int unsigned comment '排序',
+    `order_number`  int unsigned comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
-    `update_time`   int(10) comment '更新时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
+    `update_time`   int(10) unsigned comment '更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)
@@ -72,8 +72,8 @@ create table `pre_file` (
     `pwd`           varchar(64) comment '访问密码',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
-    `update_time`   int(10) comment '更新时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
+    `update_time`   int(10) unsigned comment '更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)
@@ -101,9 +101,9 @@ create table `pre_file_upload_log` (
     `actor_country`     varchar(63) comment '操作者国家',
     `actor_province`    varchar(63) comment '操作者省',
     `actor_city`        varchar(63) comment '操作者市',
-    `act_time`          int(10) comment '操作时间',
+    `act_time`          int(10) unsigned comment '操作时间',
     `is_deleted`        tinyint unsigned default 0 comment '是否删除',
-    `insert_time`       int(10) comment '添加时间',
+    `insert_time`       int(10) unsigned comment '添加时间',
     `create_user`       int unsigned comment '创建人',
     primary key (`id`)
 )
@@ -111,5 +111,3 @@ engine = innodb
 auto_increment = 1
 default charset = `utf8`
 comment '其他文件上传记录日志表';
-
-# alter table `heanes.com`.`pre_file_upload_log` add `usage_info` text comment '借款用途备注';

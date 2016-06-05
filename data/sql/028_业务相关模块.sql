@@ -17,8 +17,8 @@ create table `pre_customer`(
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
-    `update_time`   int(10) comment '更新时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
+    `update_time`   int(10) unsigned comment '更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)
@@ -42,7 +42,7 @@ create table `pre_customer_status_log`(
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
     `create_user`   int unsigned comment '创建人',
     primary key (`id`)
 )
@@ -65,8 +65,8 @@ create table `pre_part_time_job`(
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
-    `update_time`   int(10) comment '更新时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
+    `update_time`   int(10) unsigned comment '更新时间',
     `create_user`   int unsigned comment '创建人',
     `update_user`   int unsigned comment '更新人',
     primary key (`id`)
@@ -89,7 +89,7 @@ create table `pre_part_time_job_status_log`(
     `customer_id`   int unsigned comment '关系人客',
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) comment '添加时间',
+    `insert_time`   int(10) unsigned comment '添加时间',
     `create_user`   int unsigned comment '创建人',
     `updae_user`    int unsigned comment '更新人',
     primary key (`id`)
