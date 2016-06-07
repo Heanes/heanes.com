@@ -25,5 +25,5 @@ define('PATH_SYS_DATA',			'data');		//定义【系统数据存储】路径
 
 
 
-$site_url = strtolower('http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/index.php')).'/wap/index.php');
+$site_url = strtolower('http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/index.php')).'/index/index.php');
 @header('Location: '.$site_url);

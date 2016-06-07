@@ -7,7 +7,7 @@
  * @doc 首页控制文件
  */
 defined('InHeanes') or exit('Access Invalid!');
-class indexController extends BaseIndexController {
+class IndexController extends BaseIndexController {
 	function __construct() {
 		//echo __METHOD__.'</br>';
 		parent::__construct();
