@@ -34,8 +34,8 @@ class SystemNavigationController extends BaseAPIController {
                 'aTitle'           => '首页',
                 'aTarget'          => '_blank',
                 'imgSrc'           => 'image/nav/about.png',
-                'imgSrcHover'      => 'image/nav/about.png',
-                'imgSrcActive'     => 'image/nav/about.png',
+                'imgSrcHover'      => 'image/nav/aboutHover.png',
+                'imgSrcActive'     => 'image/nav/aboutActive.png',
                 'styleClass'       => 'header-nav nav-about',
                 'styleClassHover'  => 'nav-about-hover',
                 'styleClassActive' => 'nav-about-active',
@@ -67,6 +67,47 @@ class SystemNavigationController extends BaseAPIController {
         ];
         $result = [
             'body'    => $data,
+            'status'  => $status,
+            'APITime' => $apiTime,
+        ];
+        $this->postJson($result);
+    }
+
+    /**
+     * @doc 导航链接详情
+     * @author Heanes fang <heanes@163.com>
+     * @time 2016-06-08 18:48:37 周三
+     */
+    function detailOp(){
+        $navDetail = [
+            'id'               => 1,
+            'name'             => '首页',
+            'aHref'            => 'http://www.heanes.com/',
+            'aTitle'           => '首页',
+            'aTarget'          => '_blank',
+            'imgSrc'           => 'image/nav/about.png',
+            'imgSrcHover'      => 'image/nav/aboutHover.png',
+            'imgSrcActive'     => 'image/nav/aboutActiver.png',
+            'styleClass'       => 'header-nav nav-about',
+            'styleClassHover'  => 'nav-about-hover',
+            'styleClassActive' => 'nav-about-active',
+            'orderNumber'      => '1',
+        ];
+        $status = [
+            'message' => 'success',
+            'code'    => 0,
+            'success' => true,
+            'errors'  => null,
+        ];
+        $microTime = microtime(true);
+        $apiTime = [
+            'requestTime'        => REQUEST_TIME,
+            'requestTimeString'  => date('Y-m-d H:i:s', REQUEST_TIME),
+            'responseTime'       => $microTime,
+            'responseTimeString' => date('Y-m-d H:i:s', $microTime),
+        ];
+        $result = [
+            'body'    => $navDetail,
             'status'  => $status,
             'APITime' => $apiTime,
         ];
