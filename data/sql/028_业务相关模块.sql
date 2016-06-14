@@ -10,17 +10,17 @@ set foreign_key_checks = 0;
 drop table if exists `pre_customer`;
 create table `pre_customer`(
     `id`            int unsigned auto_increment comment '自增ID，主键',
-    `uid_master`    int unsigned comment '关系人主',
-    `uid_slave`     int unsigned comment '关系人客',
-    `ship_type`     tinyint comment '关系类型，friend-好友，customer-客户/业务，partjober-客户/兼职',
+    `uid_master`    int unsigned default 0 comment '关系人主',
+    `uid_slave`     int unsigned default 0 comment '关系人客',
+    `ship_type`     tinyint default 0 comment '关系类型，friend-好友，customer-客户/业务，partjober-客户/兼职',
     `apply_now`     tinyint default 1 comment '是否立即递交申请',
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned comment '添加时间',
-    `update_time`   int(10) unsigned comment '更新时间',
-    `create_user`   int unsigned comment '创建人',
-    `update_user`   int unsigned comment '更新人',
+    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `update_time`   int(10) unsigned default 0 comment '更新时间',
+    `create_user`   int unsigned default 0 comment '创建人',
+    `update_user`   int unsigned default 0 comment '更新人',
     primary key (`id`)
 )
 engine = innodb
@@ -37,13 +37,13 @@ comment '客户关系表';
 drop table if exists `pre_customer_status_log`;
 create table `pre_customer_status_log`(
     `id`            int unsigned auto_increment comment '自增ID，主键',
-    `actor_user_id` int unsigned comment '关系人主',
-    `customer_id`   int unsigned comment '关系人客',
+    `actor_user_id` int unsigned default 0 comment '关系人主',
+    `customer_id`   int unsigned default 0 comment '关系人客',
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned comment '添加时间',
-    `create_user`   int unsigned comment '创建人',
+    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `create_user`   int unsigned default 0 comment '创建人',
     primary key (`id`)
 )
 engine = innodb
@@ -60,15 +60,15 @@ comment '客户关系申请表';
 drop table if exists `pre_part_time_job`;
 create table `pre_part_time_job`(
     `id`            int unsigned auto_increment comment '自增ID，主键',
-    `uid_master`    int unsigned comment '关系人主',
-    `uid_slave`     int unsigned comment '关系人客',
+    `uid_master`    int unsigned default 0 comment '关系人主',
+    `uid_slave`     int unsigned default 0 comment '关系人客',
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned comment '添加时间',
-    `update_time`   int(10) unsigned comment '更新时间',
-    `create_user`   int unsigned comment '创建人',
-    `update_user`   int unsigned comment '更新人',
+    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `update_time`   int(10) unsigned default 0 comment '更新时间',
+    `create_user`   int unsigned default 0 comment '创建人',
+    `update_user`   int unsigned default 0 comment '更新人',
     primary key (`id`)
 )
 engine = innodb
@@ -85,13 +85,13 @@ comment '兼职人员关系表';
 drop table if exists `pre_part_time_job_status_log`;
 create table `pre_part_time_job_status_log`(
     `id`            int unsigned auto_increment comment '自增ID，主键',
-    `actor_user_id` int unsigned comment '关系人主',
-    `customer_id`   int unsigned comment '关系人客',
+    `actor_user_id` int unsigned default 0 comment '关系人主',
+    `customer_id`   int unsigned default 0 comment '关系人客',
     `status`        tinyint default 0 comment '关系状态，0-审核中，1-已通过，2-已拒绝',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned comment '添加时间',
-    `create_user`   int unsigned comment '创建人',
-    `updae_user`    int unsigned comment '更新人',
+    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `create_user`   int unsigned default 0 comment '创建人',
+    `updae_user`    int unsigned default 0 comment '更新人',
     primary key (`id`)
 )
 engine = innodb

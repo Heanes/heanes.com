@@ -11,13 +11,13 @@
  * @doc Debug调试开关
  * @var boolean
  */
-!defined('DEBUG_ON') ? define('DEBUG_ON',false) : null;
+!defined('DEBUG_ON') ? define('DEBUG_ON', true) : null;
 
 /**
  * @doc 是否显示系统错误报告提示信息
  * @var boolean
  */
-define('SHOW_ERROR_REPORT',true);
+define('SHOW_ERROR_REPORT', true);
 
 /**
  * @doc 是否显示抛出的异常语句

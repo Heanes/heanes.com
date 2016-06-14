@@ -27,13 +27,13 @@ set foreign_key_checks = 0;
 drop table if exists `pre_`;
 create table `pre_` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
-    `order_number`  int unsigned comment '排序',
+    `order_number`  int unsigned default 0 comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否有效',
     `is_deleted`    tinyint unsigned default 0 comment '是否已删除' comment '是否启用（显示）',
-    `insert_time`   int(10) unsigned comment '创建时间',
-    `update_time`   int(10) unsigned comment '更新时间',
-    `create_user`   int unsigned comment '创建人',
-    `update_user`   int unsigned comment '更新人'
+    `insert_time`   int(10) unsigned default 0 comment '创建时间',
+    `update_time`   int(10) unsigned default 0 comment '更新时间',
+    `create_user`   int unsigned default 0 comment '创建人',
+    `update_user`   int unsigned default 0 comment '更新人'
     primary key (`id`)
 )
 engine = innodb
