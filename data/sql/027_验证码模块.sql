@@ -33,7 +33,7 @@ drop table if exists `pre_sms_log`;
 create table `pre_sms_log` (
     `id`          int unsigned auto_increment comment '自增ID，主键',
     `receiver`    varchar(127) not null default '' comment '接收人，可以是手机或者邮件地址',
-    `content`     text not null default '' comment '发送内容',
+    `content`     text not null comment '发送内容',
     `type`        varchar(31)  not null default '' comment '验证类型，手机(mobile)或邮件(email)',
     `client_ip`   varchar(63) default '' comment '客户IP地址',
     `insert_time` int(10) unsigned default 0 comment '插入时间',

@@ -68,8 +68,8 @@ class IndexController extends BaseInstallController {
 		$sql_demo_file=PATH_ABS_BASE_DATA.'sql_query/03_demo_data.sql';
 		$sql_demo_string=file_get_contents(iconv('utf-8','gb2312',$sql_demo_file));
 		$multi_sql.=$sql_demo_string;
-		//echo highlight_string($multi_sql);
-		//exit;
+		echo highlight_string($multi_sql);
+		exit;
 		if(DB::multi_query($multi_sql)){
 			@ob_clean();
 			@header('Location: index.php?act=index&op=step2');

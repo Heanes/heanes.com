@@ -8,14 +8,14 @@ set FOREIGN_KEY_CHECKS = 0;
  */
 truncate `heanes.com`.`pre_admin_user`;
 insert into `heanes.com`.`pre_admin_user` (
-	`user_name`, `user_pwd`, `user_email`, `create_time`)
+	`user_name`, `user_pwd`, `user_email`, `insert_time`)
 values
 	('admin', 'd6f19b13cc75b70cabe99ca6d92e5de7', 'heanes@163.com', '1425922473');
 
 #================================================网站设置类数据导入=============================================#
 truncate `heanes.com`.`pre_setting_common`;
 insert into `heanes.com`.`pre_setting_common` (
-	`parent_id`,`code`, `input_type`, `input_range`, `store_value`, `order`, `can_edit`)
+	`parent_id`,`code`, `input_type`, `input_range`, `store_value`, `order_number`, `can_edit`)
 values
 	# 默认管理员
 	('1','default_admin','text',null,'admin','1','0')
