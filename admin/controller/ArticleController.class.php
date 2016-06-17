@@ -40,10 +40,10 @@ class ArticleController extends BaseAdminController {
 		if(isset($_GET['status'])){
 			$status=Filter::doFilter($_GET['status'],'string');
 			if($status=='recycle'){
-				$paramArticle['where']= (empty($paramArticle['where'])? '' : 'AND')." `is_delete`=1 ";
+				$paramArticle['where']= (empty($paramArticle['where'])? '' : 'AND')." `is_deleted`=1 ";
 			}
 		}else{
-			$paramArticle['where']= (empty($paramArticle['where'])? '' : 'AND')." `is_enable`=1 AND `is_delete`=0";
+			$paramArticle['where']= (empty($paramArticle['where'])? '' : 'AND')." `is_enable`=1 AND `is_deleted`=0";
 		}
 		$page=new Page(10);
 		$articleList = $articleModel->getList($paramArticle,$page);

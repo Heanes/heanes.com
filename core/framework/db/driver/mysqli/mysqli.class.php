@@ -273,7 +273,9 @@ class DB {
 		}
 
 		//from{1、单表查询||2、多表查询}@todo 多表查询
-		$param['tables']=explode(',',$param['tables']);
+        if(isset($param['tables']) && !empty($param['tables'])){
+            $param['tables']=explode(',',$param['tables']);
+        }
 
 		//数据字段为空则返回所有字段
 		if (empty($param['field'])){
@@ -349,11 +351,13 @@ class DB {
 		//全部判断完毕再执行
 		//处理查询结果
 		//echo $sql;
-		$result = self::query($sql,$host);
-		$array=array();
-		while ($row=$result->fetch_assoc()) {
-			$array[]=$row;
-		}
+        $result = self::query($sql,$host);
+        $array = array();
+        if($result){
+            while ($row = $result->fetch_assoc()) {
+                $array[] = $row;
+            }
+        }
 
 		return $array;
 	}

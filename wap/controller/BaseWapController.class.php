@@ -64,10 +64,10 @@ class BaseWapController extends AuthController{
 	 */
 	protected function getWapNavigation() {
 		$wapNavigationModel=Model('navigation_wap');
-		$wapNavigationParam['where']="`is_enable`=1 AND `is_delete`=0";
-		$wapNavigationParam['order']=array('order'=>'ASC');
+		$wapNavigationParam['where']="`is_enable`=1 AND `is_deleted`=0";
+		$wapNavigationParam['order']=array('order_number'=>'ASC');
 		$wapNavigationParam['limit']=5;
-		$wapNavigationList=$wapNavigationModel->getList($wapNavigationParam);
+		$wapNavigationList= $wapNavigationModel->getList($wapNavigationParam);
 		//处理导航链接选中样式
 		foreach ($wapNavigationList as $key => $wapNavigation) {
 			$wapNavigationList[$key]['href_in_hover']=explode(',',$wapNavigation['href_in_hover']);

@@ -65,7 +65,7 @@ class CustomerController extends BaseWapController{
 		//2用户资产信息
 		//2.1所有要显示的资产信息
 		$propertyModel = Model('property');
-		$propertyParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+		$propertyParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 		$propertyList = $propertyModel->getList($propertyParam);
 		$userPropertyModel = Model('user_property');
 		//2.2查找用户是否有该资产数据
@@ -202,30 +202,30 @@ class CustomerController extends BaseWapController{
 			*/
 			//2.查询需要注册的字段信息
 			$userFields = Model('user_fields');
-			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$userFieldsParam['order'] = array('order' => 'DESC');
 			$userFieldsList = $userFields->getList($userFieldsParam);
 			Tpl::assign('userFieldsList', $userFieldsList);
 			//3.1查询需要添加的资产信息
 			$propertyModel = Model('property');
-			$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$propertyParam['order'] = array('order' => 'ASC');
 			$propertyList = $propertyModel->getList($propertyParam);
 			//3.2查询添加资产需要填写的字段
 			$propertyFieldsModel = Model('property_fields');
 			foreach ($propertyList as $key => $property) {
-				$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+				$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 				$propertyFieldsParam['order'] = array('order' => 'ASC');
 				$propertyList[$key]['propertyFields'] = $propertyFieldsModel->getList($propertyFieldsParam);
 			}
 			//4查询需要添加的用户认证信息
 			$certificationTypeModel = Model('certification_type');
-			$certificationTypeParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+			$certificationTypeParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 			$certificationTypeList = $certificationTypeModel->getList($certificationTypeParam);
 			//4.1 查询添加认证需要填写的字段
 			$certificationTypeFieldsModel = Model('certification_type_fields');
 			foreach ($certificationTypeList as $key => $certificationType) {
-				$certificationTypeFieldsParam['where'] = "`type_id`='".$certificationType['id']."' AND `add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+				$certificationTypeFieldsParam['where'] = "`type_id`='".$certificationType['id']."' AND `add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 				$certificationTypeList[$key]['certificationTypeFields'] = $certificationTypeFieldsModel->getList($certificationTypeFieldsParam);
 			}
 			Tpl::assign('certificationTypeList', $certificationTypeList);
@@ -267,7 +267,7 @@ class CustomerController extends BaseWapController{
 			$userCertificationModel = Model('user_certification');
 			$CertificationTypeModel = Model('certification_type');
 			$userCertificationTypeFieldsModel = Model('certification_type_fields');
-			$CertificationTypeParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$CertificationTypeParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$CertificationTypeList = $CertificationTypeModel->getList($CertificationTypeParam);
 			$userCertificationFieldsDataModel = Model('user_certification_fields_data');
 			foreach ($CertificationTypeList as $key => $CertificationType) {
@@ -282,7 +282,7 @@ class CustomerController extends BaseWapController{
 					//添加认证记录
 					if ($userCertificationModel->insert($newUserCertification)) {
 						//再获取提交的信息
-						$userCertificationTypeFieldsParam['where'] = "`type_id`='".$CertificationType['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+						$userCertificationTypeFieldsParam['where'] = "`type_id`='".$CertificationType['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 						$userCertificationTypeFieldsList = $userCertificationTypeFieldsModel->getList($userCertificationTypeFieldsParam);
 						foreach ($userCertificationTypeFieldsList as $fields_key => $userCertificationTypeFields) {
 							$newUserCertificationFieldsData['user_id'] = $newUserId;
@@ -328,7 +328,7 @@ class CustomerController extends BaseWapController{
 			$userPropertyModel = Model('user_property');
 			//3.2添加用户资产属性信息
 			$propertyModel = Model('property');
-			$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$propertyList = $propertyModel->getList($propertyParam);
 			$UserPropertyFieldsDataModel = Model('user_property_fields_data');
 			foreach ($propertyList as $key => $property) {
@@ -341,7 +341,7 @@ class CustomerController extends BaseWapController{
 					if ($userPropertyModel->insert($newUserProperty)) {
 						//获取要添加字段
 						$propertyFieldsModel = Model('property_fields');
-						$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+						$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 						$propertyFieldsList = $propertyFieldsModel->getList($propertyFieldsParam);
 						foreach ($propertyFieldsList as $fields_key => $propertyFields) {
 							$newUserPropertyFieldsData['user_id'] = $newUserId;
@@ -385,7 +385,7 @@ class CustomerController extends BaseWapController{
 			//4.1添加客户关系记录
 			//4.1.1、先检查是否已经是客户关系
 			$customerModel = Model('customer');
-			$customerParam['where'] = "`uid_slave`='$newUserId' AND `uid_master`='$user_id' AND `is_delete`=1";
+			$customerParam['where'] = "`uid_slave`='$newUserId' AND `uid_master`='$user_id' AND `is_deleted`=1";
 			if (count($customerModel->getOne($customerParam))) {
 				showError('此用户已经是你的客户');
 			} else {
@@ -488,7 +488,7 @@ class CustomerController extends BaseWapController{
 		//2.用户认证信息
 		//2.1所有要显示的用户认证信息
 		$certificationTypeModel=Model('certification_type');
-		$certificationTypeParam['where']="`add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+		$certificationTypeParam['where']="`add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 		$certificationTypeList=$certificationTypeModel->getList($certificationTypeParam);
 		//2.2查找用户是否有该认证信息
 		$userCertificationModel=Model('user_certification');
@@ -528,7 +528,7 @@ class CustomerController extends BaseWapController{
 		//3用户资产信息
 		//3.1所有要显示的资产信息
 		$propertyModel = Model('property');
-		$propertyParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+		$propertyParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 		$propertyList = $propertyModel->getList($propertyParam);
 		$userPropertyModel = Model('user_property');
 		//3.2查找用户是否有该资产数据

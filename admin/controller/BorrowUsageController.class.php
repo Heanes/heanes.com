@@ -24,7 +24,7 @@ class BorrowUsageController extends BaseAdminController{
 	public function listOp(){
 		$borrowUsageModel=Model('borrow_usage');
 		$borrowUsageListParam=array();
-		$borrowUsageListParam['where']= (empty($borrowUsageListParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_delete`=0";
+		$borrowUsageListParam['where']= (empty($borrowUsageListParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_deleted`=0";
 		$page=new Page(10);
 		$borrowUsageList=$borrowUsageModel->getList($borrowUsageListParam,$page);
 		Tpl::assign('borrowUsageList',$borrowUsageList);

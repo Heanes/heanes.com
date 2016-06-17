@@ -25,7 +25,7 @@ class BorrowProgressController extends BaseAdminController{
 		//查询进度表
 		$borrowProgressModel=Model('borrow_progress');
 		$borrowProgressParam=array();
-		$borrowProgressParam['where']= (empty($borrowProgressParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_delete`=0";
+		$borrowProgressParam['where']= (empty($borrowProgressParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_deleted`=0";
 		$page=new Page(10);
 		$borrowProgressList=$borrowProgressModel->getList($borrowProgressParam,$page);
 		

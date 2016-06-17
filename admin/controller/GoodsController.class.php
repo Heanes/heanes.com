@@ -84,7 +84,7 @@ class GoodsController extends BaseAdminController {
 		$type_id=Filter::doFilter($_POST['type_id'], 'integer');
 		//根据商品类型去查找该类型属性名称
 		$goodsFieldsModel=Model('goods_fields');
-		$goodsFieldsParam['where']="`type_id`='$type_id' AND `is_enable`=1 AND `is_delete`=0";
+		$goodsFieldsParam['where']="`type_id`='$type_id' AND `is_enable`=1 AND `is_deleted`=0";
 		$goodsFieldsList=$goodsFieldsModel->getList($goodsFieldsParam);
 		
 		//选择类型ID下边显示对应的属性信息

@@ -36,12 +36,12 @@ class ArticleController extends BaseWapController{
 		//文章列表
 		//@TODO 要显示的分类，应从后台设置中取出
 		$articleCategoryModel = Model('article_category');
-		$articleCategoryListParam['where'] = "`is_enable`=1 AND `is_delete`=0";
+		$articleCategoryListParam['where'] = "`is_enable`=1 AND `is_deleted`=0";
 		$articleCategoryListParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
 		$articleCategoryList = $articleCategoryModel->getList($articleCategoryListParam);
 		Tpl::assign('articleCategoryList', $articleCategoryList);
 		$articleModel = Model('article');
-		$articleParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$articleParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$articleParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
 		$html_title='文章列表';
 		if(isset($_GET['category']) && !empty($_GET['category'])){
@@ -61,7 +61,7 @@ class ArticleController extends BaseWapController{
 		}
 		Tpl::assign('articleList', $articleList);
 		//获取置顶的5条记录
-		$hotArticleParam['where']="`is_recommend`=1 AND `is_enable`=1 AND `is_delete`=0";
+		$hotArticleParam['where']="`is_recommend`=1 AND `is_enable`=1 AND `is_deleted`=0";
 		$hotArticleParam['limit']='5';
 		$hotArticleList=$articleModel->getList($hotArticleParam);
 		foreach ($hotArticleList as $key => $article) {
@@ -96,7 +96,7 @@ class ArticleController extends BaseWapController{
 		//获取文章收藏数
 		$articleCollectModel=Model('article_collect');
 		$articleCollectParam['field']='id';
-		$articleCollectParam['where']="`article_id`='$article_id' AND `is_enable`=1 AND `is_delete`=0";
+		$articleCollectParam['where']="`article_id`='$article_id' AND `is_enable`=1 AND `is_deleted`=0";
 		$articleCollectIdList=$articleCollectModel->getList($articleCollectParam);
 		$article['_collect_count']=count($articleCollectIdList);
 		Tpl::assign('article', $article);
@@ -119,7 +119,7 @@ class ArticleController extends BaseWapController{
 
 		//获取文章评论数据
 		$commentModel = Model('article_comment');
-		$commentParam['where']="`article_id`='$article_id' AND `is_enable`=1 AND `is_delete`=0";
+		$commentParam['where']="`article_id`='$article_id' AND `is_enable`=1 AND `is_deleted`=0";
 		$articleCommentPage = new Page(10);
 		$commentList = $commentModel->getList($commentParam, $articleCommentPage);
 		Tpl::assign('pager', $articleCommentPage->getPager());
@@ -182,7 +182,7 @@ class ArticleController extends BaseWapController{
 			.' `c`.`user_id` = '.$user_id
 			.' and `c`.`article_id` = `p`.`id`'
 			.' and `c`.`is_enable` = 1 and `p`.`is_enable`=1'
-			.' and `c`.`is_delete` = 0 and `p`.`is_delete`=0'
+			.' and `c`.`is_deleted` = 0 and `p`.`is_deleted`=0'
 			.' order by'
 			.' `c`.`collect_time` desc';
 		if(isset($_GET['page']) && !empty($_GET['page'])){

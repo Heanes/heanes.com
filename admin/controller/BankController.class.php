@@ -25,7 +25,7 @@ class BankController extends BaseAdminController {
 	public function listOp() {
 		$bankModel=Model('bank');
 		$bankParam=array();
-		$bankParam['where']= (empty($bankParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_delete`=0";
+		$bankParam['where']= (empty($bankParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_deleted`=0";
 		$page=new Page(10);
 		$bank_list=$bankModel->getList($bankParam,$page);
 		Tpl::assign('bank_list',$bank_list);

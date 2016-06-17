@@ -25,7 +25,7 @@ class BorrowController extends BaseAdminController{
 		//查询借款记录表
 		$borrowModel=Model('borrow');
 		$borrowParam=array();
-		$borrowParam['where']= (empty($borrowParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_delete`=0";
+		$borrowParam['where']= (empty($borrowParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_deleted`=0";
 		$page=new Page(10);
 		$borrow_list=$borrowModel->getList($borrowParam,$page);
 		//查询申请表

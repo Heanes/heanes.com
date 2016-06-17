@@ -16,7 +16,7 @@ class SettingCommonController extends BaseAdminController{
 		//加载语言包
 		Language::read('settingCommon');
 		$settingCommonModel=Model('setting_common');
-		$settingCommonParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$settingCommonParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$settingCommonList=$settingCommonModel->getList($settingCommonParam);
 		Tpl::assign('html_title','网站通用设置');
 		Tpl::display('settingCommon/index.tpl.php');

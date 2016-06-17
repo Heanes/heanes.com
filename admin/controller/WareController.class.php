@@ -85,7 +85,7 @@ class WareController extends BaseAdminController {
 		$type_id=Filter::doFilter($_POST['type_id'], 'integer');
 		//根据产品类型去查找该类型属性名称
 		$wareFieldsModel=Model('ware_fields');
-		$wareFieldsParam['where']="`type_id`='$type_id' AND `is_enable`=1 AND `is_delete`=0";
+		$wareFieldsParam['where']="`type_id`='$type_id' AND `is_enable`=1 AND `is_deleted`=0";
 		$wareFieldsList=$wareFieldsModel->getList($wareFieldsParam);
 		
 		//选择类型ID下边显示对应的属性信息

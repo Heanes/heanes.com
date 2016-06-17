@@ -24,7 +24,7 @@ class CertificationAttributeDataController extends BaseAdminController {
 	public function listOp(){
 		$certificationFieldsDataModel = Model('user_certification_fields_data');
 //		$certificationFieldsDataListParam=array();
-//		$certificationFieldsDataListParam['where']= (empty($certificationFieldsDataListParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_delete`=0";
+//		$certificationFieldsDataListParam['where']= (empty($certificationFieldsDataListParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_deleted`=0";
 		$page = new Page(10);
 		$certificationFieldsData_list = $certificationFieldsDataModel->getList('', $page);
 		//查询属性表的属性名称

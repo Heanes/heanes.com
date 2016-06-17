@@ -123,7 +123,7 @@ class EmployeeController extends BaseWapController{
 		$employeeModel = Model('employee');
 		$selfEmployeeParam['where'] = "`user_id`='$user_id'";
 		$selfEmployeeInfo = $employeeModel->getOne($selfEmployeeParam);
-		$checkEmployeeParam['where'] = "`user_id`='$uid_slave' AND `department_id`='".$selfEmployeeInfo['department_id']."' AND `is_delete`=1";
+		$checkEmployeeParam['where'] = "`user_id`='$uid_slave' AND `department_id`='".$selfEmployeeInfo['department_id']."' AND `is_deleted`=1";
 		if (count($employeeModel->getOne($checkEmployeeParam))) {
 			showError('此用户已经是兼职了');
 		} else {
@@ -153,7 +153,7 @@ class EmployeeController extends BaseWapController{
 		} else {
 			//1.查询需要注册的字段信息
 			$userFields = Model('user_fields');
-			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$userFieldsParam['order'] = array('order' => 'DESC');
 			$userFieldsList = $userFields->getList($userFieldsParam);
 			Tpl::assign('userFieldsList', $userFieldsList);
@@ -163,12 +163,12 @@ class EmployeeController extends BaseWapController{
 			Tpl::assign('bankList', $bankList);
 			//3.查询需要添加的用户认证信息
 			$certificationTypeModel = Model('certification_type');
-			$certificationTypeParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+			$certificationTypeParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 			$certificationTypeList = $certificationTypeModel->getList($certificationTypeParam);
 			//3.1 查询添加认证需要填写的字段
 			$certificationTypeFieldsModel = Model('certification_type_fields');
 			foreach ($certificationTypeList as $key => $certificationType) {
-				$certificationTypeFieldsParam['where'] = "`type_id`='".$certificationType['id']."' AND `add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+				$certificationTypeFieldsParam['where'] = "`type_id`='".$certificationType['id']."' AND `add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 				$certificationTypeList[$key]['certificationTypeFields'] = $certificationTypeFieldsModel->getList($certificationTypeFieldsParam);
 			}
 			Tpl::assign('certificationTypeList', $certificationTypeList);
@@ -239,7 +239,7 @@ class EmployeeController extends BaseWapController{
 			$userCertificationModel = Model('user_certification');
 			$CertificationTypeModel = Model('certification_type');
 			$userCertificationTypeFieldsModel = Model('certification_type_fields');
-			$CertificationTypeParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$CertificationTypeParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$CertificationTypeList = $CertificationTypeModel->getList($CertificationTypeParam);
 			$userCertificationFieldsDataModel = Model('user_certification_fields_data');
 			foreach ($CertificationTypeList as $key => $CertificationType) {
@@ -254,7 +254,7 @@ class EmployeeController extends BaseWapController{
 					//添加认证记录
 					if ($userCertificationModel->insert($newUserCertification)) {
 						//再获取提交的信息
-						$userCertificationTypeFieldsParam['where'] = "`type_id`='".$CertificationType['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+						$userCertificationTypeFieldsParam['where'] = "`type_id`='".$CertificationType['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 						$userCertificationTypeFieldsList = $userCertificationTypeFieldsModel->getList($userCertificationTypeFieldsParam);
 						foreach ($userCertificationTypeFieldsList as $fields_key => $userCertificationTypeFields) {
 							$newUserCertificationFieldsData['user_id'] = $newUserId;
@@ -329,7 +329,7 @@ class EmployeeController extends BaseWapController{
 				$employeeModel = Model('employee');
 				$selfEmployeeParam['where'] = "`user_id`='$user_id'";
 				$selfEmployeeInfo = $employeeModel->getOne($selfEmployeeParam);
-				$employeeParam['where'] = "`user_id`='$newUserId' AND `department_id`='".$selfEmployeeInfo['department_id']."' AND `is_delete`=1";
+				$employeeParam['where'] = "`user_id`='$newUserId' AND `department_id`='".$selfEmployeeInfo['department_id']."' AND `is_deleted`=1";
 				if (count($employeeModel->getOne($employeeParam))) {
 					showError('此用户已经是你的兼职');
 				} else {
@@ -430,7 +430,7 @@ class EmployeeController extends BaseWapController{
 			//检测是否已经申请过
 			$employeeModel = Model('employee');
 			$user_id = Filter::doFilter($_SESSION['user_id'], 'integer');
-			$employeeParam['where'] = "`user_id`='$user_id' AND `is_enable`='1' AND `is_delete`='0'";
+			$employeeParam['where'] = "`user_id`='$user_id' AND `is_enable`='1' AND `is_deleted`='0'";
 			if ($employeeModel->getOne($employeeParam)) {
 				//显示申请详情页面
 				$result=array(
@@ -456,18 +456,18 @@ class EmployeeController extends BaseWapController{
 				Tpl::assign('bankList', $bankList);
 				//2.查询需要注册的字段信息
 				$userFields = Model('user_fields');
-				$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+				$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 				$userFieldsParam['order'] = array('order' => 'DESC');
 				$userFieldsList = $userFields->getList($userFieldsParam);
 				Tpl::assign('userFieldsList', $userFieldsList);
 				//3查询需要添加的用户认证信息
 				$certificationTypeModel = Model('certification_type');
-				$certificationTypeParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+				$certificationTypeParam['where'] = "`add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 				$certificationTypeList = $certificationTypeModel->getList($certificationTypeParam);
 				//3.1 查询添加认证需要填写的字段
 				$certificationTypeFieldsModel = Model('certification_type_fields');
 				foreach ($certificationTypeList as $key => $certificationType) {
-					$certificationTypeFieldsParam['where'] = "`type_id`='".$certificationType['id']."' AND `add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+					$certificationTypeFieldsParam['where'] = "`type_id`='".$certificationType['id']."' AND `add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 					$certificationTypeList[$key]['certificationTypeFields'] = $certificationTypeFieldsModel->getList($certificationTypeFieldsParam);
 				}
 				Tpl::assign('certificationTypeList', $certificationTypeList);
@@ -563,7 +563,7 @@ class EmployeeController extends BaseWapController{
 				$userCertificationModel = Model('user_certification');
 				$CertificationTypeModel = Model('certification_type');
 				$userCertificationTypeFieldsModel = Model('certification_type_fields');
-				$CertificationTypeParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+				$CertificationTypeParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 				$CertificationTypeList = $CertificationTypeModel->getList($CertificationTypeParam);
 				$userCertificationFieldsDataModel = Model('user_certification_fields_data');
 				foreach ($CertificationTypeList as $key => $CertificationType) {
@@ -576,7 +576,7 @@ class EmployeeController extends BaseWapController{
 					//添加认证记录
 					if ($userCertificationModel->insert($newUserCertification)) {
 						//再获取提交的信息
-						$userCertificationTypeFieldsParam['where'] = "`type_id`='".$CertificationType['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+						$userCertificationTypeFieldsParam['where'] = "`type_id`='".$CertificationType['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 						$userCertificationTypeFieldsList = $userCertificationTypeFieldsModel->getList($userCertificationTypeFieldsParam);
 						foreach ($userCertificationTypeFieldsList as $fields_key => $userCertificationTypeFields) {
 							$newUserCertificationFieldsData['user_id'] = $user_id;
@@ -637,7 +637,7 @@ class EmployeeController extends BaseWapController{
 		$employeeApplyParam['where'] = "`department_id`='".$employeeInfo['department_id']."'";
 		*/
 		$employeeModel = Model('employee');
-		$employeeApplyParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$employeeApplyParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$employeeApplyParam['order']=array('insert_time'=>'DESC');
 		//如果设置了查询状态
 		if (isset($_REQUEST['apply_status'])) {
@@ -717,7 +717,7 @@ class EmployeeController extends BaseWapController{
 			//2.用户认证信息
 			//2.1所有要显示的用户认证信息
 			$certificationTypeModel=Model('certification_type');
-			$certificationTypeParam['where']="`add_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+			$certificationTypeParam['where']="`add_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 			$certificationTypeList=$certificationTypeModel->getList($certificationTypeParam);
 			//2.2查找用户是否有该认证信息
 			$userCertificationModel=Model('user_certification');

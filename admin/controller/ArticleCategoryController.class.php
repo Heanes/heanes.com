@@ -26,7 +26,7 @@ class ArticleCategoryController extends BaseAdminController{
 	public function listOp(){
 		$articleCategoryModel=Model('article_category');
 		$articleCategoryListParam=array();
-		$articleCategoryListParam['where']= (empty($articleCategoryListParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_delete`=0";
+		$articleCategoryListParam['where']= (empty($articleCategoryListParam['where'])? '' : 'AND')."`is_enable`=1 AND `is_deleted`=0";
 		$page=new Page(10);
 		$articleCategoryList=$articleCategoryModel->getList($articleCategoryListParam,$page);
 		//获取文章分类下文章个数

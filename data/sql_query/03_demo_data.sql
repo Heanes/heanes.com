@@ -7,12 +7,12 @@ set FOREIGN_KEY_CHECKS = 0;
  */
 truncate `heanes.com`.`pre_navigation_wap`;
 insert into `heanes.com`.`pre_navigation_wap` (
-	`name`, `parent_id`, `a_href`, `a_title`, `a_target`, `img_src`, `img_src_hover`, `href_in_hover`, `insert_time`, `order`)
+	`name`, `parent_id`, `a_href`, `a_title`, `a_target`, `img_src`, `img_src_hover`, `img_src_active`, `insert_time`, `order_number`)
 values
-	('首页', '0', 'http://m.jinlehui.net/wap/index.php', '首页', '1', 'home.png', 'home-hover.png', 'index', '1362094066', '1')
-	, ('资讯', '0', 'http://m.jinlehui.net/wap/index.php?act=article&category=notice', '资讯', '1', 'news.png', 'news-hover.png', 'article', '1362094066', '2')
-	, ('创业之家', '0', 'http://m.jinlehui.net/wap/index.php?act=special&id=1', '创业之家', '1', 'startup.png', 'startup-hover.png', 'specialTopic,employee', '1362094066', '3')
-	, ('我的', '0', 'http://m.jinlehui.net/wap/index.php?act=member', '个人中心', '1', 'member.png', 'member-hover.png', 'member,menu,service', '1362094066', '4')
+	('首页', '0', '/wap/index.php', '首页', '1', 'home.png', 'home-hover.png', 'index', '1362094066', '1')
+	, ('资讯', '0', '/wap/index.php?act=article&category=notice', '资讯', '1', 'news.png', 'news-hover.png', 'article', '1362094066', '2')
+	, ('创业之家', '0', '/wap/index.php?act=special&id=1', '创业之家', '1', 'startup.png', 'startup-hover.png', 'specialTopic,employee', '1362094066', '3')
+	, ('我的', '0', '/wap/index.php?act=member', '个人中心', '1', 'member.png', 'member-hover.png', 'member,menu,service', '1362094066', '4')
 ;
 
 /**
@@ -22,13 +22,13 @@ values
  */
 truncate `heanes.com`.`pre_slide_wap`;
 insert into `heanes.com`.`pre_slide_wap`(
-	`name`, `img_src`, `a_href`, `a_target`, `title`, `description`, `order`, `insert_time`,`is_enable`)
+	`name`, `img_src`, `a_href`, `a_target`, `title`, `description`, `order_number`, `insert_time`,`is_enable`)
 values
-	('第1张幻灯','1.jpg','http://m.jinlehui.net/wap/index.php','1','欢迎访问','第2张幻灯','2','1436471342','1')
-	, ('第2张幻灯','2.jpg','http://m.jinlehui.net/wap/index.php','2','欢迎访问','第2张幻灯','3','1436471342','1')
-	, ('第3张幻灯','3.jpg','http://m.jinlehui.net/wap/index.php?act=money&op=apply','3','欢迎访问','第3张幻灯','1','1436471342','1')
-	, ('第4张幻灯','4.jpg','http://m.jinlehui.net/wap/index.php','4','欢迎访问','第4张幻灯','4','1436471342','1')
-	, ('第5张幻灯','5.jpg','http://m.jinlehui.net/wap/index.php?act=employee&op=introduce','5','欢迎访问','第5张幻灯','5','1436471342','1')
+	('第1张幻灯','1.jpg','/wap/index.php','1','欢迎访问','第2张幻灯','2','1436471342','1')
+	, ('第2张幻灯','2.jpg','/wap/index.php','2','欢迎访问','第2张幻灯','3','1436471342','1')
+	, ('第3张幻灯','3.jpg','/wap/index.php?act=money&op=apply','3','欢迎访问','第3张幻灯','1','1436471342','1')
+	, ('第4张幻灯','4.jpg','/wap/index.php','4','欢迎访问','第4张幻灯','4','1436471342','1')
+	, ('第5张幻灯','5.jpg','/wap/index.php?act=employee&op=introduce','5','欢迎访问','第5张幻灯','5','1436471342','1')
 ;
 
 /**
@@ -38,26 +38,26 @@ values
  */
 truncate `heanes.com`.`pre_wap_member_center_menu`;
 insert into `heanes.com`.`pre_wap_member_center_menu` (
-	`name`,`parent_id`, `group`, `a_href`, `a_target`, `icon_src`, `icon_src_hover`, `allow_read_role`, `insert_time`, `order`, `is_enable`)
+	`name`,`parent_id`, `group`, `a_href`, `a_target`, `icon_src`, `icon_src_hover`, `allow_read_role`, `insert_time`, `order_number`, `is_enable`)
 values
-	('申请贷款', '0', '1', '', '', '0', '.png', '.png', '1436471342', '1', '1')
-	, ('贷款查询', '0', '1', '', '', '0', '.png', '.png', '1436471342', '2', '1')
-	, ('我的贷款', '0', '1', '', '', '0', '.png', '.png', '1436471342', '3', '1')
-	, ('', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
+	('申请贷款', '0', '1', '', 0, '', '.png', '.png', '1436471342', '1', '1')
+	, ('贷款查询', '0', '1', '', 0, '', '.png', '.png', '1436471342', '2', '1')
+	, ('我的贷款', '0', '1', '', 0, '', '.png', '.png', '1436471342', '3', '1')
+	, ('', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
 	##以下暂时不变
-	, ('金宝街', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('收藏管理', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('产品收藏', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('积分商城收藏', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('文章收藏', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('帮助中心', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('投诉建议', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('联系我们', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('关于我们', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('设置', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('帐号与安全', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
-	, ('关于', '0', '1', '', '', '0', '.png', '.png', '1436471342', '4', '1')
+	, ('金宝街', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('收藏管理', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('产品收藏', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('积分商城收藏', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('文章收藏', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('帮助中心', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('投诉建议', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('联系我们', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('关于我们', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('设置', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('帐号与安全', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
+	, ('关于', '0', '1', '', 0, '', '.png', '.png', '1436471342', '4', '1')
 ;
 
 /**
@@ -65,8 +65,9 @@ values
  * @author Heanes
  * @time 2015-07-05 00:39:58
  */
+truncate `heanes.com`.`pre_users`;
 insert into `heanes.com`.`pre_users` (
-	`real_name`, `user_name`, `mobile`, `gender`, `role_id`, `user_pwd`, `reg_time`, `last_login_ip`, `is_enable`, `is_delete`, `user_email`, `idcard`, `login_times`)
+	`real_name`, `user_name`, `mobile`, `gender`, `role_id`, `user_pwd`, `reg_time`, `last_login_ip`, `is_enable`, `is_deleted`, `user_email`, `idcard`, `login_times`)
 values
 	('周宏超', '周宏超', '15699997798', '1', '10', 'd6f19b13cc75b70cabe99ca6d92e5de7', '1362094066', '127.0.0.1', '5', '0', 'heanes@163.com', '', '1')
 	, ('曹舒', '曹舒', '13261107321', '0', '9', 'd6f19b13cc75b70cabe99ca6d92e5de7', '1362094066', '127.0.0.1', '5', '0', '', '', '1')
@@ -149,7 +150,7 @@ update `heanes.com`.`pre_users` set `nickname`=`real_name`;
  */
 truncate `heanes.com`.`pre_user_role`;
 insert into `pre_user_role` (
-	`name`, `description`, `order`)
+	`name`, `description`, `order_number`)
 values
 	('普通会员', '普通会员', '1')
 	, ('金鹰用户', '金鹰用户', '2')
@@ -309,7 +310,7 @@ values
  */
 truncate `heanes.com`.`pre_property`;
 insert into `heanes.com`.`pre_property` (
-	`name`, `order`, `add_show`, `is_required`, `insert_time`, `is_enable`)
+	`name`, `order_number`, `add_show`, `is_required`, `insert_time`, `is_enable`)
 values
 	('个人房产', '1', '1', '0', '1436918347', '1')
 	, ('个人车辆', '2', '1', '0', '1436918347', '1')
@@ -323,7 +324,7 @@ values
  */
 truncate `heanes.com`.`pre_property_fields`;
 insert into `heanes.com`.`pre_property_fields` (
-	`property_id`, `name`, `input_type`, `input_value`, `value_unit`, `add_show`, `is_required`, `order`, `insert_time`, `update_time`, `is_enable`)
+	`property_id`, `name`, `input_type`, `input_value`, `value_unit`, `add_show`, `is_required`, `order_number`, `insert_time`, `update_time`, `is_enable`)
 values
 	('1', '房产类型', 'select', '住宅房,商业房', null, '1', null, '1', '1436918347', '1436918347', '1')
 	, ('1', '住房面积', 'text', null, '平', '1', null, '2', '1436918347', '1436918347', '1')
@@ -345,7 +346,7 @@ values
  */
 truncate `heanes.com`.`pre_certification_type`;
 insert into `heanes.com`.`pre_certification_type` (
-	`name`, `code`, `img_src`, `description`, `add_show`, `insert_time`, `order`)
+	`name`, `code`, `img_src`, `description`, `add_show`, `insert_time`, `order_number`)
 values
 	('身份认证', 'IDCard', 'ID.png', '用户实名认证，和真实身份证号挂钩', '1', '1436060529', '1')
 	, ('邮件认证', 'email', 'Email.png', '用户注册关联邮件', '0', '1436060529', '2')
@@ -364,7 +365,7 @@ values
  */
 truncate `heanes.com`.`pre_certification_type_fields`;
 insert into `heanes.com`.`pre_certification_type_fields` (
-	`name`, `type_id`, `input_type`, `input_value`, `value_unit`, `order`, `add_show`, `is_required`, `insert_time`, `is_enable`)
+	`name`, `type_id`, `input_type`, `input_value`, `value_unit`, `order_number`, `add_show`, `is_required`, `insert_time`, `is_enable`)
 values
 	('身份证号', '1', 'text', 'IDCard/demo_front.jpg', null, '1', '0', '0', '1436918347', '1')
 	, ('身份证正面照片', '1', 'file-image', 'IDCard/demo_front.jpg', null, '2', '0', '0', '1436918347', '1')
@@ -378,7 +379,7 @@ values
  */
 truncate `heanes.com`.`pre_department`;
 insert into `heanes.com`.`pre_department` (
-	`name`, `english_name`, `description`,`manager_job_id`, `order`, `insert_time`)
+	`name`, `english_name`, `description`,`manager_job_id`, `order_number`, `insert_time`)
 values
 	('总管理', 'manage', '老大', '8', '0', '1435908579')
 	, ('综合管理部', 'manage', '综合管理部', '4', '1', '1436060433')
@@ -450,7 +451,7 @@ values
  */
 truncate `heanes.com`.`pre_product`;
 insert into `heanes.com`.`pre_product` (
-	`name`, `category_id`, `type_id`, `is_recommend`, `cover_img_src`, `short_desc`, `description`, `insert_time`, `order`,`loan_type`)
+	`name`, `category_id`, `type_id`, `is_recommend`, `cover_img_src`, `short_desc`, `description`, `insert_time`, `order_number`,`loan_type`)
 values
 	('金企通', '1', '1', '1','1.png', '(企业对公贷款) 行长推荐', '中小型企业的私人订制产品，提供担保、抵押、信用等多样化融资方式，解决中小企业的资金短缺等问题，助力中小企业直通成功！', '1436914750', '1', '企业对公贷款')
 	, ('金易通', '1', '2', '1', '2.png', '（个人抵押经营、消费贷）行长推荐', '为小微企业和个人客户量身打造的专属产品，以抵押授信加理财的融资方式为私营业主提供绿色融资通道！', '1436914750', '2', '个人经营贷款')
@@ -480,7 +481,7 @@ values
 #产品分类
 truncate `heanes.com`.`pre_product_category`;
 insert into `heanes.com`.`pre_product_category`(
-	`parent_id`, `name`, `img_src`, `insert_time`, `order`)
+	`parent_id`, `name`, `img_src`, `insert_time`, `order_number`)
 values
 	('0','<p style="text-align:center">银行</p><p style="text-align:center">抵押贷款</p>','1.svg','1436914750','1')
 	, ('0','<p style="text-align:center">银行</p><p style="text-align:center">信用贷款</p>','2.svg','1436914750','2')
@@ -490,7 +491,7 @@ values
 # 产品类型
 truncate `heanes.com`.`pre_product_type`;
 insert into `heanes.com`.`pre_product_type` (
-	`name`, `description`, `insert_time`, `order`)
+	`name`, `description`, `insert_time`, `order_number`)
 values
 	('金企通', '金企通', '1436914750', '1')
 	, ('金易通', '金易通', '1436914750', '1')
@@ -519,7 +520,7 @@ values
 # 产品类型字段
 truncate `heanes.com`.`pre_product_fields`;
 insert into `heanes.com`.`pre_product_fields` (
-	`type_id`, `name`, `input_type`, `input_value`, `allow_read_min_role_level`, `as_filter`, `is_show`, `order`, `is_enable`)
+	`type_id`, `name`, `input_type`, `input_value`, `allow_read_min_role_level`, `as_filter`, `is_show`, `order_number`, `is_enable`)
 values
 	('1', '目标群体', 'text', null, '0', '0', '1', '1', '1')
 	, ('1', '贷款额度', 'text', null, '0', '0', '1', '2', '1')
@@ -1008,7 +1009,7 @@ values
  */
 truncate `heanes.com`.`pre_article_category`;
 insert into `heanes.com`.`pre_article_category` (
-	`parent_id`, `name`, `code`, `insert_time`, `order`, `is_enable`)
+	`parent_id`, `name`, `code`, `insert_time`, `order_number`, `is_enable`)
 values
 	('0','最新资讯','news','1356389066','1','1')#1
 	, ('0','网站公告','notice','1356389066','2','1')#2
@@ -1025,7 +1026,7 @@ values
  */
 truncate `heanes.com`.`pre_article`;
 insert into `heanes.com`.`pre_article` (
-	`category_id`, `title`, `subtitle`, `cover_img_src`, `user_id`, `user_link`, `author`, `editor`, `origin_source`, `content`, `keywords`, `tags`, `semantic_a_href`, `a_href`, `a_title`, `title_bg_color`, `content_bg_color`, `template_id`, `is_new`, `is_recommend`, `is_top`, `is_great`, `is_delete`, `allow_comment`, `comment_num`, `comment_score`, `read_num`, `click_count`, `seo_title`, `seo_keywords`, `seo_description`, `user_role_id`, `user_rank`, `pwd`, `insert_time`, `update_time`, `order`, `is_enable`)
+	`category_id`, `title`, `subtitle`, `cover_img_src`, `user_id`, `user_link`, `author`, `editor`, `origin_source`, `content`, `keywords`, `tags`, `semantic_a_href`, `a_href`, `a_title`, `title_bg_color`, `content_bg_color`, `template_id`, `is_new`, `is_recommend`, `is_top`, `is_great`, `is_deleted`, `allow_comment`, `comment_num`, `comment_score`, `read_num`, `click_count`, `seo_title`, `seo_keywords`, `seo_description`, `user_role_id`, `user_rank`, `access_password`, `insert_time`, `update_time`, `order_number`, `is_enable`)
 values
 	('2', '金乐汇金融超市即将上线', '', '1.jpg', '0', null, null, null, null, '<div>\r\n	<span style=\"font-size:14px;line-height:21px;\">尊敬的金乐汇用户：</span>\r\n</div>\r\n<div>\r\n	<span style=\"font-size:14px;line-height:21px;\"><br />\r\n</span>\r\n</div>\r\n<div>\r\n	<span style=\"font-size:14px;line-height:21px;\"> 您好！</span>\r\n</div>\r\n<div>\r\n	<span style=\"font-size:14px;line-height:21px;\"><br />\r\n</span>\r\n</div>\r\n<div style=\"text-align:left;\">\r\n	<span style=\"font-size:14px;line-height:21px;\"> </span><span style=\"font-size:14px;line-height:21px;\"><span style=\"font-size:14px;line-height:21px;\">金乐汇</span>正在测试中，</span><span style=\"font-size:14px;line-height:21px;\">预计2015年6月正式上线。具体上线日期确定后我们会及时予以公布。</span>\r\n</div>\r\n<div>\r\n	<span style=\"font-size:14px;line-height:21px;\"><br />\r\n</span>\r\n</div>\r\n<div>\r\n	<span style=\"font-size:14px;line-height:21px;\"> 非常感谢各位用户的支持和信任！我们会不断完善、为您提供更加优质的服务！</span>\r\n</div>\r\n<div>\r\n	<span style=\"font-size:14px;line-height:21px;\"><br />\r\n</span>\r\n</div>\r\n<div style=\"text-align:right;\">\r\n	<span style=\"font-size:14px;line-height:21px;\"><span style=\"font-size:14px;line-height:21px;\">金乐汇</span>团队</span>\r\n</div>\r\n<div style=\"text-align:right;\">\r\n	<span style=\"font-size:14px;line-height:21px;\"><br />\r\n</span>\r\n</div>\r\n<div style=\"text-align:right;\">\r\n	<span style=\"font-size:14px;line-height:21px;\">2015年4月3日</span>\r\n</div>', '金乐汇,贷款', null, '', null, null, '#FFF', '#FFF', null, '1', '1', '0', '0', '0', '1', '0', '5', '1', '113', '金乐汇上线公告', '金乐汇，', '', null, null, null, '1356389066', '1431562309', null, '1')
 ;
@@ -1108,13 +1109,13 @@ truncate `heanes.com`.`pre_special`;
 insert into `heanes.com`.`pre_special` (
 	`title`, `subtitle`, `semantic_a_href`, `a_href`, `template_path`, `template_file`, `insert_time`)
 values
-	('业之家', '创业之家', 'http://m.jinlehui.net/wap/index.php?act=employee&op=partjober', 'http://m.jinlehui.net/wap/index.php?act=employee&op=partjober', 'partjober', 'scrollPage', '1440637673')
+	('业之家', '创业之家', '/wap/index.php?act=employee&op=partjober', '/wap/index.php?act=employee&op=partjober', 'partjober', 'scrollPage', '1440637673')
 ;
 
 truncate `heanes.com`.`pre_ware`;
 alter table `heanes.com`.`pre_ware` auto_increment=100001 ;
 insert into `heanes.com`.`pre_ware`(
-	`category_id`, `name`, `shop_price`, `original_price`, `store_num`, `total_sold_num`, `cover_img_src`, `description`, `insert_time`, `order`, `is_enable`)
+	`category_id`, `name`, `shop_price`, `original_price`, `store_num`, `total_sold_num`, `cover_img_src`, `description`, `insert_time`, `order_number`, `is_enable`)
 values
 	('1','锅碗瓢盆任你挑任你选，破的不要钱，旧的白送，假的买一赔三','999','1099','471','23','1.jpg','<a><img src="/data/upload/image/ware/100001/album/1.jpg"></a>','1440637673','1','1')
 	,('1','正品304不锈钢真空户外旅行壶大容量保温杯宝宝泡奶杯保温壶包邮','179','259','361','56','1.jpg','<a><img src="/data/upload/image/ware/100002/album/1.jpg"></a>','1440637673','2','1')

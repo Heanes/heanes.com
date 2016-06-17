@@ -28,7 +28,7 @@ class SpecialController extends BaseWapController{
 	 */
 	public function listOp(){
 		$specialModel=Model('special');
-		$specialParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$specialParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$special=$specialModel->getList($specialParam);
 		Tpl::assign('html_title','专题列表');
 		Tpl::display();
@@ -43,7 +43,7 @@ class SpecialController extends BaseWapController{
 		if(isset($_GET['id']) && !empty($_GET['id'])){
 			$id=Filter::doFilter($_GET['id'],'integer');
 			$specialModel=Model('special');
-			$specialParam['where']="`is_enable`=1 AND `is_delete`=0";
+			$specialParam['where']="`is_enable`=1 AND `is_deleted`=0";
 			$special=$specialModel->getOneByID($id);
 			if($special){
 				Tpl::assign('html_title',$special['title']);

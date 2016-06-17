@@ -23,7 +23,7 @@ class WareShopController extends BaseWapController{
 			}else{
 				//获取幻灯显示
 				$slideWapModel=Model('slide_wap');
-				$slideWapParam['where']="`is_enable`=1 AND `is_delete`=0";
+				$slideWapParam['where']="`is_enable`=1 AND `is_deleted`=0";
 				$slideWapParam['order']=array('order'=>'ASC');
 				$slideWapList=$slideWapModel->getList($slideWapParam);
 				foreach ($slideWapList as $key => $value) {
@@ -50,7 +50,7 @@ class WareShopController extends BaseWapController{
 				}
 				//获取有效产品分类
 				$wareCategoryModel = Model('ware_category');
-				$wareCategoryParam['where']="`is_enable`=1 AND `is_delete`=0";
+				$wareCategoryParam['where']="`is_enable`=1 AND `is_deleted`=0";
 				$wareCategoryParam['order']=array('order'=>'ASC');
 				$wareCategoryList=$wareCategoryModel->getList($wareCategoryParam);
 				foreach ($wareCategoryList as $key => $wareCategory) {
@@ -60,7 +60,7 @@ class WareShopController extends BaseWapController{
 				Tpl::assign('html_title','金宝街 - 首页');
 				//获取所有积分商品列表
 				$wareModel=Model('ware');
-				$wareParam['where']="`is_enable`=1 AND `is_delete`=0";
+				$wareParam['where']="`is_enable`=1 AND `is_deleted`=0";
 				$wareParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
 				$page=new Page('20');
 				$wareList=$wareModel->getList($wareParam,$page);
@@ -80,7 +80,7 @@ class WareShopController extends BaseWapController{
 	 */
 	public function listOp(){
 		$wareModel=Model('ware');
-		$wareParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$wareParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$wareParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
 		$wareList=$wareModel->getList($wareParam);
 		Tpl::assign('wareList',$wareList);
@@ -111,14 +111,14 @@ class WareShopController extends BaseWapController{
 				$user = $userModel->getOneByID($user_id);
 				//获取收藏情况
 				$wareCollectModel=Model('ware_collect');
-				$wareCollectParam['where']="`ware_id`='$ware_id' AND `user_id`='$user_id' AND `is_enable`=1 AND `is_delete`=0";
+				$wareCollectParam['where']="`ware_id`='$ware_id' AND `user_id`='$user_id' AND `is_enable`=1 AND `is_deleted`=0";
 				$wareCollect=$wareCollectModel->getOne($wareCollectParam);
 				Tpl::assign('wareCollect',$wareCollect);
 			} else {
 				$user['role_id'] = 0;
 			}
 			$wareModel=Model('ware');
-			$wareParam['where']="`id`=$ware_id AND `is_enable`=1 AND `is_delete`=0";
+			$wareParam['where']="`id`=$ware_id AND `is_enable`=1 AND `is_deleted`=0";
 			$ware=$wareModel->getOne($wareParam);
 			if(count($ware)){
 				$ware['_cover_img_src']=PATH_BASE_FILE_UPLOAD.'image/ware/'.$ware['id'].'/album/'.$ware['cover_img_src'];
@@ -154,7 +154,7 @@ class WareShopController extends BaseWapController{
 			.' `c`.`user_id` = '.$user_id
 			.' and `c`.`ware_id` = `p`.`id`'
 			.' and `c`.`is_enable` = 1 and `p`.`is_enable`=1'
-			.' and `c`.`is_delete` = 0 and `p`.`is_delete`=0'
+			.' and `c`.`is_deleted` = 0 and `p`.`is_deleted`=0'
 			.' order by'
 			.' `c`.`collect_time` desc';
 		if(isset($_GET['page']) && !empty($_GET['page'])){

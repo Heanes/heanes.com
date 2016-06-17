@@ -28,7 +28,7 @@ class ProductController extends BaseWapController{
 			}else{
 				//1.获取有效产品分类
 				$productCategoryModel = Model('product_category');
-				$productCategoryParam['where']="`is_enable`=1 AND `is_delete`=0";
+				$productCategoryParam['where']="`is_enable`=1 AND `is_deleted`=0";
 				$productCategoryParam['order']=array('order'=>'ASC');
 				$productCategoryList=$productCategoryModel->getList($productCategoryParam);
 				foreach ($productCategoryList as $key => $productCategory) {
@@ -57,7 +57,7 @@ class ProductController extends BaseWapController{
 		}
 		//1.获取有效产品分类
 		$productCategoryModel = Model('product_category');
-		$productCategoryParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$productCategoryParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$productCategoryParam['order']=array('order'=>'ASC');
 		$productCategoryList=$productCategoryModel->getList($productCategoryParam);
 		foreach ($productCategoryList as $key => $productCategory) {
@@ -68,11 +68,11 @@ class ProductController extends BaseWapController{
 		$productTypeModel = Model('product_type');
 		$productFieldsModel = Model('product_fields');
 		$productFieldsDataModel = Model('product_fields_data');
-		$productTypeParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$productTypeParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$productTypeList=$productTypeModel->getList($productTypeParam);
 		$productTypeIn=implode("','",array_column($productTypeList,'id'));
 		//3.获取过滤条件列表
-		$productFieldsParam['where'] = "(`type_id` IN ('".$productTypeIn."') OR `type_id`='0') AND `as_filter`=1 AND ('".$user['role_id']."'in(`allow_read_role`) OR `allow_read_min_role_level`<='".$user['role_id']."' )AND `is_enable`=1 AND `is_delete`=0";
+		$productFieldsParam['where'] = "(`type_id` IN ('".$productTypeIn."') OR `type_id`='0') AND `as_filter`=1 AND ('".$user['role_id']."'in(`allow_read_role`) OR `allow_read_min_role_level`<='".$user['role_id']."' )AND `is_enable`=1 AND `is_deleted`=0";
 		$productFieldsParam['group']='name';
 		$productFieldsParam['order']=array('order'=>'ASC');
 		$productFilterList = $productFieldsModel->getList($productFieldsParam);
@@ -82,7 +82,7 @@ class ProductController extends BaseWapController{
 		foreach ($productList as $key => $product) {
 			//3.获取产品类型属性
 			$productList[$key]['_type'] = $productTypeModel->getOneByID($product['id']);
-			$productFieldsParam['where'] = "(`type_id`='".$productList[$key]['_type']['id']."' OR `type_id`='0') AND `as_filter`=1 AND ('".$user['role_id']."'in(`allow_read_role`) OR `allow_read_min_role_level`<='".$user['role_id']."' )AND `is_enable`=1 AND `is_delete`=0";
+			$productFieldsParam['where'] = "(`type_id`='".$productList[$key]['_type']['id']."' OR `type_id`='0') AND `as_filter`=1 AND ('".$user['role_id']."'in(`allow_read_role`) OR `allow_read_min_role_level`<='".$user['role_id']."' )AND `is_enable`=1 AND `is_deleted`=0";
 			$productList[$key]['_fields'] = $productFieldsModel->getList($productFieldsParam);
 			//3.获取产品类型属性值
 			foreach ($productList[$key]['_fields'] as $sub_fields_key => $sub_field) {
@@ -94,7 +94,7 @@ class ProductController extends BaseWapController{
 		//3.获取产品数据
 		$productModel = Model('product');
 		$page=new Page('10');
-		$productParam['where']="`is_enable`=1 AND `is_delete`=0";
+		$productParam['where']="`is_enable`=1 AND `is_deleted`=0";
 		$articleParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
 		if(isset($_GET['category']) && !empty($_GET['category'])){
 			$category=Filter::doFilter($_GET['category'],'string');
@@ -148,7 +148,7 @@ class ProductController extends BaseWapController{
 				$user = $userModel->getOneByID($user_id);
 				//获取收藏情况
 				$productCollectModel = Model('product_collect');
-				$productCollectParam['where'] = "`product_id`='$id' AND `user_id`='$user_id' AND `is_enable`=1 AND `is_delete`=0";
+				$productCollectParam['where'] = "`product_id`='$id' AND `user_id`='$user_id' AND `is_enable`=1 AND `is_deleted`=0";
 				$productCollect = $productCollectModel->getOne($productCollectParam);
 				Tpl::assign('productCollect', $productCollect);
 			} else{
@@ -161,7 +161,7 @@ class ProductController extends BaseWapController{
 			$productType = $productTypeModel->getOneByID($product['type_id']);
 			//获取product对应类型属性字段
 			$productFieldsModel = Model('product_fields');
-			$productFieldsParam['where'] = "(`type_id`='" . $productType['id'] . "' OR `type_id`='0') AND ('" . $user['role_id'] . "'in(`allow_read_role`) OR `allow_read_min_role_level`<='" . $user['role_id'] . "' ) AND `is_show`=1 AND `is_enable`=1 AND `is_delete`=0";
+			$productFieldsParam['where'] = "(`type_id`='" . $productType['id'] . "' OR `type_id`='0') AND ('" . $user['role_id'] . "'in(`allow_read_role`) OR `allow_read_min_role_level`<='" . $user['role_id'] . "' ) AND `is_show`=1 AND `is_enable`=1 AND `is_deleted`=0";
 			$productFieldsParam['order'] = array('order' => 'ASC');
 			$productFieldsList = $productFieldsModel->getList($productFieldsParam);
 			//根据字段ID查询该字段的输入值
@@ -200,7 +200,7 @@ class ProductController extends BaseWapController{
 				.' `c`.`user_id` = '.$user_id
 					.' and `c`.`product_id` = `p`.`id`'
 					.' and `c`.`is_enable` = 1 and `p`.`is_enable`=1'
-					.' and `c`.`is_delete` = 0 and `p`.`is_delete`=0'
+					.' and `c`.`is_deleted` = 0 and `p`.`is_deleted`=0'
 					.' order by'
 					.' `c`.`collect_time` desc';
 		if(isset($_GET['page']) && !empty($_GET['page'])){

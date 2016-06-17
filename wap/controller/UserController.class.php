@@ -292,19 +292,19 @@ class UserController extends BaseWapController{
 			$bankList = $bankModel->getList();
 			//2.查询需要注册的字段信息
 			$userFields = Model('user_fields');
-			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$userFieldsParam['order'] = array('order' => 'DESC');
 			$userFieldsList = $userFields->getList($userFieldsParam);
 			Tpl::assign('userFieldsList', $userFieldsList);
 			//3.1查询需要添加的资产信息
 			$propertyModel = Model('property');
-			$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+			$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 			$propertyParam['order'] = array('order' => 'ASC');
 			$propertyList = $propertyModel->getList($propertyParam);
 			foreach ($propertyList as $key => $property) {
 				//3.2查询添加资产需要填写的字段
 				$propertyFieldsModel = Model('property_fields');
-				$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+				$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 				$propertyFieldsParam['order'] = array('order' => 'ASC');
 				$propertyList[$key]['propertyFields'] = $propertyFieldsModel->getList($propertyFieldsParam);
 			}
@@ -370,7 +370,7 @@ class UserController extends BaseWapController{
 				}
 				//2.3添加用户资产信息
 				$propertyModel = Model('property');
-				$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+				$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 				$propertyList = $propertyModel->getList($propertyParam);
 				$userPropertyFieldsDataModel = Model('user_property_fields_data');
 				foreach ($propertyList as $key => $property) {
@@ -379,7 +379,7 @@ class UserController extends BaseWapController{
 					if ($isHaveProperty == 1) {
 						//获取要添加字段
 						$propertyFieldsModel = Model('property_fields');
-						$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_delete`='0'";
+						$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
 						$propertyFieldsList = $propertyFieldsModel->getList($propertyFieldsParam);
 						foreach ($propertyFieldsList as $fields_key => $propertyFields) {
 							$newUserPropertyFieldsData['user_id'] = $newUserId;
