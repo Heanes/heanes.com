@@ -293,19 +293,19 @@ class UserController extends BaseWapController{
 			//2.查询需要注册的字段信息
 			$userFields = Model('user_fields');
 			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
-			$userFieldsParam['order'] = array('order' => 'DESC');
+			$userFieldsParam['order'] = array('order_number' => 'DESC');
 			$userFieldsList = $userFields->getList($userFieldsParam);
 			Tpl::assign('userFieldsList', $userFieldsList);
 			//3.1查询需要添加的资产信息
 			$propertyModel = Model('property');
 			$propertyParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
-			$propertyParam['order'] = array('order' => 'ASC');
+			$propertyParam['order'] = array('order_number' => 'ASC');
 			$propertyList = $propertyModel->getList($propertyParam);
 			foreach ($propertyList as $key => $property) {
 				//3.2查询添加资产需要填写的字段
 				$propertyFieldsModel = Model('property_fields');
 				$propertyFieldsParam['where'] = "`property_id`='".$property['id']."' AND `add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
-				$propertyFieldsParam['order'] = array('order' => 'ASC');
+				$propertyFieldsParam['order'] = array('order_number' => 'ASC');
 				$propertyList[$key]['propertyFields'] = $propertyFieldsModel->getList($propertyFieldsParam);
 			}
 			Tpl::assign('propertyList', $propertyList);

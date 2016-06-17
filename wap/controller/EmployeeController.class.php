@@ -154,7 +154,7 @@ class EmployeeController extends BaseWapController{
 			//1.查询需要注册的字段信息
 			$userFields = Model('user_fields');
 			$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
-			$userFieldsParam['order'] = array('order' => 'DESC');
+			$userFieldsParam['order'] = array('order_number' => 'DESC');
 			$userFieldsList = $userFields->getList($userFieldsParam);
 			Tpl::assign('userFieldsList', $userFieldsList);
 			//2.银行卡信息
@@ -457,7 +457,7 @@ class EmployeeController extends BaseWapController{
 				//2.查询需要注册的字段信息
 				$userFields = Model('user_fields');
 				$userFieldsParam['where'] = "`add_show`='1' AND `is_enable`='1' AND `is_deleted`='0'";
-				$userFieldsParam['order'] = array('order' => 'DESC');
+				$userFieldsParam['order'] = array('order_number' => 'DESC');
 				$userFieldsList = $userFields->getList($userFieldsParam);
 				Tpl::assign('userFieldsList', $userFieldsList);
 				//3查询需要添加的用户认证信息

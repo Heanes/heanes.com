@@ -24,7 +24,7 @@ class WareShopController extends BaseWapController{
 				//获取幻灯显示
 				$slideWapModel=Model('slide_wap');
 				$slideWapParam['where']="`is_enable`=1 AND `is_deleted`=0";
-				$slideWapParam['order']=array('order'=>'ASC');
+				$slideWapParam['order']=array('order_number' => 'ASC');
 				$slideWapList=$slideWapModel->getList($slideWapParam);
 				foreach ($slideWapList as $key => $value) {
 					//从设置中获取该类型文件存储路径，再拼接成完整的文件位置
@@ -51,7 +51,7 @@ class WareShopController extends BaseWapController{
 				//获取有效产品分类
 				$wareCategoryModel = Model('ware_category');
 				$wareCategoryParam['where']="`is_enable`=1 AND `is_deleted`=0";
-				$wareCategoryParam['order']=array('order'=>'ASC');
+				$wareCategoryParam['order']=array('order_number' => 'ASC');
 				$wareCategoryList=$wareCategoryModel->getList($wareCategoryParam);
 				foreach ($wareCategoryList as $key => $wareCategory) {
 					$wareCategoryList[$key]['img_src']=PATH_BASE_FILE_UPLOAD.'image/ware/category-icon/'.$wareCategory['img_src'];
@@ -61,7 +61,7 @@ class WareShopController extends BaseWapController{
 				//获取所有积分商品列表
 				$wareModel=Model('ware');
 				$wareParam['where']="`is_enable`=1 AND `is_deleted`=0";
-				$wareParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
+				$wareParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
 				$page=new Page('20');
 				$wareList=$wareModel->getList($wareParam,$page);
 				foreach ($wareList as $key=>$ware) {
@@ -81,7 +81,7 @@ class WareShopController extends BaseWapController{
 	public function listOp(){
 		$wareModel=Model('ware');
 		$wareParam['where']="`is_enable`=1 AND `is_deleted`=0";
-		$wareParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
+		$wareParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
 		$wareList=$wareModel->getList($wareParam);
 		Tpl::assign('wareList',$wareList);
 		Tpl::assign('html_title','积分商品列表');

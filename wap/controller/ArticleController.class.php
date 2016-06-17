@@ -37,12 +37,12 @@ class ArticleController extends BaseWapController{
 		//@TODO 要显示的分类，应从后台设置中取出
 		$articleCategoryModel = Model('article_category');
 		$articleCategoryListParam['where'] = "`is_enable`=1 AND `is_deleted`=0";
-		$articleCategoryListParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
+		$articleCategoryListParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
 		$articleCategoryList = $articleCategoryModel->getList($articleCategoryListParam);
 		Tpl::assign('articleCategoryList', $articleCategoryList);
 		$articleModel = Model('article');
 		$articleParam['where']="`is_enable`=1 AND `is_deleted`=0";
-		$articleParam['order']=array('order'=>'ASC','insert_time'=>'DESC');
+		$articleParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
 		$html_title='文章列表';
 		if(isset($_GET['category']) && !empty($_GET['category'])){
 			$category=Filter::doFilter($_GET['category'],'string');
