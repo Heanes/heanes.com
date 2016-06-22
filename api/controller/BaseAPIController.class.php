@@ -33,7 +33,7 @@ class BaseAPIController {
      * @author Heanes fang <heanes@163.com>
      * @time 2016-06-07 17:15:59 周二
      */
-    function postJson($anything) {
+    function returnJson($anything) {
         echo json_encode($anything);
         exit;
     }

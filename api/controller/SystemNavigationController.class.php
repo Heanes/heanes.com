@@ -70,7 +70,7 @@ class SystemNavigationController extends BaseAPIController {
             'status'  => $status,
             'APITime' => $apiTime,
         ];
-        $this->postJson($result);
+        $this->returnJson($result);
     }
 
     /**
@@ -111,7 +111,7 @@ class SystemNavigationController extends BaseAPIController {
             'status'  => $status,
             'APITime' => $apiTime,
         ];
-        $this->postJson($result);
+        $this->returnJson($result);
     }
 
 }
