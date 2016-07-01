@@ -13,11 +13,12 @@ create table `pre_navigation` (
     `name`                      varchar(15) not null default '' comment '导航栏名称',
     `a_href`                    varchar(255) default '' comment '导航链接',
     `a_title`                   varchar(255) default '' comment '链接title',
-    `a_target`                  varchar(255) default '' comment '导航链接打开方式',
+    `a_target`                  varchar(255) default '' comment '导航链接打开方式，_blank-新标签页,_parent-父窗口,_self-自身,_top-顶层窗体，或指定某窗体ID打开',
+    `icon_class`                varchar(255) default '' comment '导航链接icon样式',
     `img_src`                   varchar(255) default '' comment '导航链接图标地址',
     `img_src_hover`             varchar(255) default '' comment '导航链接图标鼠标浮上时地址',
     `img_src_active`            varchar(255) default '' comment '导航链接激活时图标地址',
-    `href_active_match_path`    text comment '链接激活匹配的控制器',
+    `href_active_match_path`    varchar(255) default '' comment '链接激活匹配的控制器',
     `style_class`               varchar(255) default '' comment '链接样式',
     `style_class_hover`         varchar(255) default '' comment '链接鼠标浮上时样式',
     `style_class_acitve`        varchar(255) default '' comment '链接激活的样式',
@@ -52,7 +53,7 @@ create table `pre_navigation_wap` (
     `img_src`                   varchar(255) default '' comment '导航链接图标地址',
     `img_src_hover`             varchar(255) default '' comment '导航链接图标鼠标浮上时地址',
     `img_src_active`            varchar(255) default '' comment '导航链接激活时图标地址',
-    `href_active_match_path`    text comment '链接激活匹配的控制器',
+    `href_active_match_path`    varchar(255) default '' comment '链接激活匹配的控制器',
     `style_class`               varchar(255) default '' comment '链接样式',
     `style_class_hover`         varchar(255) default '' comment '链接鼠标浮上时样式',
     `style_class_acitve`        varchar(255) default '' comment '链接激活的样式',
@@ -159,34 +160,3 @@ engine = innodb
 auto_increment = 1
 default charset = `utf8`
 comment '手机端会员中心菜单表';
-
-#----------pre_wap_member_center_menu_lib--------------------------------------------------------
-/*
- * @doc 手机端会员中心菜单表
- * @author Heanes
- * @time 2015-02-09 14:19:41
-*/
-drop table if exists `pre_wap_member_center_menu_lib`;
-create table `pre_wap_member_center_menu_lib` (
-    `id`                int unsigned auto_increment comment '自增ID，主键',
-    `parent_id`         int unsigned default 0 comment '父ID',
-    `name`              varchar(15) not null default '' comment '栏名称',
-    `a_href`            varchar(255) default '' comment '链接',
-    `a_title`           varchar(255) default '' comment '链接title',
-    `a_target`          tinyint unsigned default 0 comment '链接打开方式',
-    `icon_src`          varchar(255) default '' comment '链接图标地址',
-    `icon_src_hover`    varchar(255) default '' comment '链接图标激活样式地址',
-    `href_in_hover`     text comment '激活样式链接库(控制器名称)',
-    `order_number`      int unsigned default 0 comment '排序',
-    `is_enable`         tinyint unsigned default 1 comment '是否启用（显示）',
-    `is_deleted`        tinyint unsigned default 0 comment '是否删除',
-    `insert_time`       int(10) unsigned default 0 comment '创建时间',
-    `update_time`       int(10) unsigned default 0 comment '更新时间',
-    `create_user`       int unsigned default 0 comment '创建人',
-    `update_user`       int unsigned default 0 comment '更新人',
-    primary key (`id`)
-)
-engine = innodb
-auto_increment = 1
-default charset = `utf8`
-comment '手机端会员中心菜单库表';

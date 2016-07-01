@@ -223,8 +223,8 @@ create table `pre_article_album` (
     `order_number`  int unsigned default 0 comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '图片添加时间',
-    `update_time`   int(10) unsigned default 0 comment '图片更新时间',
+    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `update_time`   int(10) unsigned default 0 comment '更新时间',
     `create_user`   int unsigned default 0 comment '创建人',
     `update_user`   int unsigned default 0 comment '更新人',
     primary key (`id`)
@@ -249,8 +249,8 @@ create table `pre_article_tag` (
     `order_number`  int unsigned default 0 comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '图片添加时间',
-    `update_time`   int(10) unsigned default 0 comment '图片更新时间',
+    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `update_time`   int(10) unsigned default 0 comment '更新时间',
     `create_user`   int unsigned default 0 comment '创建人',
     `update_user`   int unsigned default 0 comment '更新人',
     primary key (`id`)
@@ -273,13 +273,37 @@ create table `pre_article_tag_lib` (
     `order_number`  int unsigned default 0 comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '图片添加时间',
-    `update_time`   int(10) unsigned default 0 comment '图片更新时间',
+    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `update_time`   int(10) unsigned default 0 comment '更新时间',
     `create_user`   int unsigned default 0 comment '创建人',
     `update_user`   int unsigned default 0 comment '更新人',
     primary key (`id`)
 )
-    engine = innodb
-    auto_increment = 1
-    default charset = `utf8`
-    comment '文章标签库表';
+engine = innodb
+auto_increment = 1
+default charset = `utf8`
+comment '文章标签库表';
+
+
+/**
+ * @doc 任务单排车常用区域表
+ * @author fanggang
+ * @time 2016-07-01 14:38:39 周五
+ */
+drop table if exists `taskbill_admin_favourite_area`;
+create table `taskbill_admin_favourite_area` (
+    `id`            bigint unsigned not null auto_increment comment '自增ID，主键',
+    `user_id`       bigint unsigned not null comment '用户ID',
+    `area_list`     varchar(1000) not null default '' comment '区域列表',
+    `c_t`           int(11) not null default '0' comment '创建时间',
+    `u_t`           int(11) not null default '0' comment '更新时间',
+    `create_user`   bigint(20) not null default '0' comment '创建用户id',
+    `update_user`   bigint(20) not null default '0' comment '修改用户id',
+    `is_deleted`    tinyint(1) not null default '0' comment '是否删除',
+    primary key (`id`),
+    unique key `i_index_user_id` (`user_id`)
+)
+engine = innodb
+auto_increment = 1
+default charset = `utf8`
+comment '任务单排车常用区域表';
