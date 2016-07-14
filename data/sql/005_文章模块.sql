@@ -77,14 +77,15 @@ create table `pre_article` (
     `allow_comment`     tinyint unsigned default 1 comment '是否允许评论',
     `comment_count`     int unsigned default 0 comment '评论数',
     `comment_score`     smallint default 5 comment '文章评分，允许为负分',
-    `read_count`        int unsigned default 1 comment '阅读次数',
-    `click_count`       bigint unsigned default 1 comment '点击次数',
-    `thumbs_up_count`   bigint unsigned default 1 comment '点击次数',
+    `read_count`        int unsigned default 0 comment '阅读次数',
+    `click_count`       bigint unsigned default 0 comment '点击次数',
+    `thumbs_up_count`   bigint unsigned default 0 comment '点赞数',
+    `collect_count`     bigint unsigned default 0 comment '收藏数',
     `seo_title`         varchar(511) default '' comment '文章SEO标题',
     `seo_keywords`      varchar(511) default '' comment '文章SEO关键词',
     `seo_description`   varchar(511) default '' comment '文章SEO描述',
-    `user_role_id`      smallint unsigned default 1 comment '文章阅读用户权限',
-    `user_rank`         int unsigned default 1 comment '文章阅读用户积分',
+    `user_role_id`      smallint unsigned default 0 comment '文章阅读用户权限',
+    `user_rank`         int unsigned default 0 comment '文章阅读用户积分',
     `access_password`   varchar(64) default '' comment '阅读密码',
     `order_number`      int default 0 comment '排序',
     `is_enable`         tinyint unsigned default 1 comment '是否启用（显示）',
@@ -143,11 +144,13 @@ comment '文章评论表';
  * @author Heanes
  * @time 2015-06-24 09:48:28
 */
-drop table if exists `pre_article_praise`;
-create table `pre_article_praise`(
+drop table if exists `pre_article_thumbs_up`;
+create table `pre_article_thumbs_up`(
     `id`            int unsigned auto_increment comment '自增ID，主键',
     `article_id`    int unsigned default 0 comment '被点赞文章ID',
     `user_id`       int unsigned default 0 comment '用户ID',
+    `ip`            varchar(40) default '' comment '点赞IP，兼容IPv6',
+    `isp`           varchar(255) default '' comment '点赞人IP对应IPS提供商',
     `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
     `is_deleted`    tinyint unsigned default 0 comment '是否已删除',
     `insert_time`   int(10) unsigned default 0 comment '点赞时间',
@@ -161,7 +164,7 @@ auto_increment = 1
 default charset = `utf8`
 comment '文章点赞表';
 
-#----------pre_article_favourite表--------------------------------------------------------
+#----------pre_article_collect表--------------------------------------------------------
 /*
  * @doc 文章收藏表
  * @author Heanes
