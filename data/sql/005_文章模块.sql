@@ -101,6 +101,30 @@ auto_increment = 1
 default charset = `utf8`
 comment '文章内容表';
 
+#----------pre_article_content表--------------------------------------------------------
+/*
+ * @doc 文章内容表，仅存储文章内容，提高文章基础表的查询速度
+ * @author Heanes
+ * @time 2016-10-23 18:44:21 周日
+*/
+drop table if exists `pre_article`;
+create table `pre_article` (
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `article_id`    int unsigned comment '文章主键ID，主键',
+    `content`       text comment '文章内容',
+    `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
+    `is_deleted`    tinyint unsigned default 0 comment '是否删除',
+    `insert_time`   int(10) unsigned default 0 comment '文章创建时间',
+    `update_time`   int(10) unsigned default 0 comment '文章更新时间',
+    `create_user`   int unsigned default 0 comment '创建人',
+    `update_user`   int unsigned default 0 comment '更新人',
+    primary key (`id`)
+)
+engine = innodb
+auto_increment = 1
+default charset = `utf8`
+comment '文章内容表';
+
 #----------pre_article_comment表--------------------------------------------------------
 /* 
  * @doc 文章评论表
