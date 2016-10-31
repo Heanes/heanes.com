@@ -1,13 +1,13 @@
 use `heanes.com`;
 set foreign_key_checks = 0;
-#----------pre_users表--------------------------------------------------------
+#----------pre_user表--------------------------------------------------------
 /* 
  * @doc 会员信息表
  * @author Heanes
  * @time 2015-02-09 14:19:41
 */
-drop table if exists `pre_users`;
-create table `pre_users` (
+drop table if exists `pre_user`;
+create table `pre_user` (
     `id`                    int unsigned auto_increment comment '自增ID，主键',
     `user_name`             varchar(255) not null unique comment '用户名',
     `user_pwd`              varchar(64)  not null default '' comment '用户密码',
@@ -68,14 +68,14 @@ auto_increment = 10001
 default charset = `utf8`
 comment '会员信息表';
 
-#----------pre_user_fields--------------------------------------------------------c
+#----------pre_user_field--------------------------------------------------------c
 /* 
  * @doc 用户额外属性字段表
  * @author Heanes
  * @time 2015-02-09 14:19:41
 */
-drop table if exists `pre_user_fields`;
-create table `pre_user_fields` (
+drop table if exists `pre_user_field`;
+create table `pre_user_field` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
     `name`          varchar(255) default '' comment '注册项名称',
     `input_type`    varchar(255) default '' comment '注册项输入类型',
@@ -98,16 +98,16 @@ auto_increment = 1
 default charset = `utf8`
 comment '用户额外属性字段表';
 
-#----------pre_user_fields_data--------------------------------------------------------
+#----------pre_user_field_data--------------------------------------------------------
 /* 
  * @doc 用户额外注册项数据映射表
  * @author Heanes
  * @time 2015-02-09 14:19:41
 */
-drop table if exists `pre_user_fields_data`;
-create table `pre_user_fields_data` (
+drop table if exists `pre_user_field_data`;
+create table `pre_user_field_data` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
-    `fields_id`     int unsigned default 0 comment '注册项ID',
+    `field_id`      int unsigned default 0 comment '注册项ID',
     `user_id`       int unsigned default 0 comment '用户ID',
     `fields_value`  varchar(255) default '' comment '注册项值',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',

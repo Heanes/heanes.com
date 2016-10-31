@@ -18,6 +18,8 @@ create table `pre_admin_user` (
     `role_name`             varchar(63) default '' comment '管理员权限角色名称',
     `allow_login`           tinyint unsigned default 0 comment '是否允许登录',
     `login_times`           int unsigned default 0 comment '登录次数',
+    `last_modify_pwd_time`  int unsigned default 0 comment '最后修改密码时间，记录此项可要求用户定期修改密码',
+    `last_use_password`     varchar(64) default '' comment '上次使用的密码',
     `last_login_time`       int(10) unsigned default 0 comment '最后登陆时间',
     `current_login_time`    int(10) unsigned default 0 comment '当前登陆时间',
     `current_login_ip`      varchar(255) default '' comment '当前登录IP',

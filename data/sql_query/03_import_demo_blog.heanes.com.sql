@@ -13,6 +13,7 @@ truncate `heanes.com`.`pre_admin_user`;
 insert into `heanes.com`.`pre_admin_user` (
     `user_name`, `user_pwd`, `user_email`, `insert_time`)
 values
+    # admin - fg123456
     ('admin', 'd6f19b13cc75b70cabe99ca6d92e5de7', 'heanes@163.com', '1425922473')
 ;
 
@@ -64,7 +65,7 @@ values
     # 网站主题-前台
     , ('1', 'web_theme_home', '网站主题-前台', '', 'text', '网站主题-前台', 'default', '1', '1')
     # 网站主题-后台
-    , ('1', 'web_theme_admin', '网站主题-后台', '', 'text', '网站主题-后台', 'default', '1', '1')
+    , ('1', 'web_theme_admin', '网站主题-后台', '', 'text', '网站主题-后台', 'modernUI', '1', '1')
     # 网站是否关闭
     , ('1', 'web_close', '网站是否关闭', '', 'select', '0,1', '0', '1', '1')
     # 网站关闭原因
