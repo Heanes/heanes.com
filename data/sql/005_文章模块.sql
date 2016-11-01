@@ -107,8 +107,8 @@ comment '文章内容表';
  * @author Heanes
  * @time 2016-10-23 18:44:21 周日
 */
-drop table if exists `pre_article`;
-create table `pre_article` (
+drop table if exists `pre_article_content`;
+create table `pre_article_content` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
     `article_id`    int unsigned comment '文章主键ID，主键',
     `content`       text comment '文章内容',
