@@ -43,7 +43,7 @@ create table `pre_friend_link` (
     `email`         varchar(255) default '' comment '友情链接Email',
     `a_href`        varchar(511) default '' comment '链接地址',
     `a_title`       varchar(511) default '' comment '链接title值',
-    `a_target`      tinyint unsigned default 0 comment '链接打开方式',
+    `a_target`      tinyint unsigned default 0 comment '链接打开方式，0-新窗口，1-当前',
     `img_src`       varchar(255) default '' comment '链接图标地址',
     `img_title`     varchar(255) default '' comment '链接图标title值',
     `description`   text comment '备注介绍',

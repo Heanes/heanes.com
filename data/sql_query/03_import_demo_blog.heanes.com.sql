@@ -167,3 +167,18 @@ insert into `heanes.com`.`pre_article` (
 values
     (2, '你好世界', 'hello world', '', '1', '', 'Heanes', 1467363203, 'Heanes', 'heanes.com', '<style>.article-content h2.title-text{font-size:22px;padding:20px 0;}.article-content h3.title-text{padding:14px 0;text-indent:2em;}.article-content p{text-indent:2em;font-size:14px;}.article-content .placeholder{line-height:1.8em;}.article-content .placeholder:before{content:"章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容"}.article-content .placeholder.ph-large{height:400px;}.article-content .placeholder.ph-mini{height:50px;}</style><h2 class="title-text">第一章</h2><p class="placeholder ph-large">内容</p><h2 class="title-text">第二章</h2><p class="placeholder ph-mini"></p><h3 class="title-text">第二章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第二章第二节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第三章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第三节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第四章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第三节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第五章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第五章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第五章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第三节</h3><p class="placeholder ph-large">内容</p>', 'hello world', '', '', '', '你好世界', '', '', 1, 1, 0, 0, 0, 1, 0, 5, 12, 11, 0, 0, '你好世界', '你好世界', '你好世界', 0, 0, '', 0, 1467363203, '1')
 ;
+
+/**
+ * @doc 友情链接
+ * @author Heanes
+ * @time 2016-11-20 20:01:57 周日
+ */
+truncate `heanes.com`.`pre_friend_link`;
+insert into `heanes.com`.`pre_friend_link`(
+    name, email, a_href, a_title, a_target, img_src, img_title, description
+    , order_number, insert_time, create_user
+)
+values
+    ('津乐网', 'heanes.com', 'http://www.ejinle.com/', '津乐网', '0', '', '津乐网', '津乐网', 1, 1467363203, 1)
+;
+    

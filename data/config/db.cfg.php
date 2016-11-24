@@ -14,7 +14,7 @@ $_config=array();
 // database host 数据库主机地址
 $_config['db']['1']['dbhost']	= 'localhost';
 // database username 数据库账户用户名
-$_config['db']['1']['dbuser']	= 'webdb';
+$_config['db']['1']['dbuser']	= 'web_user_heanes.com';
 // database password 数据库账户密码
 $_config['db']['1']['dbpwd']	= 'p()P]aHqCEfwVY@7';
 // database name 数据库名称

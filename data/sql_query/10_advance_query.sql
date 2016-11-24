@@ -54,10 +54,10 @@ SELECT auto_increment FROM `information_schema`.`TABLES` WHERE `TABLE_SCHEMA`='h
  * @time 2015-07-29 11:10:34
  */
 /*
-create user 'webdb'@'%'
+create user 'web_user_heanes.com'@'%'
 	identified by 'p()P]aHqCEfwVY@7';
 
-grant all privileges on *.* to 'webdb'@'%'
+grant all privileges on `heanes.com`.* to 'web_user_heanes.com'@'%'
 identified by 'p()P]aHqCEfwVY@7'
 with grant option;
 Flush privileges;
