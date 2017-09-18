@@ -60,7 +60,7 @@
 									<h1><?php echo $article['title']; ?></h1>
 								</div>
 								<div class="article-meta-info">
-									<span class="cell meta-time"><?php echo to_date($article['insert_time']); ?></span>
+									<span class="cell meta-time"><?php echo to_date($article['create_time']); ?></span>
 									<span class="cell read-count"><i class="read-eye-icon"></i><?php echo $article['click_count']; ?></span>
 									<span class="cell comment-count"><i class="article-comment-icon"></i><?php echo $article['comment_num']; ?></span>
 								</div>

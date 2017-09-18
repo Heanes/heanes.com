@@ -27,9 +27,9 @@
 		</tr>
 		<tr>
 			<th>链接添加时间</th>
-			<td><input type="text" name="friendLinkapply_insert_time" id="friendLinkapply_insert_time1" value="<?php echo to_date('now');?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="friendLinkapply_create_time" id="friendLinkapply_create_time1" value="<?php echo to_date('now');?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			<th>链接更新时间</th>
-			<td><input type="text" name="friendLinkapply_update_time" id="friendLinkapply_insert_time2" value="<?php echo to_date('now');?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="friendLinkapply_update_time" id="friendLinkapply_create_time2" value="<?php echo to_date('now');?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 		</tr>
 		<tr>
 			<th>申请状态</th>

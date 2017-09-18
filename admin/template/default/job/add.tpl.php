@@ -27,7 +27,7 @@
 		</tr>
 		<tr>
 			<th>创建时间</th>
-			<td><input type="text" name="job_insert_time" value="<?php echo to_date('now'); ?>" placeholder="选择起始时间"
+			<td><input type="text" name="job_create_time" value="<?php echo to_date('now'); ?>" placeholder="选择起始时间"
 					   onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker" /></td>
 			<th>修改时间</th>
 			<td><input type="text" name="job_update_time" value="<?php echo to_date('now'); ?>" placeholder="选择起始时间"

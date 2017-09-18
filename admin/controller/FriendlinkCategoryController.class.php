@@ -77,7 +77,7 @@ class FriendlinkCategoryController extends BaseAdminController{
 		$newFriendlinkCategory['img_title']=Filter::doFilter($_POST['img_title'],'string');
 		$newFriendlinkCategory['a_href']=Filter::doFilter($_POST['a_href'],'string');
 		$newFriendlinkCategory['a_title']=Filter::doFilter($_POST['a_title'],'string');
-		$newFriendlinkCategory['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newFriendlinkCategory['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newFriendlinkCategory['update_time']=to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newFriendlinkCategory['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newFriendlinkCategory['description']=Filter::doFilter($_POST['description'],'string');
@@ -125,7 +125,7 @@ class FriendlinkCategoryController extends BaseAdminController{
 		$newFriendlinkCategory['img_title']=Filter::doFilter($_POST['img_title'],'string');
 		$newFriendlinkCategory['a_href']=Filter::doFilter($_POST['a_href'],'string');
 		$newFriendlinkCategory['a_title']=Filter::doFilter($_POST['a_title'],'string');
-		$newFriendlinkCategory['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newFriendlinkCategory['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newFriendlinkCategory['update_time']=getGMTime();
 		$newFriendlinkCategory['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newFriendlinkCategory['description']=Filter::doFilter($_POST['description'],'string');

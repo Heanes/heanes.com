@@ -55,7 +55,7 @@ class UserRankTypeController extends BaseAdminController {
 		$userRankType['name'] = Filter::doFilter($_POST['points_name'], 'string');
 		$userRankType['code'] = Filter::doFilter($_POST['code'], 'string');
 		$userRankType['unit'] = Filter::doFilter($_POST['unit'], 'string');
-		$userRankType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$userRankType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$userRankType['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$userRankType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$userRankType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -93,7 +93,7 @@ class UserRankTypeController extends BaseAdminController {
 		$userRankType['name'] = Filter::doFilter($_POST['points_name'], 'string');
 		$userRankType['code'] = Filter::doFilter($_POST['code'], 'string');
 		$userRankType['unit'] = Filter::doFilter($_POST['unit'], 'string');
-		$userRankType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$userRankType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$userRankType['update_time'] = getGMTime();
 		$userRankType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$userRankType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

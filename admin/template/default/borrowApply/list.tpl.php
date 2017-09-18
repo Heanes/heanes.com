@@ -53,7 +53,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('repay_money_time', 'DESC');" title="点击对列表排序">还款时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">贷款申请时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">贷款申请时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">贷款更新时间<em class="triangle-up"></em></a>
@@ -91,7 +91,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $jiekuanApply['get_money_limit_time'];?></td>
 			<td style="text-align:center;"><?php echo to_date($jiekuanApply['get_money_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($jiekuanApply['repay_money_time']);?></td>
-			<td style="text-align:center;"><?php echo to_date($jiekuanApply['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($jiekuanApply['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($jiekuanApply['update_time']);?></td>
 			<td style="text-align:center;">
 				<?php if($jiekuan['status'] == "0"){ ?>

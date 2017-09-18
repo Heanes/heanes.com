@@ -24,7 +24,7 @@ defined('InHeanes') or exit('Access Invalid!');
 					<thead>
 					<tr>
 						<th>申请时间：</th>
-						<td colspan="2"><?php echo to_date($employeeApply['insert_time']); ?></td>
+						<td colspan="2"><?php echo to_date($employeeApply['create_time']); ?></td>
 					</tr>
 					</thead>
 					<tbody>

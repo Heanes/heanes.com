@@ -56,7 +56,7 @@ class DepartmentController extends BaseAdminController{
 		$newDepartment['pid']=Filter::doFilter($_POST['department_pid'],'string');
 		$newDepartment['order']=Filter::doFilter($_POST['department_order'],'string');
 		$newDepartment['english_name']=Filter::doFilter($_POST['department_english_name'],'string');
-		$newDepartment['insert_time']=to_timespan(Filter::doFilter($_POST['department_insert_time'],'string'));
+		$newDepartment['create_time']=to_timespan(Filter::doFilter($_POST['department_create_time'],'string'));
 		$newDepartment['update_time']=to_timespan(Filter::doFilter($_POST['department_update_time'],'string'));
 		$newDepartment['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newDepartment['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -94,7 +94,7 @@ class DepartmentController extends BaseAdminController{
 		//$newDepartment['pid']=Filter::doFilter($_POST['department_pid'],'string');
 		$newDepartment['order']=Filter::doFilter($_POST['department_order'],'string');
 		$newDepartment['english_name']=Filter::doFilter($_POST['department_english_name'],'string');
-		$newDepartment['insert_time']=to_timespan(Filter::doFilter($_POST['department_insert_time'],'string'));
+		$newDepartment['create_time']=to_timespan(Filter::doFilter($_POST['department_create_time'],'string'));
 		$newDepartment['update_time']=getGMTime();
 		$newDepartment['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newDepartment['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

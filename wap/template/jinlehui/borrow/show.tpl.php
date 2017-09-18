@@ -100,7 +100,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<!-- 3.1贷款申请进度 -->
 			<?php foreach ($output['borrowApplyLog'] as $key => $borrowApply) { ?>
 				<tr>
-					<td class="borrow-log-time"><?php echo to_date($borrowApply['insert_time']); ?></td>
+					<td class="borrow-log-time"><?php echo to_date($borrowApply['create_time']); ?></td>
 					<td><i class="order-finish"></i></td>
 					<td>
 						<?php if ($borrowApply['status'] == 1) { ?>完成资料审核<?php } ?>
@@ -145,37 +145,37 @@ defined('InHeanes') or exit('Access Invalid!');
 			<?php foreach ($output['borrowProgressLog'] as $key => $borrowProgress) { ?>
 				<?php if ($borrowProgress['status'] == 1) { ?>
 					<tr>
-						<td class="borrow-log-time"><?php echo to_date($borrowProgress['insert_time']); ?></td>
+						<td class="borrow-log-time"><?php echo to_date($borrowProgress['create_time']); ?></td>
 						<td><i class="order-finish"></i></td>
 						<td>下户</td>
 					</tr>
 				<?php } elseif ($borrowProgress['status'] == 2) { ?>
 					<tr>
-						<td><?php echo to_date($borrowProgress['insert_time']); ?></td>
+						<td><?php echo to_date($borrowProgress['create_time']); ?></td>
 						<td><i class="order-finish"></i></td>
 						<td>评级</td>
 					</tr>
 				<?php } elseif ($borrowProgress['status'] == 3) { ?>
 					<tr>
-						<td><?php echo to_date($borrowProgress['insert_time']); ?></td>
+						<td><?php echo to_date($borrowProgress['create_time']); ?></td>
 						<td><i class="order-finish"></i></td>
 						<td>做卷</td>
 					</tr>
 				<?php } elseif ($borrowProgress['status'] == 4) { ?>
 					<tr>
-						<td><?php echo to_date($borrowProgress['insert_time']); ?></td>
+						<td><?php echo to_date($borrowProgress['create_time']); ?></td>
 						<td><i class="order-finish"></i></td>
 						<td>资料审核</td>
 					</tr>
 				<?php } elseif ($borrowProgress['status'] == 5) { ?>
 					<tr>
-						<td><?php echo to_date($borrowProgress['insert_time']); ?></td>
+						<td><?php echo to_date($borrowProgress['create_time']); ?></td>
 						<td><i class="order-finish"></i></td>
 						<td>批贷函</td>
 					</tr>
 				<?php } elseif ($borrowProgress['status'] == 6) { ?>
 					<tr>
-						<td><?php echo to_date($borrowProgress['insert_time']); ?></td>
+						<td><?php echo to_date($borrowProgress['create_time']); ?></td>
 						<td><i class="order-finish"></i></td>
 						<td>贷后管理（开始放款）</td>
 					</tr>

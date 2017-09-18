@@ -56,7 +56,7 @@ class UserAttributeController extends BaseAdminController {
 		$newUserFields['input_type'] = Filter::doFilter($_POST['input_type'], 'string');
 		$newUserFields['add_show'] = Filter::doFilter($_POST['add_show'], 'integer');
 		$newUserFields['is_required'] = Filter::doFilter($_POST['is_required'], 'integer');
-		$newUserFields['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newUserFields['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newUserFields['update_time'] = getGMTime();
 		$newUserFields['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$userFieldsModel = Model('user_fields');
@@ -94,7 +94,7 @@ class UserAttributeController extends BaseAdminController {
 		$newUserFields['input_type'] = Filter::doFilter($_POST['input_type'], 'string');
 		$newUserFields['add_show'] = Filter::doFilter($_POST['add_show'], 'integer');
 		$newUserFields['is_required'] = Filter::doFilter($_POST['is_required'], 'integer');
-		$newUserFields['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newUserFields['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newUserFields['update_time'] = getGMTime();
 		$newUserFields['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$where = "`id`=$id";

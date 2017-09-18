@@ -69,7 +69,7 @@ class BorrowProgressController extends BaseAdminController{
 		$newBorrowProgress['jk_id']=Filter::doFilter($_POST['jk_id'],'string');
 		$newBorrowProgress['actor_user_id']=Filter::doFilter($_POST['actor_user_id'],'string');
 		$newBorrowProgress['reason']=Filter::doFilter($_POST['reason'],'string');
-		$newBorrowProgress['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newBorrowProgress['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newBorrowProgress['status']=Filter::doFilter($_POST['status'],'string');
 		$newBorrowProgress['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newBorrowProgress['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -108,7 +108,7 @@ class BorrowProgressController extends BaseAdminController{
 		$newBorrowProgress['jk_id']=Filter::doFilter($_POST['jk_id'],'string');
 		$newBorrowProgress['actor_user_id']=Filter::doFilter($_POST['actor_user_id'],'string');
 		$newBorrowProgress['reason']=Filter::doFilter($_POST['reason'],'string');
-		$newBorrowProgress['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newBorrowProgress['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newBorrowProgress['status']=Filter::doFilter($_POST['status'],'string');
 		$newBorrowProgress['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newBorrowProgress['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

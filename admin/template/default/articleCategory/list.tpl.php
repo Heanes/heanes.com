@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('is_enable', 'DESC');" title="点击对列表排序">是否显示<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
 			</th>
 			<th style="width: auto;">
 				<a href="javascript:listTable.sort('article_count', 'DESC');" title="点击对列表排序">分类下文章数<em class="triangle-up"></em></a>
@@ -54,7 +54,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=articleCategory&op=edit&id=<?php echo $articleCategory['id'];?>"><?php echo $articleCategory['name'];?></a></td>
 			<td style="text-align:center;"><?php echo $articleCategory['user_role_name'];?></td>
 			<td style="text-align:center;"><?php echo $articleCategory['is_enable']==1?'显示':'不显示';?></td>
-			<td style="text-align:center;"><?php echo to_date($articleCategory['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($articleCategory['create_time']);?></td>
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=article&op=list&category_id=<?php echo $articleCategory['id'];?>"><?php echo $articleCategory['article_count'];?></a></td>
 			<td style="text-align:center;">
 				<a href="<?php echo BASE_URL;?>index.php?act=articleCategory&op=edit&id=<?php echo $articleCategory['id'];?>" class="btn btn-mini">编辑</a>

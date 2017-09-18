@@ -35,7 +35,7 @@ class ArticleCommentController extends BaseWapController{
 		$newCommentArray['article_id'] = Filter::doFilter($_REQUEST['article_id'], 'integer');;
 		$newCommentArray['content'] = Filter::doFilter($_POST['comment_content'], 'string');
 		$newCommentArray['user_id'] = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
-		$newCommentArray['insert_time'] = getGMTime();
+		$newCommentArray['create_time'] = getGMTime();
 		$newCommentArray['ip'] = get_client_ip();
 		$location=get_ip_location(get_client_ip(),'taobao');
 		$newCommentArray['location'] = $location['data']['region'].' '.$location['data']['city'];
@@ -88,7 +88,7 @@ class ArticleCommentController extends BaseWapController{
 		$newArticleCommentJudge['reason'] = Filter::doFilter($_POST['reason'], 'string');
 		$newArticleCommentJudge['user_id'] = isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
 		$newArticleCommentJudge['user_ip'] = get_client_ip();
-		$newArticleCommentJudge['insert_time'] = getGMTime();
+		$newArticleCommentJudge['create_time'] = getGMTime();
 		$findArticleCommentJudge['where'] = "`article_comment_id`='".$newArticleCommentJudge['article_comment_id']
 			."' AND `user_id`='".$newArticleCommentJudge['user_id']
 			."' AND `type`='".$newArticleCommentJudge['type']

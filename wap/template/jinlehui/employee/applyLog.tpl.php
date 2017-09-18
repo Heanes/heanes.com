@@ -21,14 +21,14 @@ defined('InHeanes') or exit('Access Invalid!');
 			</thead>
 			<tbody>
 			<tr>
-				<td><?php echo to_date($output['employee']['insert_time']); ?></td>
+				<td><?php echo to_date($output['employee']['create_time']); ?></td>
 				<td><i class="order-finish"></i></td>
 				<td>开始申请</td>
 			</tr>
 			<!-- 申请记录 -->
 			<?php foreach ($output['employeeApplyLog'] as $key => $employeeApply) { ?>
 				<tr>
-					<td><?php echo to_date($employeeApply['insert_time']); ?></td>
+					<td><?php echo to_date($employeeApply['create_time']); ?></td>
 					<td><i class="order-finish"></i></td>
 					<td>
 						<?php if ($borrowApply['status'] == 1) { ?>完成资料审核<?php } ?>

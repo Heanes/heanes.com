@@ -146,7 +146,7 @@
 				<th>阅读密码</th>
 				<td><input type="password" name="pwd" value="" style="width:60%;height:30px;margin:0;"/></td>
 				<th>文章创建时间</th>
-				<td><input type="text" name="article_insert_time" id="article_insert_time1" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="article_create_time" id="article_create_time1" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			</tr>
 			<tr>
 				<th>文章更新时间</th>

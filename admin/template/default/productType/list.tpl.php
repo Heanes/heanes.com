@@ -29,7 +29,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('name', 'DESC');" title="点击对列表排序">类型名称<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -52,7 +52,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><input name="check" type="checkbox"></td>
 			<td style="text-align:center;"><?php echo $productType['id'];?></td>
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=ProductType&op=edit&id=<?php echo $productType['id'];?>"><?php echo $productType['name'];?></a></td>
-			<td style="text-align:center;"><?php echo to_date($productType['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($productType['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($productType['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $productType['is_enable']==1?'显示':'不显示';?></td>
 			<td style="text-align:center;"><?php echo $productType['is_delete']==1?'是':'否';?></td>

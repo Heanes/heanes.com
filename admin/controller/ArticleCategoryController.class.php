@@ -105,7 +105,7 @@ class ArticleCategoryController extends BaseAdminController{
 		$newArticleCategory['user_rank']=Filter::doFilter($_POST['user_rank'],'string');
 		$pwd=Filter::doFilter($_POST['pwd'],'string');
 		$newArticleCategory['pwd'] = md5($pwd);
-		$newArticleCategory['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newArticleCategory['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newArticleCategory['update_time']=to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newArticleCategory['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newArticleCategory['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -162,7 +162,7 @@ class ArticleCategoryController extends BaseAdminController{
 		$newArticleCategory['user_rank']=Filter::doFilter($_POST['user_rank'],'string');
 		$pwd=Filter::doFilter($_POST['pwd'],'string');
 		$newArticleCategory['pwd'] = md5($pwd);
-		$newArticleCategory['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newArticleCategory['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newArticleCategory['update_time']=getGMTime();
 		$newArticleCategory['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newArticleCategory['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

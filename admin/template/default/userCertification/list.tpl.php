@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('message', 'DESC');" title="点击对列表排序">申请审核留言<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">申请添加时间<em class="triangle-down"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">申请添加时间<em class="triangle-down"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-down"></em></a>
@@ -57,7 +57,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=UserCertification&op=edit&id=<?php echo $Usercertification['id'];?>"><?php echo $Usercertification['user_name'];?></a></td>
 			<td style="text-align:center;"><?php echo $Usercertification['type_name'];?></td>
 			<td style="text-align:center;"><?php echo $Usercertification['message'];?></td>
-			<td style="text-align:center;"><?php echo to_date($Usercertification['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($Usercertification['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($Usercertification['update_time']);?></td>
 			<td style="text-align:center;">
 				<?php if($Usercertification['status'] == "0"){ ?>

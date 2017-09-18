@@ -51,7 +51,7 @@
 			<tr>
 			<tr>
 				<th>导航创建时间</th>
-				<td><input type="text" name="insert_time" id="navigationWap_insert_time1" value="<?php echo to_date($output['navigationWap']['insert_time']);?>" placeholder="选择创建时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="create_time" id="navigationWap_create_time1" value="<?php echo to_date($output['navigationWap']['create_time']);?>" placeholder="选择创建时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 				<th>导航更新时间</th>
 				<td><input type="text" name="update_time" id="navigationWap_update_time2" value="<?php echo to_date(getGMTime());?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			</tr>

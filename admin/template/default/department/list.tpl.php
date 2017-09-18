@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('is_enable', 'DESC');" title="点击对列表排序">显示状态<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -54,7 +54,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=department&op=edit&id=<?php echo $department['id'];?>"><?php echo $department['name'];?></a></td>
 			<td style="text-align:center;"><?php echo $department['english_name'];?></td>
 			<td style="text-align:center;"><?php echo $department['is_enable']==1?'显示':'不显示';?></td>
-			<td style="text-align:center;"><?php echo to_date($department['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($department['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($department['update_time']);?></td>
 			<td style="text-align:center;">
 				<a href="<?php echo BASE_URL;?>index.php?act=department&op=edit&id=<?php echo $department['id'];?>" class="btn btn-mini">编辑</a>

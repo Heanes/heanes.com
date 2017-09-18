@@ -82,7 +82,7 @@ class UserAttributeDataController extends BaseAdminController {
 		$newUserFieldsData['fields_id'] = Filter::doFilter($_POST['fields_id'], 'string');
 		$newUserFieldsData['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newUserFieldsData['fields_value'] = Filter::doFilter($_POST['fields_value'], 'string');
-		$newUserFieldsData['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newUserFieldsData['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newUserFieldsData['update_time'] = getGMTime();
 		$userFieldsDataModel = Model('user_fields_data');
 		if ($userFieldsDataModel->insert($newUserFieldsData)) {
@@ -127,7 +127,7 @@ class UserAttributeDataController extends BaseAdminController {
 		$newUserFieldsData['fields_id'] = Filter::doFilter($_POST['fields_id'], 'string');
 		$newUserFieldsData['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newUserFieldsData['fields_value'] = Filter::doFilter($_POST['fields_value'], 'string');
-		$newUserFieldsData['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newUserFieldsData['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newUserFieldsData['update_time'] = getGMTime();
 		$where = "`id`=$id";
 		$userFieldsDataModel = Model('user_fields_data');

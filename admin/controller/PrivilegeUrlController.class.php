@@ -68,7 +68,7 @@ class PrivilegeUrlController extends BaseAdminController{
 		$newprivilegeUrl['name'] = Filter::doFilter($_POST['privilege_name'], 'string');
 		$newprivilegeUrl['class'] = Filter::doFilter($_POST['class_name'], 'string');
 		$newprivilegeUrl['method'] = Filter::doFilter($_POST['method'], 'string');
-		$newprivilegeUrl['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newprivilegeUrl['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newprivilegeUrl['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newprivilegeUrl['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newprivilegeUrl['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -91,7 +91,7 @@ class PrivilegeUrlController extends BaseAdminController{
 		$newprivilegeUrl['name'] = Filter::doFilter($_POST['privilege_name'], 'string');
 		$newprivilegeUrl['class'] = Filter::doFilter($_POST['class_name'], 'string');
 		$newprivilegeUrl['method'] = Filter::doFilter($_POST['method'], 'string');
-		$newprivilegeUrl['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newprivilegeUrl['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newprivilegeUrl['update_time'] = getGMTime();
 		$newprivilegeUrl['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newprivilegeUrl['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

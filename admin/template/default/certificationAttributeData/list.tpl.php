@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('fields_value', 'DESC');" title="点击对列表排序">认证属性值<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-down"></em></a>
@@ -54,7 +54,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $certificationFieldsData['fields_name'];?></td>
 			<td style="text-align:center;"><?php echo $certificationFieldsData['user_name'];?></td>
 			<td style="text-align:center;"><?php echo $certificationFieldsData['fields_value'];?></td>
-			<td style="text-align:center;"><?php echo to_date($certificationFieldsData['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($certificationFieldsData['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($certificationFieldsData['update_time']);?></td>
 			<td style="text-align:center;">
 				<a href="<?php echo BASE_URL;?>index.php?act=CertificationAttributeData&op=edit&id=<?php echo $certificationFieldsData['id'];?>" class="btn btn-mini">编辑</a>

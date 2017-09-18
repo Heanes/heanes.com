@@ -77,7 +77,7 @@ class UserRankController extends BaseAdminController {
 		$userRank['user_id'] = Filter::doFilter($_POST['user_id'], 'integer');
 		$userRank['type_id'] = Filter::doFilter($_POST['type_id'], 'integer');
 		$userRank['value'] = Filter::doFilter($_POST['value'], 'string');
-		$userRank['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$userRank['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$userRank['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$userRankModel = Model('user_rank');
 		if ($userRankModel->insert($userRank)) {
@@ -122,7 +122,7 @@ class UserRankController extends BaseAdminController {
 		$userRank['user_id'] = Filter::doFilter($_POST['user_id'], 'integer');
 		$userRank['type_id'] = Filter::doFilter($_POST['type_id'], 'integer');
 		$userRank['value'] = Filter::doFilter($_POST['value'], 'string');
-		$userRank['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$userRank['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$userRank['update_time'] = getGMTime();
 		$where = "`id`=$id";
 		$userRankModel = Model('user_rank');

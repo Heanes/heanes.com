@@ -49,7 +49,7 @@
 		</tr>
 		<tr>
 			<th>导航创建时间</th>
-			<td><input type="text" name="navigation_insert_time" id="navigation_insert_time1" value="<?php echo to_date('now');?>" placeholder="选择创建时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="navigation_create_time" id="navigation_create_time1" value="<?php echo to_date('now');?>" placeholder="选择创建时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			<th>导航更新时间</th>
 			<td><input type="text" name="navigation_update_time" id="navigation_update_time2" value="<?php echo to_date('now');?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 		</tr>

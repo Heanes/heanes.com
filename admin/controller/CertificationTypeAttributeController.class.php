@@ -75,7 +75,7 @@ class CertificationTypeAttributeController extends BaseAdminController {
 		$newcertificationFields['value_unit'] = Filter::doFilter($_POST['value_unit'], 'string');
 		$newcertificationFields['add_show'] = Filter::doFilter($_POST['add_show'], 'string');
 		$newcertificationFields['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
-		$newcertificationFields['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newcertificationFields['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newcertificationFields['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newcertificationFields['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newcertificationFields['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -123,7 +123,7 @@ class CertificationTypeAttributeController extends BaseAdminController {
 		$newcertificationFields['value_unit'] = Filter::doFilter($_POST['value_unit'], 'string');
 		$newcertificationFields['add_show'] = Filter::doFilter($_POST['add_show'], 'string');
 		$newcertificationFields['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
-		$newcertificationFields['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newcertificationFields['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newcertificationFields['update_time'] = getGMTime();
 		$newcertificationFields['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newcertificationFields['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

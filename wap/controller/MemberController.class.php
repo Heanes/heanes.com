@@ -445,7 +445,7 @@ class MemberController extends BaseWapController{
 				'user_id'     => $newUserID,
 				'type_id'     => 1,
 				'value'       => 10,
-				'insert_time' => getGMTime(),
+				'create_time' => getGMTime(),
 			);
 			$flag = $userRankModel->insert($newUserRank);
 			$logged_user = array(
@@ -485,7 +485,7 @@ class MemberController extends BaseWapController{
 		$sentVerifyCode = $verify_code_model->getLastVerifyCode($user_mobile, $reg_verify_type, $time_limit);
 		if (!count($sentVerifyCode) > 0) {
 			$status = 0;//还未发送验证码
-		} else if ($mobile_verify_code == $sentVerifyCode[0]['verify_code'] && (getGMTime() - $sentVerifyCode[0]['insert_time']) / (60) < $time_limit) {
+		} else if ($mobile_verify_code == $sentVerifyCode[0]['verify_code'] && (getGMTime() - $sentVerifyCode[0]['create_time']) / (60) < $time_limit) {
 			$status = 1;//正确验证
 		} else {
 			foreach ($sentVerifyCode as $key => $value) {

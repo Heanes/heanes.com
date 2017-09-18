@@ -131,7 +131,7 @@ class EmployeeController extends BaseWapController{
 			$newEmployee['user_id'] = $uid_slave;
 			$newEmployee['department_id'] = $selfEmployeeInfo['department_id'];
 			$newEmployee['job_id'] = 1;
-			$newEmployee['insert_time'] = getGMTime();
+			$newEmployee['create_time'] = getGMTime();
 			$newEmployee['status'] = 0;
 			if ($employeeModel->insert($newEmployee)) {
 				showSuccess('添加成功');
@@ -248,7 +248,7 @@ class EmployeeController extends BaseWapController{
 				if ($isSubmitCertificationType) {
 					$newUserCertification['user_id'] = $newUserId;
 					$newUserCertification['type_id'] = $CertificationType['id'];
-					$newUserCertification['insert_time'] = getGMTime();
+					$newUserCertification['create_time'] = getGMTime();
 					$newUserCertification['message'] = Filter::doFilter($_POST['message'.$CertificationType['id']], 'string');
 					$newUserCertification['status'] = 0;
 					//添加认证记录
@@ -287,7 +287,7 @@ class EmployeeController extends BaseWapController{
 								} else {
 									$newUserCertificationFieldsData['fields_value'] = Filter::doFilter($_POST['certification_type_fields_value'.$userCertificationTypeFields['id']], 'string');
 								}
-								$newUserCertificationFieldsData['insert_time'] = getGMTime();
+								$newUserCertificationFieldsData['create_time'] = getGMTime();
 								$userCertificationFieldsDataModel->insert($newUserCertificationFieldsData);
 								unset($newUserCertificationFieldsData);
 							}
@@ -302,7 +302,7 @@ class EmployeeController extends BaseWapController{
 			if ($newUserBank['bank_no'] != '') {
 				$newUserBank['real_name'] = Filter::doFilter($_POST['bank_real_name'], 'string');
 				$newUserBank['bank_id'] = Filter::doFilter($_POST['bank_id'], 'string');
-				$newUserBank['insert_time'] = getGMTime();
+				$newUserBank['create_time'] = getGMTime();
 				//上传文件操作
 				$upload = new UploadFile();
 				//1.1先上传银行卡正面照片
@@ -337,7 +337,7 @@ class EmployeeController extends BaseWapController{
 					$newEmployee['user_id'] = $newUserId;
 					$newEmployee['department_id'] = $selfEmployeeInfo['department_id'];
 					$newEmployee['job_id'] = 1;
-					$newEmployee['insert_time'] = getGMTime();
+					$newEmployee['create_time'] = getGMTime();
 					$newEmployee['apply_status'] = 0;
 					if ($employeeModel->insert($newEmployee)) {
 						showSuccess('兼职添加成功！');
@@ -360,7 +360,7 @@ class EmployeeController extends BaseWapController{
 		$newEmployee['department_id'] = Filter::doFilter($_POST['department_id'], 'integer');
 		$newEmployee['job_id'] = Filter::doFilter($_POST['job_id'], 'integer');
 		$newEmployee['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
-		$newEmployee['insert_time'] = getGMTime();
+		$newEmployee['create_time'] = getGMTime();
 		$newEmployee['update_time'] = getGMTime();
 		$employeeModel = Model('Employee');
 		if ($employeeModel->insert($newEmployee)) {
@@ -513,7 +513,7 @@ class EmployeeController extends BaseWapController{
 		$newEmployeeApply['job_id'] = 1;//职位ID，后台配置申请职位的ID，目前死，作为快速开发
 		$newEmployeeApply['department_id'] = 0;//部门ID，自主申请的置为0，之后在审核操作时分配部门
 		$newEmployeeApply['apply_status'] = 0;
-		$newEmployeeApply['insert_time'] = getGMTime();
+		$newEmployeeApply['create_time'] = getGMTime();
 
 		try {
 			//更新用户表，更改实际姓名和年龄
@@ -545,7 +545,7 @@ class EmployeeController extends BaseWapController{
 				if ($newUserBank['bank_no'] != '') {
 					$newUserBank['real_name'] = Filter::doFilter($_POST['real_name'], 'string');
 					$newUserBank['bank_id'] = Filter::doFilter($_POST['bank_id'], 'integer');
-					$newUserBank['insert_time'] = getGMTime();
+					$newUserBank['create_time'] = getGMTime();
 					//@todo 用此方式创建不存在的目录，并不是最优解
 					$upload = new UploadFile();
 					$upload->setPath('user'.DS.$user_id.DS.'bank');
@@ -570,7 +570,7 @@ class EmployeeController extends BaseWapController{
 					//用户是否添加此认证
 					$newUserCertification['user_id'] = $user_id;
 					$newUserCertification['type_id'] = $CertificationType['id'];
-					$newUserCertification['insert_time'] = getGMTime();
+					$newUserCertification['create_time'] = getGMTime();
 					$newUserCertification['message'] = Filter::doFilter($_POST['message'.$CertificationType['id']], 'string');
 					$newUserCertification['status'] = 0;
 					//添加认证记录
@@ -594,7 +594,7 @@ class EmployeeController extends BaseWapController{
 								} else {
 									$newUserCertificationFieldsData['fields_value'] = Filter::doFilter($_POST['certification_type_fields_value'.$userCertificationTypeFields['id']], 'string');
 								}
-								$newUserCertificationFieldsData['insert_time'] = getGMTime();
+								$newUserCertificationFieldsData['create_time'] = getGMTime();
 								$userCertificationFieldsDataModel->insert($newUserCertificationFieldsData);
 								unset($newUserCertificationFieldsData);
 							}
@@ -638,7 +638,7 @@ class EmployeeController extends BaseWapController{
 		*/
 		$employeeModel = Model('employee');
 		$employeeApplyParam['where']="`is_enable`=1 AND `is_deleted`=0";
-		$employeeApplyParam['order']=array('insert_time'=>'DESC');
+		$employeeApplyParam['order']=array('create_time'=>'DESC');
 		//如果设置了查询状态
 		if (isset($_REQUEST['apply_status'])) {
 			$apply_status = intval(Filter::doFilter($_REQUEST['apply_status'], 'integer'));
@@ -796,7 +796,7 @@ class EmployeeController extends BaseWapController{
 			$newEmployeeStatus['actor_user_id'] = $user_id;
 			$newEmployeeStatus['apply_status'] = $check_status;
 			$newEmployeeStatus['check_status'] = Filter::doFilter($_POST['reason'], 'string');
-			$newEmployeeStatus['insert_time'] = getGMTime();
+			$newEmployeeStatus['create_time'] = getGMTime();
 			//更新用户权限
 			$employee=$employeeModel->getOneByID($id);
 			$userModel=Model('users');

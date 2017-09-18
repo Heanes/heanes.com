@@ -152,7 +152,7 @@ class WareController extends BaseAdminController {
 		$newWare['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$newWare['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newWare['pwd'] = md5($newWare['pwd']);
-		$newWare['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newWare['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newWare['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newWare['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newWare['description'] = Filter::doFilter($_POST['description'], 'string');
@@ -317,7 +317,7 @@ class WareController extends BaseAdminController {
 		$newWare['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$newWare['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newWare['pwd'] = md5($newWare['pwd']);
-		$newWare['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newWare['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newWare['update_time'] = getGMTime();
 		$newWare['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newWare['description'] = Filter::doFilter($_POST['description'], 'string');

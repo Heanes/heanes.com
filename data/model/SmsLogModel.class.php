@@ -35,7 +35,7 @@ class SmsLogModel extends BaseModel{
 	public function checkLastSendTime($receiver, $limit_time = '30min'){
 		$param['table'] = 'sms_log';
 		$param['where'] = "`receiver`='$receiver'";
-		$param['order'] = 'order by `insert_time`';
+		$param['order'] = 'order by `create_time`';
 		if (count(DB::getRow($param))) {
 			return false;
 		} else {
@@ -54,7 +54,7 @@ class SmsLogModel extends BaseModel{
 		$param['table'] = 'sms_log';
 		$param['where'] = "`receiver`='$receiver'";
 		$param['order'] = array(
-			'insert_time'=>'DESC',
+			'create_time'=>'DESC',
 		);
 		return DB::getRow($param);
 	}

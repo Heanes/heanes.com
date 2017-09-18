@@ -101,7 +101,7 @@ class MoneyController extends BaseWapController{
 				'money_want'  => Filter::doFilter($_POST['money_want'], 'string'),
 				'loan_type'   => Filter::doFilter($_POST['loan_type'], 'integer'),
 				'product_id'  => Filter::doFilter($_GET['id'], 'integer'),
-				'insert_time' => getGMTime(),
+				'create_time' => getGMTime(),
 				'user_ip'     => get_client_ip(),
 			);
 			$borrowQuickApplyModel = Model('money_quick_apply');
@@ -186,7 +186,7 @@ class MoneyController extends BaseWapController{
 			if ($isSubmitCertificationType) {
 				$newUserCertification['user_id'] = $user_id;
 				$newUserCertification['type_id'] = $CertificationType['id'];
-				$newUserCertification['insert_time'] = getGMTime();
+				$newUserCertification['create_time'] = getGMTime();
 				$newUserCertification['message'] = Filter::doFilter($_POST['message'.$CertificationType['id']], 'string');
 				$newUserCertification['status'] = 0;
 				//添加认证记录
@@ -210,7 +210,7 @@ class MoneyController extends BaseWapController{
 							} else {
 								$newUserCertificationFieldsData['fields_value'] = Filter::doFilter($_POST['certification_type_fields_value'.$userCertificationTypeFields['id']], 'string');
 							}
-							$newUserCertificationFieldsData['insert_time'] = getGMTime();
+							$newUserCertificationFieldsData['create_time'] = getGMTime();
 							$userCertificationFieldsDataModel->insert($newUserCertificationFieldsData);
 							unset($newUserCertificationFieldsData);
 						}
@@ -232,7 +232,7 @@ class MoneyController extends BaseWapController{
 			if ($isHaveProperty == 1) {
 				$newUserProperty['user_id'] = $user_id;
 				$newUserProperty['property_id'] = $property['id'];
-				$newUserProperty['insert_time'] = getGMTime();
+				$newUserProperty['create_time'] = getGMTime();
 				if ($userPropertyModel->insert($newUserProperty)) {
 					//获取要添加字段
 					$propertyFieldsModel = Model('property_fields');
@@ -254,7 +254,7 @@ class MoneyController extends BaseWapController{
 							} else {
 								$newUserPropertyFieldsData['fields_value'] = Filter::doFilter($_POST['property_fields_value'.$propertyFields['id']], 'string');
 							}
-							$newUserPropertyFieldsData['insert_time'] = getGMTime();
+							$newUserPropertyFieldsData['create_time'] = getGMTime();
 							$UserPropertyFieldsDataModel->insert($newUserPropertyFieldsData);
 							unset($newUserPropertyFieldsData);
 						}
@@ -270,7 +270,7 @@ class MoneyController extends BaseWapController{
 			'usage_info'   => Filter::doFilter($_POST['usage_info'], 'string'),
 			'total'        => Filter::doFilter($_POST['total'], 'integer'),
 			'year_limit'   => Filter::doFilter($_POST['year_limit'], 'integer'),
-			'insert_time'  => getGMTime(),
+			'create_time'  => getGMTime(),
 			'apply_time'   => getGMTime(),
 			'apply_status' => 0,
 		);
@@ -304,12 +304,12 @@ class MoneyController extends BaseWapController{
 		}
 		$sms_log_model = Model('SmsLog');
 		$last_send_sms = $sms_log_model->getLastSend($user_mobile);
-		if ((getGMTime() - $last_send_sms['insert_time']) / (60) > 1) {
+		if ((getGMTime() - $last_send_sms['create_time']) / (60) > 1) {
 			//生成验证码相关数据
 			$verify_data['verify_code'] = rand(111111, 999999);
 			$verify_data['receiver'] = $user_mobile;
 			$verify_data['type'] = VERIFY_MOBILE;
-			$verify_data['insert_time'] = getGMTime();
+			$verify_data['create_time'] = getGMTime();
 			$verify_data['client_ip'] = get_client_ip();
 			$verifyCodeModel = Model('verify_code');
 			try {
@@ -373,7 +373,7 @@ class MoneyController extends BaseWapController{
 		$sentVerifyCode = $verify_code_model->getLastVerifyCode($user_mobile, $reg_verify_type, $time_limit);
 		if (!count($sentVerifyCode) > 0) {
 			$status = 0;//还未发送验证码
-		} else if ($mobile_verify_code == $sentVerifyCode[0]['verify_code'] && (getGMTime() - $sentVerifyCode[0]['insert_time']) / (60) < $time_limit) {
+		} else if ($mobile_verify_code == $sentVerifyCode[0]['verify_code'] && (getGMTime() - $sentVerifyCode[0]['create_time']) / (60) < $time_limit) {
 			$status = 1;//正确验证
 		} else {
 			foreach ($sentVerifyCode as $key => $value) {

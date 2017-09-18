@@ -81,7 +81,7 @@ class SlideController extends BaseAdminController {
 		$newSlide['a_href']=Filter::doFilter($_POST['a_href'],'string');
 		$newSlide['a_target']=Filter::doFilter($_POST['a_target'],'integer');
 		$newSlide['title']=Filter::doFilter($_POST['title'],'string');
-		$newSlide['insert_time']=to_timespan(Filter::doFilter($_POST['slide_insert_time'],'string'));
+		$newSlide['create_time']=to_timespan(Filter::doFilter($_POST['slide_create_time'],'string'));
 		$newSlide['update_time']=to_timespan(Filter::doFilter($_POST['slide_update_time'],'string'));
 		$newSlide['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newSlide['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -108,7 +108,7 @@ class SlideController extends BaseAdminController {
 		$newSlide['a_href']=Filter::doFilter($_POST['a_href'],'string');
 		$newSlide['a_target']=Filter::doFilter($_POST['a_target'],'integer');
 		$newSlide['title']=Filter::doFilter($_POST['title'],'string');
-		$newSlide['insert_time']=to_timespan(Filter::doFilter($_POST['slide_insert_time'],'string'));
+		$newSlide['create_time']=to_timespan(Filter::doFilter($_POST['slide_create_time'],'string'));
 		$newSlide['update_time']=getGMTime();
 		$newSlide['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newSlide['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

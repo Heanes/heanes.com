@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('value', 'DESC');" title="点击对列表排序">积分个数<em class="triangle-up"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -54,7 +54,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=UserRank&op=edit&id=<?php echo $userRank['id'];?>"><?php echo $userRank['user_name'];?></a></td>
 			<td style="text-align:center;"><?php echo $userRank['type_name'];?></td>
 			<td style="text-align:center;"><?php echo $userRank['value'];?></td>
-			<td style="text-align:center;"><?php echo to_date($userRank['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($userRank['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($userRank['update_time']);?></td>
 			<td style="text-align:center;">
 				<a href="<?php echo BASE_URL;?>index.php?act=UserRank&op=edit&id=<?php echo $userRank['id'];?>" class="btn btn-mini">编辑</a>

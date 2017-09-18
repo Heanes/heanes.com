@@ -9,7 +9,7 @@ set FOREIGN_KEY_CHECKS = 0;
  */
 truncate `heanes.com`.`pre_bank`;
 insert into `heanes.com`.`pre_bank` (
-    `name`, `code`, `img_url`, `a_href`, `insert_time`, `update_time`)
+    `name`, `code`, `img_url`, `a_href`, `create_time`, `update_time`)
 values
     ('工商银行', 'ICBC', 'ICBC.jpg', 'http://www.icbc.com.cn/icbc/', '1436471342', '1436471342')
     , ('中国银行', 'BOC', 'BOC.jpg', 'http://www.boc.cn/', '1436471342', '1436471342')

@@ -48,7 +48,7 @@ defined('InHeanes') or exit('Access Invalid!');
 										</tr>
 										<tr>
 											<th>入职时间：</th>
-											<td><?php echo to_date($employee['insert_time']);?></td>
+											<td><?php echo to_date($employee['create_time']);?></td>
 										</tr>
 										</tbody>
 									</table>

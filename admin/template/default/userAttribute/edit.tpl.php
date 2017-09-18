@@ -32,7 +32,7 @@
 			</tr>
 			<tr>
 				<th>插入时间</th>
-				<td><input type="text" name="insert_time" value="<?php echo to_date($output['userFields']['insert_time']);?>"></td>
+				<td><input type="text" name="create_time" value="<?php echo to_date($output['userFields']['create_time']);?>"></td>
 				<th>更新时间</th>
 				<td><input type="text" name="update_time" id="reg_time1" value="<?php echo to_date(getGMTime());?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			</tr>

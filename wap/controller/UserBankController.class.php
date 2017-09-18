@@ -93,7 +93,7 @@ class UserBankController extends BaseWapController {
 				'bank_no'              => Filter::doFilter($_POST['bank_no'], 'string'),
 				'account_bank_address' => Filter::doFilter($_POST['account_bank_address'], 'string'),
 				'front_pic_src'        => Filter::doFilter($uploadFile['front_pic_src'], 'string'),
-				'insert_time'          => Filter::doFilter(getGMTime(), 'string'),
+				'create_time'          => Filter::doFilter(getGMTime(), 'string'),
 				'update_time'          => Filter::doFilter(getGMTime(), 'string'),
 
 			);
@@ -160,7 +160,7 @@ class UserBankController extends BaseWapController {
 			'bank_no'              => Filter::doFilter($_POST['bank_no'], 'string'),
 			'account_bank_address' => Filter::doFilter($_POST['account_bank_address'], 'string'),
 			'front_pic_src'        => Filter::doFilter($uploadFile['front_pic_src'], 'string'),
-			'insert_time'          => Filter::doFilter(getGMTime(), 'string'),
+			'create_time'          => Filter::doFilter(getGMTime(), 'string'),
 			'update_time'          => Filter::doFilter(getGMTime(), 'string'),
 		);
 		// echo "<pre>";

@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('reason', 'DESC');" title="点击对列表排序">处理原因<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">插入时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">插入时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('status', 'DESC');" title="点击对列表排序">贷款进行状态<em class="triangle-up"></em></a>
@@ -64,7 +64,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=borrowProgress&op=edit&id=<?php echo $borrowProgress['id'];?>"><?php echo $borrowProgress['jk_name'];?></a></td>
 			<td style="text-align:center;"><?php echo $borrowProgress['actor_name'];?></td>
 			<td style="text-align:center;"><?php echo $borrowProgress['reason'];?></td>
-			<td style="text-align:center;"><?php echo to_date($borrowProgress['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($borrowProgress['create_time']);?></td>
 			<td style="text-align:center;"><?php echo $borrowProgress['status'];?></td>
 			<td style="text-align:center;"><?php echo $borrowProgress['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $borrowProgress['is_delete']==1?'是':'否';?></td>

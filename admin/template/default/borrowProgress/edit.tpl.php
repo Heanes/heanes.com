@@ -23,7 +23,7 @@
 				<th>处理原因</th>
 				<td><input type="text" name="reason" value="<?php echo $output['borrowProgress']['reason'];?>" style="width:60%;"></td>
 				<th>进度插入时间</th>
-				<td><input type="text" name="insert_time" value="<?php echo to_date($output['borrowProgress']['insert_time']);?>" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"></td>
+				<td><input type="text" name="create_time" value="<?php echo to_date($output['borrowProgress']['create_time']);?>" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"></td>
 			</tr>
 			<tr>
 				<th>是否有效</th>

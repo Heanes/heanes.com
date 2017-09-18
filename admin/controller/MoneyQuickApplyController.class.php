@@ -94,7 +94,7 @@ class MoneyQuickApplyController extends BaseAdminController{
 		$newQuickApply['handle_time']=to_timespan(Filter::doFilter($_POST['handle_time'],'string'));
 		$newQuickApply['is_recycle']=Filter::doFilter($_POST['is_recycle'],'integer');
 		$newQuickApply['is_top']=Filter::doFilter($_POST['is_top'],'string');
-		$newQuickApply['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newQuickApply['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newQuickApply['update_time'] = getGMTime();
 		$newQuickApply['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newQuickApply['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

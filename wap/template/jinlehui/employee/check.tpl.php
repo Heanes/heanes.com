@@ -147,7 +147,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<tr>
 					<th>申请时间</th>
 					<td>
-						<span><?php echo to_date($output['employeeApplyInfo']['insert_time']);?></span>
+						<span><?php echo to_date($output['employeeApplyInfo']['create_time']);?></span>
 					</td>
 				</tr>
 				<tr>

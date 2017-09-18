@@ -47,7 +47,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('is_required', 'DESC');" title="点击对列表排序">是否必须的<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-down"></em></a>
@@ -76,7 +76,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $certificationType['point'];?></td>
 			<td style="text-align:center;"><?php echo $certificationType['add_show']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $certificationType['is_required']==1?'是':'否';?></td>
-			<td style="text-align:center;"><?php echo to_date($certificationType['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($certificationType['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($certificationType['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $certificationType['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $certificationType['is_delete']==1?'是':'否';?></td>

@@ -48,7 +48,7 @@ class BorrowController extends BaseAdminController{
 			$borrow_list["get_money_time"] = $borrowApply["get_money_time"];
 			$borrow_list["repay_money_time"] = $borrowApply["repay_money_time"];
 			$borrow_list["has_colleague"] = $borrowApply["has_colleague"];
-			$borrow_list["apply_time"] = $borrowApply["insert_time"];
+			$borrow_list["apply_time"] = $borrowApply["create_time"];
 			$borrow_list["apply_update_time"] = $borrowApply["update_time"];
 			$borrow_list["apply_status"] = $borrowApply["status"];
 			
@@ -140,7 +140,7 @@ class BorrowController extends BaseAdminController{
 		$newBorrow['apply_update_time']=to_timespan(Filter::doFilter($_POST['apply_update_time'],'string'));
 		$newBorrow['progress_status']=Filter::doFilter($_POST['progress_status'],'integer');
 		$newBorrow['progress_update_time']=to_timespan(Filter::doFilter($_POST['progress_update_time'],'integer'));
-		$newBorrow['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newBorrow['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newBorrow['update_time']=to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newBorrow['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newBorrow['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -208,7 +208,7 @@ class BorrowController extends BaseAdminController{
 		$newBorrow['apply_update_time']=to_timespan(Filter::doFilter($_POST['apply_update_time'],'string'));
 		$newBorrow['progress_status']=Filter::doFilter($_POST['progress_status'],'integer');
 		$newBorrow['progress_update_time']=to_timespan(Filter::doFilter($_POST['progress_update_time'],'integer'));
-		$newBorrow['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newBorrow['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newBorrow['update_time']=getGMTime();
 		$newBorrow['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newBorrow['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

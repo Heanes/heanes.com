@@ -41,7 +41,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('img_src', 'DESC');" title="点击对列表排序">链接图标地址<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">创建时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">创建时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -65,7 +65,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $navigation['a_title'];?></td>
 			<td style="text-align:center;"><?php echo $navigation['a_target']==1?'新窗口':'原窗口';?></td>
 			<td style="text-align:center;"><?php echo $navigation['img_src'];?></td>
-			<td style="text-align:center;"><?php echo to_date($navigation['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($navigation['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($navigation['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $navigation['is_enable']==1?'显示':'不显示';?></td>
 			<td style="text-align:center;">

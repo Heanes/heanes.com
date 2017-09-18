@@ -72,7 +72,7 @@ defined('InHeanes') or exit('Access Invalid!');
 												</tr>
 												<tr>
 													<th>添加时间：</th>
-													<td><?php echo to_date($customer['insert_time']); ?></td>
+													<td><?php echo to_date($customer['create_time']); ?></td>
 												</tr>
 												</tbody>
 											</table>

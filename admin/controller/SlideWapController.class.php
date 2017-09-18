@@ -72,7 +72,7 @@ class SlideWapController extends BaseAdminController {
 		$newSlideWap['a_href']=Filter::doFilter($_POST['a_href'],'string');
 		$newSlideWap['a_target']=Filter::doFilter($_POST['a_target'],'integer');
 		$newSlideWap['title']=Filter::doFilter($_POST['title'],'string');
-		$newSlideWap['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newSlideWap['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newSlideWap['update_time']=to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newSlideWap['description']=Filter::doFilter($_POST['description'],'string');
 		$newSlideWap['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
@@ -99,7 +99,7 @@ class SlideWapController extends BaseAdminController {
 		$newSlideWap['a_href']=Filter::doFilter($_POST['a_href'],'string');
 		$newSlideWap['a_target']=Filter::doFilter($_POST['a_target'],'integer');
 		$newSlideWap['title']=Filter::doFilter($_POST['title'],'string');
-		$newSlideWap['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newSlideWap['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newSlideWap['update_time']=getGMTime();
 		$newSlideWap['description']=Filter::doFilter($_POST['description'],'string');
 		$newSlideWap['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');

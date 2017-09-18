@@ -43,7 +43,7 @@
 					</select>
 				</td>
 				<th>处理时间</th>
-				<td><input type="text" name="insert_time" value="<?php echo to_date($output['certificationCheck']['insert_time']);?>" placeholder="选择处理时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="create_time" value="<?php echo to_date($output['certificationCheck']['create_time']);?>" placeholder="选择处理时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			</tr>
 			<tr>
 				<th>操作留下的备注信息,留给系统查看</th>

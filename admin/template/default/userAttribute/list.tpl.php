@@ -38,7 +38,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('is_required', 'DESC');" title="点击对列表排序">是否必须的<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">插入时间<em class="triangle-up"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">插入时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -61,7 +61,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $userFields['input_type'];?></td>
 			<td style="text-align:center;"><?php echo $userFields['add_show']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $userFields['is_required']==1?'是':'否';?></td>
-			<td style="text-align:center;"><?php echo to_date($userFields['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($userFields['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($userFields['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $userFields['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;">

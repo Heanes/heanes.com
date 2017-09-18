@@ -99,7 +99,7 @@ class UserPrivilegeController extends BaseAdminController{
 	public function insertOp(){
 		$newuserPrivilege['privilege_id'] = Filter::doFilter($_POST['privilege_id'], 'string');
 		$newuserPrivilege['role_id'] = Filter::doFilter($_POST['role_id'], 'string');
-		$newuserPrivilege['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserPrivilege['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserPrivilege['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newuserPrivilege['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newuserPrivilege['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -120,7 +120,7 @@ class UserPrivilegeController extends BaseAdminController{
 		$id = Filter::doFilter($_POST['id'], 'integer');
 		$newuserPrivilege['privilege_id'] = Filter::doFilter($_POST['privilege_id'], 'string');
 		$newuserPrivilege['role_id'] = Filter::doFilter($_POST['role_id'], 'string');
-		$newuserPrivilege['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserPrivilege['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserPrivilege['update_time'] = getGMTime();
 		$newuserPrivilege['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newuserPrivilege['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

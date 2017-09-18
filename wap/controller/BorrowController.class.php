@@ -126,7 +126,7 @@ class BorrowController extends BaseWapController{
 			//1.先查找该用户的所有客户
 			$customerModel = Model('customer');
 			$customerParam['where'] = "`uid_master`='$user_id' AND `status`=1 AND `is_enable`=1 AND `is_deleted`=0";
-			$customerParam['order'] = array('insert_time' => 'DESC');
+			$customerParam['order'] = array('create_time' => 'DESC');
 			$customerList = $customerModel->getList($customerParam);
 			if (count($customerList)) {
 				$customerUserIdString = '';
@@ -177,7 +177,7 @@ class BorrowController extends BaseWapController{
 				'total'        => Filter::doFilter($_POST['total'], 'integer'),
 				'year_limit'   => Filter::doFilter($_POST['year_limit'], 'integer'),
 				'rate'         => Filter::doFilter($_POST['rate'], 'string'),
-				'insert_time'  => getGMTime(),
+				'create_time'  => getGMTime(),
 				'apply_time'  => getGMTime(),
 				'apply_status' => 0,
 			);
@@ -284,7 +284,7 @@ class BorrowController extends BaseWapController{
 				if ($isSubmitCertificationType) {
 					$newUserCertification['user_id'] = $newUserId;
 					$newUserCertification['type_id'] = $CertificationType['id'];
-					$newUserCertification['insert_time'] = getGMTime();
+					$newUserCertification['create_time'] = getGMTime();
 					$newUserCertification['message'] = Filter::doFilter($_POST['message'.$CertificationType['id']], 'string');
 					$newUserCertification['status'] = 0;
 					//添加认证记录
@@ -323,7 +323,7 @@ class BorrowController extends BaseWapController{
 								} else {
 									$newUserCertificationFieldsData['fields_value'] = Filter::doFilter($_POST['certification_type_fields_value'.$userCertificationTypeFields['id']], 'string');
 								}
-								$newUserCertificationFieldsData['insert_time'] = getGMTime();
+								$newUserCertificationFieldsData['create_time'] = getGMTime();
 								$userCertificationFieldsDataModel->insert($newUserCertificationFieldsData);
 								unset($newUserCertificationFieldsData);
 							}
@@ -345,7 +345,7 @@ class BorrowController extends BaseWapController{
 				if ($isHaveProperty == 1) {
 					$newUserProperty['user_id'] = $newUserId;
 					$newUserProperty['property_id'] = $property['id'];
-					$newUserProperty['insert_time'] = getGMTime();
+					$newUserProperty['create_time'] = getGMTime();
 					if ($userPropertyModel->insert($newUserProperty)) {
 						//获取要添加字段
 						$propertyFieldsModel = Model('property_fields');
@@ -367,7 +367,7 @@ class BorrowController extends BaseWapController{
 								} else {
 									$newUserPropertyFieldsData['fields_value'] = Filter::doFilter($_POST['property_fields_value'.$propertyFields['id']], 'string');
 								}
-								$newUserPropertyFieldsData['insert_time'] = getGMTime();
+								$newUserPropertyFieldsData['create_time'] = getGMTime();
 								$UserPropertyFieldsDataModel->insert($newUserPropertyFieldsData);
 								unset($newUserPropertyFieldsData);
 							}
@@ -385,7 +385,7 @@ class BorrowController extends BaseWapController{
 				//4.1.2 不是则插入客户关系
 				$newCustomer['uid_master'] = $user_id;
 				$newCustomer['uid_slave'] = $newUserId;
-				$newCustomer['insert_time'] = getGMTime();
+				$newCustomer['create_time'] = getGMTime();
 				$newCustomer['status'] = 0;
 				$newCustomer['apply_now'] = 1;
 				if ($customerModel->insert($newCustomer)) {
@@ -398,7 +398,7 @@ class BorrowController extends BaseWapController{
 						'total'        => Filter::doFilter($_POST['total'], 'integer'),
 						'year_limit'   => Filter::doFilter($_POST['year_limit'], 'integer'),
 						'rate'         => Filter::doFilter($_POST['rate'], 'string'),
-						'insert_time'  => getGMTime(),
+						'create_time'  => getGMTime(),
 						'apply_time'  => getGMTime(),
 						'apply_status' => 0,
 					);
@@ -586,7 +586,7 @@ class BorrowController extends BaseWapController{
 			$borrowApplyStatusLogModel = Model('customer_status_log');
 			$newBorrowApplyStatusLog['customer_id'] = $id;
 			$newBorrowApplyStatusLog['actor_user_id'] = $user_id;
-			$newBorrowApplyStatusLog['insert_time'] = getGMTime();
+			$newBorrowApplyStatusLog['create_time'] = getGMTime();
 			$newBorrowApplyStatusLog['status'] = $check_status_result;
 			$borrowApplyStatusLogModel->insert($newBorrowApplyStatusLog);
 			showSuccess('操作成功');
@@ -642,7 +642,7 @@ class BorrowController extends BaseWapController{
 			$keywords = Filter::doFilter($_GET['keywords'], 'string');
 			$borrowModel = Model('borrow');
 			$borrowParam['where'] = "`uid_master`='".$_SESSION['user_id']."'";
-			$borrowParam['order'] = array('insert_time' => 'DESC');
+			$borrowParam['order'] = array('create_time' => 'DESC');
 			$borrowList = $borrowModel->getList($borrowParam);
 			if (count($borrowList)) {
 				$borrowUserIdString=implode("','",array_column($borrowList,'uid_slave'));

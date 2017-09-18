@@ -69,7 +69,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<tr>
 				<th>入职时间</th>
 				<td>
-					<span><?php echo to_date($output['employee']['insert_time']); ?></span>
+					<span><?php echo to_date($output['employee']['create_time']); ?></span>
 				</td>
 			</tr>
 			<tr>

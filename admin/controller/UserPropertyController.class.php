@@ -83,7 +83,7 @@ class UserPropertyController extends BaseAdminController {
 		$newuserProperty['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newuserProperty['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newuserProperty['property_id'] = Filter::doFilter($_POST['property_id'], 'string');
-		$newuserProperty['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserProperty['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserProperty['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newuserProperty['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newuserProperty['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -130,7 +130,7 @@ class UserPropertyController extends BaseAdminController {
 		$newuserProperty['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newuserProperty['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newuserProperty['property_id'] = Filter::doFilter($_POST['property_id'], 'string');
-		$newuserProperty['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserProperty['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserProperty['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newuserProperty['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newuserProperty['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

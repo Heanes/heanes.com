@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('method', 'DESC');" title="点击对列表排序">方法名<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-down"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-down"></em></a>
@@ -60,7 +60,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=PrivilegeUrl&op=edit&id=<?php echo $privilegeUrl['id'];?>"><?php echo $privilegeUrl['name'];?></a></td>
 			<td style="text-align:center;"><?php echo $privilegeUrl['class'];?></td>
 			<td style="text-align:center;"><?php echo $privilegeUrl['method'];?></td>
-			<td style="text-align:center;"><?php echo to_date($privilegeUrl['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($privilegeUrl['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($privilegeUrl['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $privilegeUrl['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $privilegeUrl['is_delete']==1?'是':'否';?></td>

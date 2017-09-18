@@ -38,7 +38,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('a_title', 'DESC');" title="点击对列表排序">链接title<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -62,7 +62,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $friendLink['email'];?></td>
 			<td style="text-align:right;"><?php echo $friendLink['a_href'];?></td>
 			<td style="text-align:center;"><?php echo $friendLink['a_title'];?></td>
-			<td style="text-align:center;"><?php echo to_date($friendLink['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($friendLink['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($friendLink['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $friendLink['is_enable']==1?'启用':'不启用';?></td>
 			<td style="text-align:center;">

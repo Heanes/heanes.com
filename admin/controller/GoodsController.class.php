@@ -151,7 +151,7 @@ class GoodsController extends BaseAdminController {
 		$newGoods['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$newGoods['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newGoods['pwd'] = md5($newGoods['pwd']);
-		$newGoods['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newGoods['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newGoods['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newGoods['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newGoods['description'] = Filter::doFilter($_POST['description'], 'string');
@@ -316,7 +316,7 @@ class GoodsController extends BaseAdminController {
 		$newGoods['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$newGoods['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newGoods['pwd'] = md5($newGoods['pwd']);
-		$newGoods['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newGoods['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newGoods['update_time'] = getGMTime();
 		$newGoods['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newGoods['description'] = Filter::doFilter($_POST['description'], 'string');

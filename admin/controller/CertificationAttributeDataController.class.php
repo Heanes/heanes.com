@@ -84,7 +84,7 @@ class CertificationAttributeDataController extends BaseAdminController {
 		$newcertificationFieldsData['fields_id'] = Filter::doFilter($_POST['fields_id'], 'string');
 		$newcertificationFieldsData['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newcertificationFieldsData['fields_value'] = Filter::doFilter($_POST['fields_value'], 'string');
-		$newcertificationFieldsData['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newcertificationFieldsData['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newcertificationFieldsData['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$certificationFieldsDataModel = Model('user_certification_fields_data');
 		if ($certificationFieldsDataModel->insert($newcertificationFieldsData)) {
@@ -129,7 +129,7 @@ class CertificationAttributeDataController extends BaseAdminController {
 		$newcertificationFieldsData['fields_id'] = Filter::doFilter($_POST['fields_id'], 'string');
 		$newcertificationFieldsData['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newcertificationFieldsData['fields_value'] = Filter::doFilter($_POST['fields_value'], 'string');
-		$newcertificationFieldsData['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newcertificationFieldsData['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newcertificationFieldsData['update_time'] = getGMTime();
 		$where = "`id`=$id";
 		$certificationFieldsDataModel = Model('user_certification_fields_data');

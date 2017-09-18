@@ -44,7 +44,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('href_in_hover', 'DESC');" title="点击对列表排序">激活样式链接库<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">创建时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">创建时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -69,7 +69,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $navigationWap['img_src'];?></td>
 			<td style="text-align:center;"><?php echo $navigationWap['img_src_hover'];?></td>
 			<td style="text-align:center;"><?php echo $navigationWap['href_in_hover'];?></td>
-			<td style="text-align:center;"><?php echo to_date($navigationWap['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($navigationWap['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($navigationWap['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $navigationWap['is_enable']==1?'显示':'不显示';?></td>
 			<td style="text-align:center;">

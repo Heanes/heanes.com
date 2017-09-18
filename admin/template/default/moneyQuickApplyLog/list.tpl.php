@@ -36,7 +36,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('log_desc', 'DESC');" title="点击对列表排序">日志说明<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('is_enable', 'DESC');" title="点击对列表排序">是否有效<em class="triangle-down"></em></a>
@@ -70,7 +70,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			</td>
 			<td style="text-align:center;"><?php echo $moneyQuickApplyLog['handle_desc'];?></td>
 			<td style="text-align:center;"><?php echo $moneyQuickApplyLog['log_desc'];?></td>
-			<td style="text-align:center;"><?php echo to_date($moneyQuickApplyLog['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($moneyQuickApplyLog['create_time']);?></td>
 			<td style="text-align:center;"><?php echo $moneyQuickApplyLog['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $moneyQuickApplyLog['is_delete']==1?'是':'否';?></td>
 			<td style="text-align:center;">

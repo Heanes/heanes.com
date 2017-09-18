@@ -94,7 +94,7 @@ class UserBankController extends BaseAdminController {
 		$newuserBank['bank_id']=Filter::doFilter($_POST['bank_id'],'string');
 		$newuserBank['bank_no']=Filter::doFilter($_POST['bank_no'],'string');
 		$newuserBank['account_bank_address']=Filter::doFilter($_POST['account_bank_address'],'string');
-		$newuserBank['insert_time']=to_timespan(Filter::doFilter($_POST['userbank_insert_time'],'string'));
+		$newuserBank['create_time']=to_timespan(Filter::doFilter($_POST['userbank_create_time'],'string'));
 		$newuserBank['update_time']=to_timespan(Filter::doFilter($_POST['userbank_update_time'],'string'));
 		$newuserBank['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$userBankModel=Model('user_bank');
@@ -134,7 +134,7 @@ class UserBankController extends BaseAdminController {
 		$newuserBank['bank_id']=Filter::doFilter($_POST['bank_id'],'string');
 		$newuserBank['bank_no']=Filter::doFilter($_POST['bank_no'],'string');
 		$newuserBank['account_bank_address']=Filter::doFilter($_POST['account_bank_address'],'string');
-		$newuserBank['insert_time']=to_timespan(Filter::doFilter($_POST['userbank_insert_time'],'string'));
+		$newuserBank['create_time']=to_timespan(Filter::doFilter($_POST['userbank_create_time'],'string'));
 		$newuserBank['update_time']=getGMTime();
 		$newuserBank['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$where="`id`=$id";

@@ -37,12 +37,12 @@ class ArticleController extends BaseWapController{
 		//@TODO 要显示的分类，应从后台设置中取出
 		$articleCategoryModel = Model('article_category');
 		$articleCategoryListParam['where'] = "`is_enable`=1 AND `is_deleted`=0";
-		$articleCategoryListParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
+		$articleCategoryListParam['order']=array('order_number' => 'ASC','create_time'=>'DESC');
 		$articleCategoryList = $articleCategoryModel->getList($articleCategoryListParam);
 		Tpl::assign('articleCategoryList', $articleCategoryList);
 		$articleModel = Model('article');
 		$articleParam['where']="`is_enable`=1 AND `is_deleted`=0";
-		$articleParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
+		$articleParam['order']=array('order_number' => 'ASC','create_time'=>'DESC');
 		$html_title='文章列表';
 		if(isset($_GET['category']) && !empty($_GET['category'])){
 			$category=Filter::doFilter($_GET['category'],'string');
@@ -248,7 +248,7 @@ class ArticleController extends BaseWapController{
 					$result=array('status'=>-1,'msg'=>'抱歉，操作失败！');
 				}
 			}else{
-				$newWareCollect['insert_time']=getGMTime();
+				$newWareCollect['create_time']=getGMTime();
 				$newWareCollect['collect_time']=getGMTime();
 				if($articleCollectModel->insert($newWareCollect)){
 					$result=array('status'=>1,'msg'=>'加入收藏成功！');

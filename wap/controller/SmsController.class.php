@@ -40,12 +40,12 @@ class SmsController extends BaseWapController {
 		}
 		$sms_log_model=Model('SmsLog');
 		$last_send_sms=$sms_log_model->getLastSend($user_mobile);
-		if((getGMTime()-$last_send_sms['insert_time'])/(60)>1){
+		if((getGMTime()-$last_send_sms['create_time'])/(60)>1){
 			//生成验证码相关数据
 			$verify_data['verify_code'] = rand(111111, 999999);
 			$verify_data['receiver'] = $user_mobile;
 			$verify_data['type'] = VERIFY_MOBILE;
-			$verify_data['insert_time'] = getGMTime();
+			$verify_data['create_time'] = getGMTime();
 			$verify_data['client_ip'] = get_client_ip();
 			$verifyCodeModel=Model('verify_code');
 			try {

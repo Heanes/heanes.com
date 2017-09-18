@@ -59,7 +59,7 @@ class WareTypeController extends BaseAdminController {
 		//添加类型
 		$newwareType['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newwareType['name'] = Filter::doFilter($_POST['type_name'], 'string');
-		$newwareType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newwareType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newwareType['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newwareType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newwareType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -146,7 +146,7 @@ class WareTypeController extends BaseAdminController {
 		$id = Filter::doFilter($_POST['type_id'], 'integer');
 		$newwareType['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newwareType['name'] = Filter::doFilter($_POST['type_name'], 'string');
-		$newwareType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newwareType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newwareType['update_time'] = getGMTime();
 		$newwareType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newwareType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

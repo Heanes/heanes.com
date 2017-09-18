@@ -11,7 +11,7 @@ set FOREIGN_KEY_CHECKS = 0;
  */
 truncate `heanes.com`.`pre_admin_user`;
 insert into `heanes.com`.`pre_admin_user` (
-    `user_name`, `user_pwd`, `user_email`, `insert_time`)
+    `user_name`, `user_pwd`, `user_email`, `create_time`)
 values
     # admin - fg123456
     ('admin', 'd6f19b13cc75b70cabe99ca6d92e5de7', 'heanes@163.com', '1425922473')
@@ -115,7 +115,7 @@ values
 truncate `heanes.com`.`pre_navigation`;
 insert into `heanes.com`.`pre_navigation` (
     `parent_id`, `name`, `a_href`, `a_title`, `a_target`, `icon_class`, `img_src`, `img_src_hover`, `img_src_active`, `href_active_match_path`
-    , `style_class`, `style_class_hover`, `style_class_acitve`, `order_number`, `insert_time`, `create_user`
+    , `style_class`, `style_class_hover`, `style_class_acitve`, `order_number`, `create_time`, `create_user`
 )values
     ('0', '首页', '/', '首页', '_self', 'fa fa-home icon-nav icon-web-home', '', '', '', '', '', '', '', '1', '1467363203', '1')
     ,('0', '精选推荐', '/articleCategory/great.html', '精选推荐', '_blank', 'fa fa-modx icon-nav icon-great', '', '', '', '', '', '', '', '2', '1467363203', '1')
@@ -139,7 +139,7 @@ insert into `heanes.com`.`pre_article_category` (
     , `icon_class`, `img_src`, `img_src_hover`, `img_src_active`, `style_class`, `style_class_hover`, `style_class_acitve`
     , `seo_keywords`, `seo_description`, `description`
     , `user_role_id`, `user_rank`, `access_password`, `order_number`
-    , `insert_time`, `create_user`
+    , `create_time`, `create_user`
 )
 values
     (0, '技术专题', 'technique', 0, '', '技术专题，各种技术文章', '', '', '', '', '', '', '', '技术专题', '技术专题，钻研各类技术问题', '技术专题，钻研各类技术问题', 0, 0, '', 0, 1467363203, 1)
@@ -162,12 +162,40 @@ insert into `heanes.com`.`pre_article` (
     , `read_count`, `click_count`, `thumbs_up_count`, `collect_count`
     , `seo_title`, `seo_keywords`, `seo_description`
     , `user_role_id`, `user_rank`, `access_password`
-    , `order_number`, `insert_time`, `create_user`
+    , `order_number`, `create_time`, `create_user`
 )
 values
     (2, '你好世界', 'hello world', '', '1', '', 'Heanes', 1467363203, 'Heanes', 'heanes.com', '<style>.article-content h2.title-text{font-size:22px;padding:20px 0;}.article-content h3.title-text{padding:14px 0;text-indent:2em;}.article-content p{text-indent:2em;font-size:14px;}.article-content .placeholder{line-height:1.8em;}.article-content .placeholder:before{content:"章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容"}.article-content .placeholder.ph-large{height:400px;}.article-content .placeholder.ph-mini{height:50px;}</style><h2 class="title-text">第一章</h2><p class="placeholder ph-large">内容</p><h2 class="title-text">第二章</h2><p class="placeholder ph-mini"></p><h3 class="title-text">第二章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第二章第二节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第三章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第三节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第四章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第三节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第五章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第五章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第五章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第三节</h3><p class="placeholder ph-large">内容</p>', 'hello world', '', '', '', '你好世界', '', '', 1, 1, 0, 0, 0, 1, 0, 5, 12, 11, 0, 0, '你好世界', '你好世界', '你好世界', 0, 0, '', 0, 1467363203, '1')
 ;
 
+/**
+ * @doc 文章内容数据
+ * @author Heanes
+ * @time 2016-07-06 19:50:59 周三
+ */
+truncate `heanes.com`.`pre_article_content`;
+insert into `heanes.com`.`pre_article_content` (
+    `article_id`, `content`, `create_time`, `create_user`
+)
+values
+    (1, '<p>第一篇文章。</p>', 1467363203, 1)
+;
+
+/**
+ * @doc 文章标签库数据
+ * @author Heanes
+ * @time 2017-09-16 13:42:20 周六
+ */
+truncate `heanes.com`.`pre_article_tag_lib`;
+insert into `heanes.com`.`pre_article_tag_lib` (
+    `name`, `create_time`, `create_user`
+)
+values
+    ('后端', 1467363203, 1),
+    ('php', 1467363203, 1)
+;
+
+#================================================网站友情链接数据导入=============================================#
 /**
  * @doc 友情链接
  * @author Heanes
@@ -176,7 +204,7 @@ values
 truncate `heanes.com`.`pre_friend_link`;
 insert into `heanes.com`.`pre_friend_link`(
     name, email, a_href, a_title, a_target, img_src, img_title, description
-    , order_number, insert_time, create_user
+    , order_number, create_time, create_user
 )
 values
     ('津乐网', 'heanes.com', 'http://www.ejinle.com/', '津乐网', '0', '', '津乐网', '津乐网', 1, 1467363203, 1)

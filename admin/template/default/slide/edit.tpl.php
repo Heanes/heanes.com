@@ -34,7 +34,7 @@
 			</tr>
 			<tr>
 				<th>幻灯创建时间</th>
-				<td><input type="text" name="slide_insert_time" value="<?php echo to_date($output['slide']['insert_time']);?>" placeholder="选择创建时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="slide_create_time" value="<?php echo to_date($output['slide']['create_time']);?>" placeholder="选择创建时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 				<th>幻灯最后修改时间</th>
 				<td><input type="text" name="slide_update_time" value="<?php echo to_date(getGMTime());?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			</tr>

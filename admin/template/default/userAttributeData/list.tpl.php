@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('fields_value', 'DESC');" title="点击对列表排序">注册项值<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">注册时间<em class="triangle-up"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">注册时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -54,7 +54,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=UserAttributeData&op=edit&id=<?php echo $userFieldsData['id'];?>"><?php echo $userFieldsData['name'];?></a></td>
 			<td style="text-align:center;"><?php echo $userFieldsData['user_name'];?></td>
 			<td style="text-align:center;"><?php echo $userFieldsData['fields_value'];?></td>
-			<td style="text-align:center;"><?php echo to_date($userFieldsData['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($userFieldsData['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($userFieldsData['update_time']);?></td>
 			<td style="text-align:center;">
 				<a href="<?php echo BASE_URL;?>index.php?act=UserAttributeData&op=edit&id=<?php echo $userFieldsData['id'];?>" class="btn btn-mini">编辑</a>

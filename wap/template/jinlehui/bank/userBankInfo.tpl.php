@@ -28,7 +28,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			</tr>
 			<tr>
 				<th>添加时间：</th>
-				<td><?php echo to_date($output['userBank']['insert_time']); ?></td>
+				<td><?php echo to_date($output['userBank']['create_time']); ?></td>
 			</tr>
 			<tr>
 				<td colspan="2">

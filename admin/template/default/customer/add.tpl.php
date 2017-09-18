@@ -99,7 +99,7 @@
 				</select>
 			</td>
 			<th>插入时间</th>
-			<td><input type="text" name="customer_insert_time" id="customer_insert_time1" value="<?php echo to_date('now');?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="customer_create_time" id="customer_create_time1" value="<?php echo to_date('now');?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 		</tr>
 		<tr>
 			<th>更新时间</th>

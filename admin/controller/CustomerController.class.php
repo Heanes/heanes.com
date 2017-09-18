@@ -88,7 +88,7 @@ class CustomerController extends BaseAdminController{
 		}
 		$newCustomer['ship_type']=Filter::doFilter($_POST['ship_type'],'integer');
 		$newCustomer['status']=Filter::doFilter($_POST['status'],'integer');
-		$newCustomer['insert_time']=to_timespan(Filter::doFilter($_POST['customer_insert_time'],'string'));
+		$newCustomer['create_time']=to_timespan(Filter::doFilter($_POST['customer_create_time'],'string'));
 		$newCustomer['update_time']=to_timespan(Filter::doFilter($_POST['customer_update_time'],'string'));
 		$newCustomer['apply_now']=Filter::doFilter($_POST['apply_now'],'integer');
 		$newCustomer['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
@@ -153,7 +153,7 @@ class CustomerController extends BaseAdminController{
 		}
 		$newCustomer['ship_type']=Filter::doFilter($_POST['ship_type'],'integer');
 		$newCustomer['status']=Filter::doFilter($_POST['status'],'integer');
-		$newCustomer['insert_time']=to_timespan(Filter::doFilter($_POST['customer_insert_time'],'string'));
+		$newCustomer['create_time']=to_timespan(Filter::doFilter($_POST['customer_create_time'],'string'));
 		$newCustomer['update_time']=getGMTime();
 		$newCustomer['apply_now']=Filter::doFilter($_POST['apply_now'],'integer');
 		$newCustomer['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');

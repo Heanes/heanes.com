@@ -41,7 +41,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('account_bank_address', 'DESC');" title="点击对列表排序">开户行地点<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">上传时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">上传时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -65,7 +65,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $userBank['name'];?></td>
 			<td style="text-align:center;"><?php echo $userBank['bank_no'];?></td>
 			<td style="text-align:center;"><?php echo $userBank['account_bank_address'];?></td>
-			<td style="text-align:center;"><?php echo to_date($userBank['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($userBank['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($userBank['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $userBank['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;">

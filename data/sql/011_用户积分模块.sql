@@ -15,7 +15,7 @@ create table `pre_user_rank_type` (
     `order_number`  int unsigned default 0 comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `create_time`   int(10) unsigned default 0 comment '添加时间',
     `update_time`   int(10) unsigned default 0 comment '更新时间',
     `create_user`   int unsigned default 0 comment '创建人',
     `update_user`   int unsigned default 0 comment '更新人',
@@ -40,7 +40,7 @@ create table `pre_user_rank` (
     `value`         int unsigned default 0 comment '积分个数',
     `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '日志插入时间',
+    `create_time`   int(10) unsigned default 0 comment '日志插入时间',
     `update_time`   int(10) unsigned default 0 comment '日志更新时间',
     `create_user`   int unsigned default 0 comment '创建人',
     `update_user`   int unsigned default 0 comment '更新人',
@@ -64,7 +64,7 @@ create table `pre_user_rank_log` (
     `chang_sign`   tinyint unsigned default 0 comment '积分变更标识，1-增加，-1-减少',
     `value`        int default 0 comment '积分变更值',
     `change_thing` varchar(255) default '' comment '积分变更事件描述',
-    `insert_time`  int(10) unsigned default 0 comment '日志插入时间',
+    `create_time`  int(10) unsigned default 0 comment '日志插入时间',
     `create_user`  int unsigned default 0 comment '创建人',
     primary key (`id`)
 )

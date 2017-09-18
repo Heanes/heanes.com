@@ -347,7 +347,7 @@ class UserController extends BaseWapController{
 			if ($newUserBank['bank_no'] != '') {
 				$newUserBank['real_name'] = Filter::doFilter($_POST['bank_real_name'], 'string');
 				$newUserBank['bank_id'] = Filter::doFilter($_POST['bank_id'], 'string');
-				$newUserBank['insert_time'] = getGMTime();
+				$newUserBank['create_time'] = getGMTime();
 				//上传文件操作
 				$upload = new UploadFile();
 				//1.1先上传银行卡正面照片
@@ -404,7 +404,7 @@ class UserController extends BaseWapController{
 							} else {
 								$newUserPropertyFieldsData['fields_value'] = Filter::doFilter($_POST['fields_value'.$propertyFields['id']], 'string');
 							}
-							$newUserPropertyFieldsData['insert_time'] = getGMTime();
+							$newUserPropertyFieldsData['create_time'] = getGMTime();
 							if (!$userPropertyFieldsDataModel->insert($newUserPropertyFieldsData)) {
 								showError('抱歉，用户资产数据插入失败！');
 							}

@@ -55,7 +55,7 @@
 		</tr>
 		<tr>
 			<th>添加时间</th>
-			<td><input type="text" name="insert_time" id="insert_time1" value="<?php echo to_date($output['moneyQuickApplyLog_list']['insert_time']);?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="create_time" id="create_time1" value="<?php echo to_date($output['moneyQuickApplyLog_list']['create_time']);?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			<th>是否有效</th>
 			<td>
 				<input type="radio" name="is_enable" value="1" <?php if($output['moneyQuickApplyLog_list']['is_enable']==1){?>checked="checked" <?php }?>> 是

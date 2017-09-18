@@ -36,7 +36,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('status', 'DESC');" title="点击对列表排序">处理结果<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">处理时间<em class="triangle-down"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">处理时间<em class="triangle-down"></em></a>
 			</th>
 			<th>操作</th>
 		</tr>
@@ -64,7 +64,7 @@ defined('InHeanes') or exit('Access Invalid!');
 					<?php echo $certificationCheck['status'] = "未通过验证";?>
 				<?php } ?>
 			</td>
-			<td style="text-align:center;"><?php echo to_date($certificationCheck['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($certificationCheck['create_time']);?></td>
 			<td style="text-align:center;">
 				<a href="<?php echo BASE_URL;?>index.php?act=CertificationCheck&op=edit&id=<?php echo $certificationCheck['id'];?>" class="btn btn-mini">编辑</a>
 				<a href="javascript:del('user_certification_check_log', <?php echo $certificationCheck['id'];?>);" class="btn btn-mini btn-danger">删除</a>

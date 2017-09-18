@@ -62,7 +62,7 @@ class CertificationTypeController extends BaseAdminController {
 		$newcertificationType['point'] = Filter::doFilter($_POST['point'], 'string');
 		$newcertificationType['add_show'] = Filter::doFilter($_POST['add_show'], 'string');
 		$newcertificationType['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
-		$newcertificationType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newcertificationType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newcertificationType['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newcertificationType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newcertificationType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -107,7 +107,7 @@ class CertificationTypeController extends BaseAdminController {
 		$newcertificationType['point'] = Filter::doFilter($_POST['point'], 'string');
 		$newcertificationType['add_show'] = Filter::doFilter($_POST['add_show'], 'string');
 		$newcertificationType['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
-		$newcertificationType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newcertificationType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newcertificationType['update_time'] = getGMTime();
 		$newcertificationType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newcertificationType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

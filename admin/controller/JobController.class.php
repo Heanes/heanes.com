@@ -63,7 +63,7 @@ class JobController extends BaseAdminController{
 		$newJob['code'] = Filter::doFilter($_POST['job_code'], 'string'); //职位代码，一般即缩写
 		$newJob['description'] = Filter::doFilter($_POST['job_description'], 'string');
 		$newJob['order'] = Filter::doFilter($_POST['job_order'], 'string');
-		$newJob['insert_time'] = to_timespan(Filter::doFilter($_POST['job_insert_time'], 'string'));
+		$newJob['create_time'] = to_timespan(Filter::doFilter($_POST['job_create_time'], 'string'));
 		$newJob['update_time'] = to_timespan(Filter::doFilter($_POST['job_update_time'], 'string'));
 		$jobModel = Model('job');
 		if ($jobModel->insert($newJob)) {

@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<th>添加时间</th>
-				<td><input type="text" name="friendLinkapply_insert_time" id="friendLinkapply_insert_time1" value="<?php echo to_date($output['friendLinkApply']['insert_time']);?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="friendLinkapply_create_time" id="friendLinkapply_create_time1" value="<?php echo to_date($output['friendLinkApply']['create_time']);?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 				<th>申请状态</th>
 				<td>
 					<input type="radio" name="status" value="1" <?php if($output['friendLinkApply']['status']==1){?>checked="checked" <?php }?>> 是

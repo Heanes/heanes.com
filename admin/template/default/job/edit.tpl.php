@@ -31,10 +31,10 @@
 		</tr>
 		<tr>
 			<th>创建时间</th>
-			<td><input type="text" name="job_insert_time" id="job_insert_time1" value="<?php echo to_date($output['job']['insert_time']); ?>" placeholder="选择起始时间"
+			<td><input type="text" name="job_create_time" id="job_create_time1" value="<?php echo to_date($output['job']['create_time']); ?>" placeholder="选择起始时间"
 					   onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker" /></td>
 			<th>修改时间</th>
-			<td><input type="text" name="job_insert_time" id="job_insert_time2" value="<?php echo to_date(getGMTime()); ?>" placeholder="选择起始时间"
+			<td><input type="text" name="job_create_time" id="job_create_time2" value="<?php echo to_date(getGMTime()); ?>" placeholder="选择起始时间"
 					   onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker" /></td>
 		</tr>
 		<tr>

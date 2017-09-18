@@ -17,7 +17,7 @@ create table `pre_order_info` (
     `status`            tinyint default 0 comment '订单状态',
     `is_enable`         tinyint unsigned default 1 comment '是否启用',
     `is_deleted`        tinyint unsigned default 0 comment '是否删除',
-    `insert_time`       int(10) unsigned default 0 comment '添加时间',
+    `create_time`       int(10) unsigned default 0 comment '添加时间',
     `update_time`       int(10) unsigned default 0 comment '更新时间',
     `create_user`       int unsigned default 0 comment '创建人',
     `update_user`       int unsigned default 0 comment '更新人',
@@ -57,7 +57,7 @@ create table `pre_order_goods` (
     `goods_pwd`             varchar(64) default '' comment '查看密码',
     `is_enable`             tinyint unsigned default 1 comment '是否启用',
     `is_deleted`            tinyint unsigned default 0 comment '是否删除',
-    `insert_time`           int(10) unsigned default 0 comment '添加时间',
+    `create_time`           int(10) unsigned default 0 comment '添加时间',
     `update_time`           int(10) unsigned default 0 comment '更新时间',
     `create_user`           int unsigned default 0 comment '创建人',
     `update_user`           int unsigned default 0 comment '更新人',
@@ -82,7 +82,7 @@ create table `pre_order_act_log` (
     `reason`        text comment '操作原因',
     `description`   text comment '操作留下的备注信息',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `create_time`   int(10) unsigned default 0 comment '添加时间',
     `create_user`   int unsigned default 0 comment '创建人',
     primary key (`id`)
 )

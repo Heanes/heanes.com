@@ -174,7 +174,7 @@ class CustomerController extends BaseWapController{
 			//2、不是则询问是否申请为客户关系
 			$newCustomer['uid_slave'] = $uid_slave;
 			$newCustomer['uid_master'] = $user_id;
-			$newCustomer['insert_time'] = getGMTime();
+			$newCustomer['create_time'] = getGMTime();
 			$newCustomer['status'] = 0;
 			$newCustomer['apply_now'] = 1;
 			if ($customerModel->insert($newCustomer)) {
@@ -276,7 +276,7 @@ class CustomerController extends BaseWapController{
 				if ($isSubmitCertificationType) {
 					$newUserCertification['user_id'] = $newUserId;
 					$newUserCertification['type_id'] = $CertificationType['id'];
-					$newUserCertification['insert_time'] = getGMTime();
+					$newUserCertification['create_time'] = getGMTime();
 					$newUserCertification['message'] = Filter::doFilter($_POST['message'.$CertificationType['id']], 'string');
 					$newUserCertification['status'] = 0;
 					//添加认证记录
@@ -315,7 +315,7 @@ class CustomerController extends BaseWapController{
 								} else {
 									$newUserCertificationFieldsData['fields_value'] = Filter::doFilter($_POST['certification_type_fields_value'.$userCertificationTypeFields['id']], 'string');
 								}
-								$newUserCertificationFieldsData['insert_time'] = getGMTime();
+								$newUserCertificationFieldsData['create_time'] = getGMTime();
 								$userCertificationFieldsDataModel->insert($newUserCertificationFieldsData);
 								unset($newUserCertificationFieldsData);
 							}
@@ -337,7 +337,7 @@ class CustomerController extends BaseWapController{
 				if ($isHaveProperty == 1) {
 					$newUserProperty['user_id'] = $newUserId;
 					$newUserProperty['property_id'] = $property['id'];
-					$newUserProperty['insert_time'] = getGMTime();
+					$newUserProperty['create_time'] = getGMTime();
 					if ($userPropertyModel->insert($newUserProperty)) {
 						//获取要添加字段
 						$propertyFieldsModel = Model('property_fields');
@@ -374,7 +374,7 @@ class CustomerController extends BaseWapController{
 								} else {
 									$newUserPropertyFieldsData['fields_value'] = Filter::doFilter($_POST['property_fields_value'.$propertyFields['id']], 'string');
 								}
-								$newUserPropertyFieldsData['insert_time'] = getGMTime();
+								$newUserPropertyFieldsData['create_time'] = getGMTime();
 								$UserPropertyFieldsDataModel->insert($newUserPropertyFieldsData);
 								unset($newUserPropertyFieldsData);
 							}
@@ -392,7 +392,7 @@ class CustomerController extends BaseWapController{
 				//4.1.2 不是则插入客户关系
 				$newCustomer['uid_master'] = $user_id;
 				$newCustomer['uid_slave'] = $newUserId;
-				$newCustomer['insert_time'] = getGMTime();
+				$newCustomer['create_time'] = getGMTime();
 				$newCustomer['status'] = 0;
 				$newCustomer['apply_now'] = 1;
 				if ($customerModel->insert($newCustomer)) {
@@ -588,7 +588,7 @@ class CustomerController extends BaseWapController{
 			$customerStatusLogModel = Model('customer_status_log');
 			$newCustomerStatusLog['customer_id'] = $id;
 			$newCustomerStatusLog['actor_user_id'] = $user_id;
-			$newCustomerStatusLog['insert_time'] = getGMTime();
+			$newCustomerStatusLog['create_time'] = getGMTime();
 			$newCustomerStatusLog['status'] = $check_status_result;
 			$customerStatusLogModel->insert($newCustomerStatusLog);
 			$result = array(
@@ -632,7 +632,7 @@ class CustomerController extends BaseWapController{
 		$keywords = Filter::doFilter($_GET['keywords'], 'string');
 		$customerModel = Model('customer');
 		$customerParam['where'] = "`uid_master`='".$_SESSION['user_id']."'";
-		$customerParam['order'] = array('insert_time' => 'DESC');
+		$customerParam['order'] = array('create_time' => 'DESC');
 		$customerList = $customerModel->getList($customerParam);
 		if (count($customerList)) {
 			$customerUserIdString=implode("','",array_column($customerList,'uid_slave'));

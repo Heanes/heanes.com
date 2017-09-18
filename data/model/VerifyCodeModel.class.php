@@ -46,8 +46,8 @@ class VerifyCodeModel extends BaseModel {
 	public function getLastVerifyCode($receiver,$type=VERIFY_MOBILE,$time_limit=30){
 		$time_limit=getGMTime()-$time_limit*60;
 		$param['table']='verify_code';
-		$param['where']="`receiver`='$receiver' and `type`='$type' and `insert_time`>='$time_limit'";
-		$param['order']['insert_time']='DESC';
+		$param['where']="`receiver`='$receiver' and `type`='$type' and `create_time`>='$time_limit'";
+		$param['order']['create_time']='DESC';
 		return DB::select($param);
 	}
 }

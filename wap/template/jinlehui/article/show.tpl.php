@@ -19,7 +19,7 @@
 			<div class="article-info">
 				<p>人气：<?php echo $output['article']['click_count'];?> <a href="<?php echo CURRENT_URL;?>#comment-list" class="comment-num">评论：<?php echo $output['commentNum'];?></a></p>
 				<p>作者：<?php echo empty($output['article']['author'])?'admin':$output['article']['author'];?> 责编：<?php echo empty($output['article']['editor'])?'admin':$output['article']['editor'];?> </p>
-				<p><?php echo to_date($output['article']['insert_time']);?> 来源：<?php echo !empty($output['article']['origin_source'])?$output['article']['origin_source']:'原创';?></p>
+				<p><?php echo to_date($output['article']['create_time']);?> 来源：<?php echo !empty($output['article']['origin_source'])?$output['article']['origin_source']:'原创';?></p>
 			</div>
 			<!-- 文章主体 -->
 			<div class="article-content">
@@ -139,7 +139,7 @@
 							<span class="comment-user-avatar"><img src="<?php echo empty($comment['_user']['avatar_src'])? 'image/user-avatar/default.png':$comment['_user']['avatar_src'];?>"></span>
 							<span class="comment-user-name"><a href="<?php echo ($comment['user_id']!=0)?BASE_URL.'index.php?act=member&op=zone&id='.$comment['user_id']:'javascript:;';?>" class="user-name-a"><?php echo empty($comment['_user']['user_name'])?'游客':$comment['_user']['user_name']; ?></a></span>
 							<span class="comment-user-ip"><?php echo $comment['location']; ?></span>
-							<span><?php echo to_date($comment['insert_time']);?></span>
+							<span><?php echo to_date($comment['create_time']);?></span>
 							<span class="comment-floor"><a id="comment-floor-<?php echo $key+1;?>" class="comment-floor-a"><?php echo $key+1;?>楼</a></span>
 						</div>
 						<div class="comment-content">

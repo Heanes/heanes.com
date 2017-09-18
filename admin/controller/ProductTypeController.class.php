@@ -60,7 +60,7 @@ class ProductTypeController extends BaseAdminController {
 		//添加类型
 		$newProductType['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newProductType['name'] = Filter::doFilter($_POST['type_name'], 'string');
-		$newProductType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newProductType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newProductType['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newProductType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newProductType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -142,7 +142,7 @@ class ProductTypeController extends BaseAdminController {
 		$id = Filter::doFilter($_POST['type_id'], 'integer');
 		$newProductType['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newProductType['name'] = Filter::doFilter($_POST['type_name'], 'string');
-		$newProductType['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newProductType['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newProductType['update_time'] = getGMTime();
 		$newProductType['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newProductType['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

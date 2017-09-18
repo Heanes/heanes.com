@@ -45,7 +45,7 @@ defined('InHeanes') or exit('Access Invalid!');
 					<thead>
 					<tr>
 						<th>申请时间：</th>
-						<td colspan="4"><?php echo to_date($borrow['insert_time']); ?></td>
+						<td colspan="4"><?php echo to_date($borrow['create_time']); ?></td>
 					</tr>
 					</thead>
 					<tbody>

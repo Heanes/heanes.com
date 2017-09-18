@@ -98,7 +98,7 @@ class CertificationCheckController extends BaseAdminController {
 		$newcertificationCheck['actor_user_id'] = Filter::doFilter($_POST['actor_user_id'], 'string');
 		$newcertificationCheck['reason'] = Filter::doFilter($_POST['reason'], 'string');
 		$newcertificationCheck['status'] = Filter::doFilter($_POST['status'], 'string');
-		$newcertificationCheck['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newcertificationCheck['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newcertificationCheck['description'] = Filter::doFilter($_POST['description'], 'string');
 		$where = "`id`=$id";
 		$certificationCheckModel = Model('user_certification_check_log');

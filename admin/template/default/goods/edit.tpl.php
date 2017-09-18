@@ -135,7 +135,7 @@
 			</tr>
 			<tr>
 				<th>商品添加时间</th>
-				<td><input type="text" name="insert_time" value="<?php echo to_date($output['goods']['insert_time']);?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="create_time" value="<?php echo to_date($output['goods']['create_time']);?>" placeholder="选择添加时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 				<th>商品更新时间</th>
 				<td><input type="text" name="update_time" value="<?php echo to_date(getGMTime());?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"></td>
 			</tr>

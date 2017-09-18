@@ -38,7 +38,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('apply_status', 'DESC');" title="点击对列表排序">审核状态<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -74,7 +74,7 @@ defined('InHeanes') or exit('Access Invalid!');
 						<?php echo $employee['apply_status'] = "拒绝";?>
 					<?php } ?>
 				</td>
-				<td style="text-align:center;"><?php echo to_date($employee['insert_time']);?></td>
+				<td style="text-align:center;"><?php echo to_date($employee['create_time']);?></td>
 				<td style="text-align:center;"><?php echo to_date($employee['update_time']);?></td>
 				<td style="text-align:center;"><?php echo $employee['is_enable']==1?'有效':'无效';?></td>
 				<td style="text-align:center;"><?php echo $employee['is_delete']==1?'是':'否';?></td>

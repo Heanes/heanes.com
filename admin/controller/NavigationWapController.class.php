@@ -75,7 +75,7 @@ class NavigationWapController extends BaseAdminController {
 		$newNavigationWap['img_src']=Filter::doFilter($_POST['img_src'],'string');
 		$newNavigationWap['img_src_hover']=Filter::doFilter($_POST['img_src_hover'],'string');
 		$newNavigationWap['href_in_hover']=Filter::doFilter($_POST['href_in_hover'],'string');
-		$newNavigationWap['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newNavigationWap['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newNavigationWap['update_time']=to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newNavigationWap['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newNavigationWap['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -125,7 +125,7 @@ class NavigationWapController extends BaseAdminController {
 		$newNavigationWap['img_src']=Filter::doFilter($_POST['img_src'],'string');
 		$newNavigationWap['img_src_hover']=Filter::doFilter($_POST['img_src_hover'],'string');
 		$newNavigationWap['href_in_hover']=Filter::doFilter($_POST['href_in_hover'],'string');
-		$newNavigationWap['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newNavigationWap['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newNavigationWap['update_time']=getGMTime();
 		$newNavigationWap['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newNavigationWap['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

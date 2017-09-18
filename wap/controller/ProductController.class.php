@@ -95,7 +95,7 @@ class ProductController extends BaseWapController{
 		$productModel = Model('product');
 		$page=new Page('10');
 		$productParam['where']="`is_enable`=1 AND `is_deleted`=0";
-		$articleParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
+		$articleParam['order']=array('order_number' => 'ASC','create_time'=>'DESC');
 		if(isset($_GET['category']) && !empty($_GET['category'])){
 			$category=Filter::doFilter($_GET['category'],'string');
 			$productCategoryParam['where'] = "`id`='$category'";
@@ -265,7 +265,7 @@ class ProductController extends BaseWapController{
 					$result=array('status'=>-1,'msg'=>'抱歉，操作失败！');
 				}
 			}else{
-				$newProductCollect['insert_time']=getGMTime();
+				$newProductCollect['create_time']=getGMTime();
 				$newProductCollect['collect_time']=getGMTime();
 				if($productCollectModel->insert($newProductCollect)){
 					$result=array('status'=>1,'msg'=>'加入收藏成功！');

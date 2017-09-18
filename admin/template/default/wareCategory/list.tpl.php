@@ -41,7 +41,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('user_rank', 'DESC');" title="点击对列表排序">分类访问用户积分<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -68,7 +68,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $wareCategory['img_src'];?></td>
 			<td style="text-align:center;"><?php echo $wareCategory['user_role_name'];?></td>
 			<td style="text-align:center;"><?php echo $wareCategory['user_rank'];?></td>
-			<td style="text-align:center;"><?php echo to_date($wareCategory['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($wareCategory['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($wareCategory['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $wareCategory['is_enable']==1?'显示':'不显示';?></td>
 			<td style="text-align:center;"><?php echo $wareCategory['is_delete']==1?'是':'否';?></td>

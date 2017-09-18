@@ -61,7 +61,7 @@ class WareShopController extends BaseWapController{
 				//获取所有积分商品列表
 				$wareModel=Model('ware');
 				$wareParam['where']="`is_enable`=1 AND `is_deleted`=0";
-				$wareParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
+				$wareParam['order']=array('order_number' => 'ASC','create_time'=>'DESC');
 				$page=new Page('20');
 				$wareList=$wareModel->getList($wareParam,$page);
 				foreach ($wareList as $key=>$ware) {
@@ -81,7 +81,7 @@ class WareShopController extends BaseWapController{
 	public function listOp(){
 		$wareModel=Model('ware');
 		$wareParam['where']="`is_enable`=1 AND `is_deleted`=0";
-		$wareParam['order']=array('order_number' => 'ASC','insert_time'=>'DESC');
+		$wareParam['order']=array('order_number' => 'ASC','create_time'=>'DESC');
 		$wareList=$wareModel->getList($wareParam);
 		Tpl::assign('wareList',$wareList);
 		Tpl::assign('html_title','积分商品列表');
@@ -220,7 +220,7 @@ class WareShopController extends BaseWapController{
 					$result=array('status'=>-1,'msg'=>'抱歉，操作失败！');
 				}
 			}else{
-				$newWareCollect['insert_time']=getGMTime();
+				$newWareCollect['create_time']=getGMTime();
 				$newWareCollect['collect_time']=getGMTime();
 				if($wareCollectModel->insert($newWareCollect)){
 					$result=array('status'=>1,'msg'=>'加入收藏成功！');

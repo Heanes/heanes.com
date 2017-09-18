@@ -152,7 +152,7 @@ class ProductController extends BaseAdminController {
 		$newProduct['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$newProduct['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newProduct['pwd'] = md5($newProduct['pwd']);
-		$newProduct['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newProduct['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newProduct['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newProduct['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newProduct['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -317,7 +317,7 @@ class ProductController extends BaseAdminController {
 		$newProduct['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$newProduct['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newProduct['pwd'] = md5($newProduct['pwd']);
-		$newProduct['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newProduct['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newProduct['update_time'] = getGMTime();
 		$newProduct['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newProduct['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

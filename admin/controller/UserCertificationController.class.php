@@ -102,7 +102,7 @@ class UserCertificationController extends BaseAdminController{
 		$newuserCertification['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newuserCertification['type_id'] = Filter::doFilter($_POST['type_id'], 'string');
 		$newuserCertification['message'] = Filter::doFilter($_POST['message'], 'string');
-		$newuserCertification['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserCertification['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserCertification['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newuserCertification['status'] = Filter::doFilter($_POST['status'], 'string');
 		$UsercertificationModel = Model('user_certification');
@@ -123,7 +123,7 @@ class UserCertificationController extends BaseAdminController{
 		$newuserCertification['user_id'] = Filter::doFilter($_POST['user_id'], 'string');
 		$newuserCertification['type_id'] = Filter::doFilter($_POST['type_id'], 'string');
 		$newuserCertification['message'] = Filter::doFilter($_POST['message'], 'string');
-		$newuserCertification['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserCertification['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserCertification['update_time'] = getGMTime();
 		$newuserCertification['status'] = Filter::doFilter($_POST['status'], 'string');
 		$where = "`id`=$id";

@@ -30,7 +30,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('value', 'DESC');" title="点击对列表排序">积分变更值<em class="triangle-up"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">日志插入时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">日志插入时间<em class="triangle-up"></em></a>
 			</th>
 			<th>操作</th>
 		</tr>
@@ -46,7 +46,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=UserRank&op=edit&id=<?php echo $userRankLog['id'];?>"><?php echo $userRankLog['user_rank_id'];?></a></td>
 			<td style="text-align:center;"><?php echo $userRankLog['chang_sign'];?></td>
 			<td style="text-align:center;"><?php echo $userRankLog['value'];?></td>
-			<td style="text-align:center;"><?php echo to_date($userRankLog['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($userRankLog['create_time']);?></td>
 			<td style="text-align:center;">
 				<a href="<?php echo BASE_URL;?>index.php?act=UserRankLog&op=look&id=<?php echo $userRankLog['id'];?>" class="btn btn-mini">查看</a>
 				<a href="javascript:del('user_rank_log', <?php echo $userRankLog['id'];?>);" class="btn btn-mini btn-danger">删除</a>

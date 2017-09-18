@@ -47,9 +47,9 @@
 		</tr>
 		<tr>
 			<th>上传时间</th>
-			<td><input type="text" name="userbank_insert_time" id="userbank_insert_time1" value="<?php echo to_date('now');?>" placeholder="选择上传时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="userbank_create_time" id="userbank_create_time1" value="<?php echo to_date('now');?>" placeholder="选择上传时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			<th>更新时间</th>
-			<td><input type="text" name="userbank_update_time" id="userbank_insert_time2" value="<?php echo to_date('now');?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="userbank_update_time" id="userbank_create_time2" value="<?php echo to_date('now');?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 		</tr>
 		<tr>
 			<th>是否有效</th>

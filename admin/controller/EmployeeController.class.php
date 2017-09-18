@@ -83,7 +83,7 @@ class EmployeeController extends BaseAdminController{
 		$newEmployee['department_id']=Filter::doFilter($_POST['department_name'],'string');
 		$newEmployee['job_id']=Filter::doFilter($_POST['job_name'],'string');
 		$newEmployee['apply_status']=Filter::doFilter($_POST['status'],'integer');
-		$newEmployee['insert_time']=to_timespan(Filter::doFilter($_POST['employee_insert_time'],'string'));
+		$newEmployee['create_time']=to_timespan(Filter::doFilter($_POST['employee_create_time'],'string'));
 		$newEmployee['update_time']=to_timespan(Filter::doFilter($_POST['employee_update_time'],'string'));
 		$newEmployee['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newEmployee['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -134,7 +134,7 @@ class EmployeeController extends BaseAdminController{
 		$newEmployee['department_id']=Filter::doFilter($_POST['department_name'],'string');
 		$newEmployee['job_id']=Filter::doFilter($_POST['job_name'],'string');
 		$newEmployee['apply_status']=Filter::doFilter($_POST['status'],'integer');
-		$newEmployee['insert_time']=to_timespan(Filter::doFilter($_POST['employee_insert_time'],'string'));
+		$newEmployee['create_time']=to_timespan(Filter::doFilter($_POST['employee_create_time'],'string'));
 		$newEmployee['update_time']=getGMTime();
 		$newEmployee['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newEmployee['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

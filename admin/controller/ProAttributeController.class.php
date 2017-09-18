@@ -82,7 +82,7 @@ class ProAttributeController extends BaseAdminController {
 		$newproFields['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
 		$newproFields['as_filter'] = Filter::doFilter($_POST['as_filter'], 'string');
 		$newproFields['is_show'] = Filter::doFilter($_POST['is_show'], 'string');
-		$newproFields['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newproFields['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newproFields['update_time']=to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newproFields['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newproFields['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -144,7 +144,7 @@ class ProAttributeController extends BaseAdminController {
 		$newproFields['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
 		$newproFields['as_filter'] = Filter::doFilter($_POST['as_filter'], 'string');
 		$newproFields['is_show'] = Filter::doFilter($_POST['is_show'], 'string');
-		$newproFields['insert_time']=to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newproFields['create_time']=to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newproFields['update_time']=getGMTime();
 		$newproFields['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newproFields['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

@@ -21,9 +21,9 @@
 		</tr>
 		<tr>
 			<th>创建时间</th>
-			<td><input type="text" name="department_insert_time" id="department_insert_time1" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="department_create_time" id="department_create_time1" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			<th>修改时间</th>
-			<td><input type="text" name="department_update_time" id="department_insert_time2" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+			<td><input type="text" name="department_update_time" id="department_create_time2" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 		</tr>
 		<tr>
 			<th>是否有效</th>

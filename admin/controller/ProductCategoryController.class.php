@@ -96,7 +96,7 @@ class ProductCategoryController extends BaseAdminController {
 		$newproductCategory['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$pwd = Filter::doFilter($_POST['pwd'], 'string');
 		$newproductCategory['pwd'] = md5($pwd);
-		$newproductCategory['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newproductCategory['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newproductCategory['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newproductCategory['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newproductCategory['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -153,7 +153,7 @@ class ProductCategoryController extends BaseAdminController {
 		$newproductCategory['user_rank'] = Filter::doFilter($_POST['user_rank'], 'string');
 		$pwd = Filter::doFilter($_POST['pwd'], 'string');
 		$newproductCategory['pwd'] = md5($pwd);
-		$newproductCategory['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newproductCategory['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newproductCategory['update_time'] = getGMTime();
 		$newproductCategory['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newproductCategory['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

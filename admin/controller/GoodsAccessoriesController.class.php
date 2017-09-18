@@ -67,7 +67,7 @@ class GoodsAccessoriesController extends BaseAdminController {
 		$newGoodsAccessories['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newGoodsAccessories['goods_id'] = Filter::doFilter($_POST['goods_id'], 'string');
 		$newGoodsAccessories['name'] = Filter::doFilter($_POST['accessories_name'], 'string');
-		$newGoodsAccessories['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newGoodsAccessories['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newGoodsAccessories['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'],'string'));
 		$newGoodsAccessories['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$goodsAccessoriesModel = Model('goods_accessories');
@@ -108,7 +108,7 @@ class GoodsAccessoriesController extends BaseAdminController {
 		$newGoodsAccessories['order'] = Filter::doFilter($_POST['order'], 'integer');
 		$newGoodsAccessories['goods_id'] = Filter::doFilter($_POST['goods_id'], 'string');
 		$newGoodsAccessories['name'] = Filter::doFilter($_POST['accessories_name'], 'string');
-		$newGoodsAccessories['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'],'string'));
+		$newGoodsAccessories['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'],'string'));
 		$newGoodsAccessories['update_time'] = getGMTime();
 		$newGoodsAccessories['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$where = "`id`=$id";

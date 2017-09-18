@@ -57,7 +57,7 @@ class PropertyController extends BaseAdminController {
 		$newproperty['name'] = Filter::doFilter($_POST['property_name'], 'string');
 		$newproperty['reg_show'] = Filter::doFilter($_POST['reg_show'], 'string');
 		$newproperty['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
-		$newproperty['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newproperty['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newproperty['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newproperty['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newproperty['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -95,7 +95,7 @@ class PropertyController extends BaseAdminController {
 		$newproperty['name'] = Filter::doFilter($_POST['property_name'], 'string');
 		$newproperty['reg_show'] = Filter::doFilter($_POST['reg_show'], 'string');
 		$newproperty['is_required'] = Filter::doFilter($_POST['is_required'], 'string');
-		$newproperty['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newproperty['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newproperty['update_time'] = getGMTime();
 		$newproperty['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newproperty['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

@@ -59,7 +59,7 @@ class BankController extends BaseAdminController {
 		$newBank['code']=Filter::doFilter($_POST['bank_code'],'string');
 		$newBank['img_url']=Filter::doFilter($_POST['img_url'],'string');
 		$newBank['a_href']=Filter::doFilter($_POST['a_href'],'string');
-		$newBank['insert_time']=to_timespan(Filter::doFilter($_POST['bank_insert_time'],'string'));
+		$newBank['create_time']=to_timespan(Filter::doFilter($_POST['bank_create_time'],'string'));
 		$newBank['update_time']=to_timespan(Filter::doFilter($_POST['bank_update_time'],'string'));
 		$newBank['is_commend']=Filter::doFilter($_POST['is_commend'],'integer');
 		$newBank['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
@@ -101,7 +101,7 @@ class BankController extends BaseAdminController {
 		$newBank['code']=Filter::doFilter($_POST['bank_code'],'string');
 		$newBank['img_url']=Filter::doFilter($_POST['img_url'],'string');
 		$newBank['a_href']=Filter::doFilter($_POST['a_href'],'string');
-		$newBank['insert_time']=to_timespan(Filter::doFilter($_POST['bank_insert_time'],'string'));
+		$newBank['create_time']=to_timespan(Filter::doFilter($_POST['bank_create_time'],'string'));
 		$newBank['update_time']=getGMTime();
 		$newBank['is_commend']=Filter::doFilter($_POST['is_commend'],'integer');
 		$newBank['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');

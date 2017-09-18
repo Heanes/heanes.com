@@ -77,7 +77,7 @@ class NavigationController extends BaseAdminController {
 		$newNavigation['img_src']=Filter::doFilter($_POST['img_src'],'string');
 		$newNavigation['img_src_hover']=Filter::doFilter($_POST['img_src_hover'],'string');
 		$newNavigation['href_in_hover']=Filter::doFilter($_POST['href_in_hover'],'string');
-		$newNavigation['insert_time']=to_timespan(Filter::doFilter($_POST['navigation_insert_time'],'string'));
+		$newNavigation['create_time']=to_timespan(Filter::doFilter($_POST['navigation_create_time'],'string'));
 		$newNavigation['update_time']=to_timespan(Filter::doFilter($_POST['navigation_update_time'],'string'));
 		$newNavigation['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newNavigation['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -126,7 +126,7 @@ class NavigationController extends BaseAdminController {
 		$newNavigation['img_src']=Filter::doFilter($_POST['img_src'],'string');
 		$newNavigation['img_src_hover']=Filter::doFilter($_POST['img_src_hover'],'string');
 		$newNavigation['href_in_hover']=Filter::doFilter($_POST['href_in_hover'],'string');
-		$newNavigation['insert_time']=to_timespan(Filter::doFilter($_POST['navigation_insert_time'],'string'));
+		$newNavigation['create_time']=to_timespan(Filter::doFilter($_POST['navigation_create_time'],'string'));
 		$newNavigation['update_time']=getGMTime();
 		$newNavigation['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newNavigation['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');

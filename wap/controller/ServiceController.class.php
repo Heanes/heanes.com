@@ -45,7 +45,7 @@ class ServiceController extends BaseWapController{
 		$msgBoardModel=Model('msg_board');
 		$newMsgBoard['content']=Filter::doFilter($_POST['suggest_content'],'string');
 		$newMsgBoard['title']='投诉建议';
-		$newMsgBoard['insert_time']=getGMTime();
+		$newMsgBoard['create_time']=getGMTime();
 		$newMsgBoard['send_time']=getGMTime();
 		$newMsgBoard['sender_ip']=get_client_ip();
 		$newMsgBoard['sender_user_id']=isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '0';

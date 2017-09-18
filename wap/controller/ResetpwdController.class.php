@@ -42,12 +42,12 @@ class ResetpwdController extends BaseWapController{
 		}
 		$sms_log_model = Model('SmsLog');
 		$last_send_sms = $sms_log_model->getLastSend($user_mobile);
-		if ((getGMTime() - $last_send_sms['insert_time']) / (60) > 1) {
+		if ((getGMTime() - $last_send_sms['create_time']) / (60) > 1) {
 			//生成验证码相关数据
 			$verify_data['verify_code'] = rand(111111, 999999);
 			$verify_data['receiver'] = $user_mobile;
 			$verify_data['type'] = VERIFY_MOBILE;
-			$verify_data['insert_time'] = getGMTime();
+			$verify_data['create_time'] = getGMTime();
 			$verify_data['client_ip'] = get_client_ip();
 			$verifyCodeModel = Model('verify_code');
 			try {
@@ -107,21 +107,21 @@ class ResetpwdController extends BaseWapController{
 				$code_time = $verifyCodeModel->getOneByID($code_id['max(`id`)']);
 				//var_dump($code_time);
 				$sum = count($code_count);
-				$code_newtime = $code_time['insert_time'] + '1800';
+				$code_newtime = $code_time['create_time'] + '1800';
 				//echo $code_newtime;
 				$current_time = getGMTime();
 				if ($current_time > $code_newtime) {
 					showError('您输入的验证码已过期！不能重复使用。');
 				} else {
 					if ($sum >= 2) {
-						$param['where'] = "`receiver`='".$mobile."' and `verify_code`='".$code."' and `insert_time`= '".$code_time['insert_time']."'";
+						$param['where'] = "`receiver`='".$mobile."' and `verify_code`='".$code."' and `create_time`= '".$code_time['create_time']."'";
 					} else {
 						$param['where'] = "`receiver`='".$mobile."' and `verify_code`='".$code."'";
 					}
 					$codelist = $verifyCodeModel->getList($param);
 					if ($codelist) {
 						$data = array(
-							'insert_time' => $code_time['insert_time'] - '1800'
+							'create_time' => $code_time['create_time'] - '1800'
 						);
 						$verifyCodeModel->update($data);
 						Tpl::assign('mobile_id', $mobile);

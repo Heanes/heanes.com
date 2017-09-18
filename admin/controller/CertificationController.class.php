@@ -66,7 +66,7 @@ class CertificationController extends BaseAdminController{
 		$newCertification['pid'] = Filter::doFilter($_POST['certification_pid'], 'string');
 		$newCertification['order'] = Filter::doFilter($_POST['certification_order'], 'string');
 		$newCertification['english_name'] = Filter::doFilter($_POST['certification_english_name'], 'string');
-		$newCertification['insert_time'] = to_timespan(Filter::doFilter($_POST['certification_insert_time'], 'string'));
+		$newCertification['create_time'] = to_timespan(Filter::doFilter($_POST['certification_create_time'], 'string'));
 		$newCertification['update_time'] = to_timespan(Filter::doFilter($_POST['certification_update_time'], 'string'));
 		$newCertification['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newCertification['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');
@@ -90,7 +90,7 @@ class CertificationController extends BaseAdminController{
 		$newCertification['pid'] = Filter::doFilter($_POST['certification_pid'], 'string');
 		$newCertification['order'] = Filter::doFilter($_POST['certification_order'], 'string');
 		$newCertification['english_name'] = Filter::doFilter($_POST['certification_english_name'], 'string');
-		$newCertification['insert_time'] = to_timespan(Filter::doFilter($_POST['certification_insert_time'], 'string'));
+		$newCertification['create_time'] = to_timespan(Filter::doFilter($_POST['certification_create_time'], 'string'));
 		$newCertification['update_time'] = to_timespan(Filter::doFilter($_POST['certification_update_time'], 'string'));
 		$newCertification['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newCertification['is_delete'] = Filter::doFilter($_POST['is_delete'], 'integer');

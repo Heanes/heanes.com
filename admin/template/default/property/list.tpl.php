@@ -35,7 +35,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('is_required', 'DESC');" title="点击对列表排序">是否必须的<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -60,7 +60,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><a href="<?php echo BASE_URL;?>index.php?act=Property&op=edit&id=<?php echo $property['id'];?>"><?php echo $property['name'];?></a></td>
 			<td style="text-align:center;"><?php echo $property['reg_show']==1?'显示':'不显示';?></td>
 			<td style="text-align:center;"><?php echo $property['is_required']==1?'是':'否';?></td>
-			<td style="text-align:center;"><?php echo to_date($property['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($property['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($property['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $property['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $property['is_delete']==1?'是':'否';?></td>

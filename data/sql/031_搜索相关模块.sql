@@ -17,7 +17,7 @@ create table `pre_log_search` (
     `city_name`     varchar(63) default '' comment '搜索者城市名称',
     `device_type`   varchar(63) default '' comment '使用设备类型',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `create_time`   int(10) unsigned default 0 comment '添加时间',
     `create_user`   int unsigned default 0 comment '创建人',
     primary key (`id`)
 )
@@ -39,7 +39,7 @@ create table `pre_hot_string` (
     `order_number`  int unsigned default 0 comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `create_time`   int(10) unsigned default 0 comment '添加时间',
     `update_time`   int(10) unsigned default 0 comment '更新时间',
     `create_user`   int unsigned default 0 comment '创建人',
     `update_user`   int unsigned default 0 comment '更新人',

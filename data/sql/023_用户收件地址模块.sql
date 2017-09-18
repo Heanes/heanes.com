@@ -19,7 +19,7 @@ create table `pre_buyer_address` (
     `is_default`    tinyint unsigned default 0 comment '是否为默认',
     `is_enable`     tinyint unsigned default 1 comment '是否启用',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `insert_time`   int(10) unsigned default 0 comment '添加时间',
+    `create_time`   int(10) unsigned default 0 comment '添加时间',
     `update_time`   int(10) unsigned default 0 comment '更新时间',
     `create_user`   int unsigned default 0 comment '创建人',
     `update_user`   int unsigned default 0 comment '更新人',

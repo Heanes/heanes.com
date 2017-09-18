@@ -60,7 +60,7 @@ class FriendLinkController extends BaseAdminController{
 		$newFriendlink['a_target']=Filter::doFilter($_POST['a_target'],'string');
 		$newFriendlink['img_src']=Filter::doFilter($_POST['img_src'],'string');
 		$newFriendlink['img_title']=Filter::doFilter($_POST['img_title'],'string');
-		$newFriendlink['insert_time']=to_timespan(Filter::doFilter($_POST['friendLink_insert_time'],'string'));
+		$newFriendlink['create_time']=to_timespan(Filter::doFilter($_POST['friendLink_create_time'],'string'));
 		$newFriendlink['update_time']=to_timespan(Filter::doFilter($_POST['friendLink_update_time'],'string'));
 		$newFriendlink['order']=Filter::doFilter($_POST['friendLink_order'],'string');
 		$newFriendlink['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
@@ -99,7 +99,7 @@ class FriendLinkController extends BaseAdminController{
 		$newFriendlink['a_href']=Filter::doFilter($_POST['a_href'],'string');
 		$newFriendlink['a_title']=Filter::doFilter($_POST['a_title'],'string');
 		$newFriendlink['a_target']=Filter::doFilter($_POST['a_target'],'string');
-		$newFriendlink['insert_time']=to_timespan(Filter::doFilter($_POST['friendLink_insert_time'],'string'));
+		$newFriendlink['create_time']=to_timespan(Filter::doFilter($_POST['friendLink_create_time'],'string'));
 		$newFriendlink['update_time']=getGMTime();
 		$newFriendlink['order']=Filter::doFilter($_POST['friendLink_order'],'string');
 		$newFriendlink['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');

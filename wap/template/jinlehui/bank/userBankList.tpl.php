@@ -26,7 +26,7 @@ defined('InHeanes') or exit('Access Invalid!');
 					<thead>
 					<tr>
 						<th>添加时间：</th>
-						<td colspan="2"><?php echo to_date($bank['insert_time']); ?></td>
+						<td colspan="2"><?php echo to_date($bank['create_time']); ?></td>
 					</tr>
 					</thead>
 					<tbody>

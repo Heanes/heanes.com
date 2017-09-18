@@ -52,7 +52,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td><a href="<?php echo BASE_URL;?>index.php?act=articleCategory&op=edit&id=<?php echo $employee['category_id'];?>"><?php echo $employee['user_name'];?></a></td>
 			<td style="text-align:left;"><a href="<?php echo BASE_URL;?>index.php?act=articleCategory&op=edit&id=<?php echo $employee['category_id'];?>"><?php echo $employee['department_name'];?></a></td>
 			<td style="text-align:right;"><a href="<?php echo BASE_URL;?>index.php?act=articleCategory&op=edit&id=<?php echo $employee['category_id'];?>"><?php echo $employee['job_name'];?></a></td>
-			<td style="text-align:center;"><?php echo to_date($employee['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($employee['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($employee['update_time']);?></td>
 			<td style="text-align:right;"><?php echo $employee['enable']==1?'有效':'无效';?></td>
 			<td style="text-align:center;">

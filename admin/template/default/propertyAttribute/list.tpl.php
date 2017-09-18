@@ -44,7 +44,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:listTable.sort('reg_show', 'DESC');" title="点击对列表排序">注册/添加时是否显示此项<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:listTable.sort('insert_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:listTable.sort('create_time', 'DESC');" title="点击对列表排序">添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:listTable.sort('is_enable', 'DESC');" title="点击对列表排序">是否启用<em class="triangle-up"></em></a>
@@ -69,7 +69,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $propertyFields['input_value'];?></td>
 			<td style="text-align:center;"><?php echo $propertyFields['value_unit'];?></td>
 			<td style="text-align:center;"><?php echo $propertyFields['reg_show']==1?'显示':'不显示';?></td>
-			<td style="text-align:center;"><?php echo to_date($propertyFields['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($propertyFields['create_time']);?></td>
 			<td style="text-align:center;"><?php echo $propertyFields['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $propertyFields['is_delete']==1?'是':'否';?></td>
 			<td style="text-align:center;">

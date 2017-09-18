@@ -38,7 +38,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('a_href', 'DESC');" title="点击对列表排序">银行链接地址<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">上传时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">上传时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">更新时间<em class="triangle-up"></em></a>
@@ -64,7 +64,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $bank['code'];?></td>
 			<td style="text-align:center;"><?php echo $bank['img_url'];?></td>
 			<td style="text-align:center;"><a href="<?php echo $bank['a_href'];?>"><?php echo $bank['a_href'];?></a></td>
-			<td style="text-align:center;"><?php echo to_date($bank['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($bank['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($bank['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $bank['is_enable']==1?'是':'否';?></td>
 			<td style="text-align:center;"><?php echo $bank['is_delete']==1?'是':'否';?></td>

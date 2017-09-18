@@ -101,7 +101,7 @@ class FileCategoryController extends BaseAdminController {
 		$newfileCategory['user_role_id'] = Filter::doFilter($_POST['user_role_id'], 'string');
 		$newfileCategory['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newfileCategory['pwd'] = md5($newfileCategory['pwd']);
-		$newfileCategory['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newfileCategory['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newfileCategory['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newfileCategory['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newfileCategory['description'] = Filter::doFilter($_POST['description'], 'string');
@@ -161,7 +161,7 @@ class FileCategoryController extends BaseAdminController {
 		$newfileCategory['user_role_id'] = Filter::doFilter($_POST['user_role_id'], 'string');
 		$newfileCategory['pwd'] = Filter::doFilter($_POST['pwd'], 'string');
 		$newfileCategory['pwd'] = md5($newfileCategory['pwd']);
-		$newfileCategory['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newfileCategory['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newfileCategory['update_time'] = getGMTime();
 		$newfileCategory['is_enable'] = Filter::doFilter($_POST['is_enable'], 'integer');
 		$newfileCategory['description'] = Filter::doFilter($_POST['description'], 'string');

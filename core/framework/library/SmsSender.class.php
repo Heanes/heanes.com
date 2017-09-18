@@ -46,7 +46,7 @@ class SmsSender {
 						'receiver'=>$mobile,
 						'content'=>$content,
 						'type'=>VERIFY_MOBILE,
-						'insert_time'=>getGMTime(),
+						'create_time'=>getGMTime(),
 						'client_ip'=>get_client_ip(),
 					);
 					$result = $this->sms->sendSms($mobiles, $content, $sendTime);

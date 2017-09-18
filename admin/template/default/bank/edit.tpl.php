@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<th>上传时间</th>
-				<td><input type="text" name="bank_insert_time" value="<?php echo to_date($output['bank']['insert_time']);?>" placeholder="选择上传时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="bank_create_time" value="<?php echo to_date($output['bank']['create_time']);?>" placeholder="选择上传时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 				<th>更新时间</th>
 				<td><input type="text" name="bank_update_time" value="<?php echo to_date(getGMTime());?>" placeholder="选择更新时间" onclick="$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			</tr>

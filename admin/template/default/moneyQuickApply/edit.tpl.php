@@ -98,11 +98,11 @@
 					<input type="radio" name="is_top" value="0" <?php if($output['moneyQuickApply']['is_top']==0){?>checked="checked" <?php }?>> 否
 				</td>
 				<th>创建时间</th>
-				<td><input type="text" name="insert_time" id="insert_time1" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="create_time" id="create_time1" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 			</tr>
 			<tr>
 				<th>修改时间</th>
-				<td><input type="text" name="update_time" id="insert_time2" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
+				<td><input type="text" name="update_time" id="create_time2" value="<?php echo to_date('now');?>" placeholder="选择起始时间" onclick="javascript:$.calendar({format:'yyyy-MM-dd HH:mm:ss'});" class="date_time_picker"/></td>
 				<th>是否有效</th>
 				<td>
 					<input type="radio" name="is_enable" value="1" <?php if($output['moneyQuickApply']['is_enable']==1){?>checked="checked" <?php }?>> 是

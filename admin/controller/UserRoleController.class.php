@@ -125,7 +125,7 @@ class UserRoleController extends BaseAdminController{
 		$id = Filter::doFilter($_POST['role_id'], 'integer');
 		$newuserRole['order'] = Filter::doFilter($_POST['order'], 'string');
 		$newuserRole['name'] = Filter::doFilter($_POST['role_name'], 'string');
-		$newuserRole['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserRole['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserRole['update_time'] = getGMTime();
 		$newuserRole['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newuserRole['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -142,7 +142,7 @@ class UserRoleController extends BaseAdminController{
 			if(empty($userPrivilege_list)){
 				//添加新的权限
 				$newUserPrivilege['privilege_id'] =$action_code;
-				$newUserPrivilege['insert_time'] = to_timespan(to_date('now'));
+				$newUserPrivilege['create_time'] = to_timespan(to_date('now'));
 				$newUserPrivilege['update_time'] = to_timespan(to_date('now'));
 				//获取role_id写入到用户权限表
 				$newUserPrivilege['role_id'] = $id;
@@ -174,7 +174,7 @@ class UserRoleController extends BaseAdminController{
 					}else {
 						//2.添加新的权限
 						$newUserPrivilege['privilege_id'] =$value;
-						$newUserPrivilege['insert_time'] = to_timespan(to_date('now'));
+						$newUserPrivilege['create_time'] = to_timespan(to_date('now'));
 						$newUserPrivilege['update_time'] = to_timespan(to_date('now'));
 						//获取role_id写入到用户权限表
 						$newUserPrivilege['role_id'] = $id;
@@ -210,7 +210,7 @@ class UserRoleController extends BaseAdminController{
 		
 		$newuserRole['order'] = Filter::doFilter($_POST['order'], 'string');
 		$newuserRole['name'] = Filter::doFilter($_POST['role_name'], 'string');
-		$newuserRole['insert_time'] = to_timespan(Filter::doFilter($_POST['insert_time'], 'string'));
+		$newuserRole['create_time'] = to_timespan(Filter::doFilter($_POST['create_time'], 'string'));
 		$newuserRole['update_time'] = to_timespan(Filter::doFilter($_POST['update_time'], 'string'));
 		$newuserRole['is_enable']=Filter::doFilter($_POST['is_enable'],'integer');
 		$newuserRole['is_delete']=Filter::doFilter($_POST['is_delete'],'integer');
@@ -221,7 +221,7 @@ class UserRoleController extends BaseAdminController{
 			$flag=false;
 			foreach ($action_code as $value){
 				$newUserPrivilege['privilege_id'] =$value;
-				$newUserPrivilege['insert_time'] = to_timespan(to_date('now'));
+				$newUserPrivilege['create_time'] = to_timespan(to_date('now'));
 				$newUserPrivilege['update_time'] = to_timespan(to_date('now'));
 				//获取role_id写入到用户权限表
 				$newUserPrivilege['role_id'] = $newUserRoleInsertID;

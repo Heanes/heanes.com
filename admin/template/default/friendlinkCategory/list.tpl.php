@@ -41,7 +41,7 @@ defined('InHeanes') or exit('Access Invalid!');
 				<a href="javascript:sortBy('a_title', 'DESC');" title="点击对列表排序">分类外链title<em class="triangle-down"></em></a>
 			</th>
 			<th>
-				<a href="javascript:sortBy('insert_time', 'DESC');" title="点击对列表排序">分类添加时间<em class="triangle-up"></em></a>
+				<a href="javascript:sortBy('create_time', 'DESC');" title="点击对列表排序">分类添加时间<em class="triangle-up"></em></a>
 			</th>
 			<th>
 				<a href="javascript:sortBy('update_time', 'DESC');" title="点击对列表排序">分类最后更新时间<em class="triangle-up"></em></a>
@@ -66,7 +66,7 @@ defined('InHeanes') or exit('Access Invalid!');
 			<td style="text-align:center;"><?php echo $friendlinkCategory['img_title'];?></td>
 			<td style="text-align:center;"><?php echo $friendlinkCategory['a_href'];?></td>
 			<td style="text-align:center;"><?php echo $friendlinkCategory['a_title'];?></td>
-			<td style="text-align:center;"><?php echo to_date($friendlinkCategory['insert_time']);?></td>
+			<td style="text-align:center;"><?php echo to_date($friendlinkCategory['create_time']);?></td>
 			<td style="text-align:center;"><?php echo to_date($friendlinkCategory['update_time']);?></td>
 			<td style="text-align:center;"><?php echo $friendlinkCategory['is_enable']==1?'显示':'不显示';?></td>
 			<td style="text-align:center;">
