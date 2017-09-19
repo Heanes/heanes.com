@@ -61,7 +61,7 @@ create table `pre_article` (
     `publish_time`      int(10) unsigned default 0 comment '文章发表时间',
     `editor`            varchar(127) default '' comment '责任编辑',
     `origin_source`     varchar(255) default '' comment '文章来源，为空表示原创',
-    `content`           text comment '文章内容',
+    `content_id`        int unsigned default 0 comment '文章内容ID，来自article_content表',
     `keywords`          varchar(255) default '' comment '关键词',
     `tags`              varchar(255) default '' comment '标签ID，形如1,2,3以逗号分开',
     `semantic_a_href`   varchar(255) default '' comment '语义化链接',
@@ -111,7 +111,7 @@ drop table if exists `pre_article_content`;
 create table `pre_article_content` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
     `article_id`    int unsigned comment '文章主键ID，主键',
-    `content`       text comment '文章内容',
+    `content`       longtext comment '文章内容',
     `is_enable`     tinyint unsigned default 1 comment '是否启用（显示）',
     `is_deleted`    tinyint unsigned default 0 comment '是否删除',
     `create_time`   int(10) unsigned default 0 comment '文章创建时间',
@@ -267,7 +267,6 @@ engine = innodb
 auto_increment = 1
 default charset = `utf8`
 comment '文章相册表';
-
 
 #----------pre_article_tag 表--------------------------------------------------------
 /*

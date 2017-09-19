@@ -155,7 +155,7 @@ truncate `heanes.com`.`pre_article`;
 insert into `heanes.com`.`pre_article` (
     `category_id`, `title`, `subtitle`, `cover_img_src`
     , `user_id`, `user_link`, `author`, `publish_time`, `editor`, `origin_source`
-    , `content`, `keywords`, `tags`, `semantic_a_href`, `a_href`, `a_title`
+    , `content_id`, `keywords`, `tags`, `semantic_a_href`, `a_href`, `a_title`
     , `title_bg_color`, `content_bg_color`, `template_id`
     , `is_new`, `is_recommend`, `is_top`, `is_great`
     , `allow_comment`, `comment_count`, `comment_score`
@@ -165,7 +165,8 @@ insert into `heanes.com`.`pre_article` (
     , `order_number`, `create_time`, `create_user`
 )
 values
-    (2, '你好世界', 'hello world', '', '1', '', 'Heanes', 1467363203, 'Heanes', 'heanes.com', '<style>.article-content h2.title-text{font-size:22px;padding:20px 0;}.article-content h3.title-text{padding:14px 0;text-indent:2em;}.article-content p{text-indent:2em;font-size:14px;}.article-content .placeholder{line-height:1.8em;}.article-content .placeholder:before{content:"章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容章节内容正文内容"}.article-content .placeholder.ph-large{height:400px;}.article-content .placeholder.ph-mini{height:50px;}</style><h2 class="title-text">第一章</h2><p class="placeholder ph-large">内容</p><h2 class="title-text">第二章</h2><p class="placeholder ph-mini"></p><h3 class="title-text">第二章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第二章第二节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第三章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第三节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第四章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第四章第三节</h3><p class="placeholder ph-large">内容</p><h2 class="title-text">第五章</h2><p class="placeholder ph-large">内容</p><h3 class="title-text">第五章第一节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第五章第二节</h3><p class="placeholder ph-large">内容</p><h3 class="title-text">第三章第三节</h3><p class="placeholder ph-large">内容</p>', 'hello world', '', '', '', '你好世界', '', '', 1, 1, 0, 0, 0, 1, 0, 5, 12, 11, 0, 0, '你好世界', '你好世界', '你好世界', 0, 0, '', 0, 1467363203, '1')
+    (2, '你好世界', 'hello world', '', '1', '', 'Heanes', 1467363203, 'Heanes', 'heanes.com', 1, 'hello world', '', '', '', '你好世界', '', '', 1, 1, 0, 0, 0, 1, 0, 5, 12, 11, 0, 0, '你好世界', '你好世界', '你好世界', 0, 0, '', 0, 1467363203, '1')
+    , (2, '关于本站', 'hello world', '', '1', '', 'Heanes', 1467363203, 'Heanes', 'heanes.com', 2, 'hello world', '', '', '', '你好世界', '', '', 1, 1, 0, 0, 0, 1, 0, 5, 12, 11, 0, 0, '你好世界', '你好世界', '你好世界', 0, 0, '', 0, 1467363203, '1')
 ;
 
 /**
@@ -179,6 +180,7 @@ insert into `heanes.com`.`pre_article_content` (
 )
 values
     (1, '<p>第一篇文章。</p>', 1467363203, 1)
+    , (2, '<p>关于本站。</p>', 1467363203, 1)
 ;
 
 /**
@@ -191,8 +193,29 @@ insert into `heanes.com`.`pre_article_tag_lib` (
     `name`, `create_time`, `create_user`
 )
 values
-    ('后端', 1467363203, 1),
-    ('php', 1467363203, 1)
+    ('关于', 1467363203, 1)
+    , ('后端', 1467363203, 1)
+    , ('前端', 1467363203, 1)
+    , ('数据库', 1467363203, 1)
+    , ('生活情绪', 1467363203, 1)
+    , ('php', 1467363203, 1)
+    , ('java', 1467363203, 1)
+    , ('javascript', 1467363203, 1)
+    , ('sql', 1467363203, 1)
+;
+
+/**
+ * @doc 文章标签
+ * @author Heanes
+ * @time 2017-09-16 13:42:20 周六
+ */
+truncate `heanes.com`.`pre_article_tag`;
+insert into `heanes.com`.`pre_article_tag` (
+    `article_id`, `tag_id`, `create_time`, `create_user`
+)
+values
+    (1, 1, 1467363203, 1)
+    , (2, 1, 1467363203, 1)
 ;
 
 #================================================网站友情链接数据导入=============================================#
@@ -207,6 +230,7 @@ insert into `heanes.com`.`pre_friend_link`(
     , order_number, create_time, create_user
 )
 values
-    ('津乐网', 'heanes.com', 'http://www.ejinle.com/', '津乐网', '0', '', '津乐网', '津乐网', 1, 1467363203, 1)
+    ('津乐网', 'heanes@163.com', 'http://www.ejinle.com/', '津乐网', '0', '', '津乐网', '津乐网', 1, 1467363203, 1)
+    , ('谷歌翻译', 'heanes@163.com', 'http://translate.google.cn/', '谷歌翻译', '0', '', '谷歌翻译', '谷歌翻译', 1, 1467363203, 1)
 ;
     
