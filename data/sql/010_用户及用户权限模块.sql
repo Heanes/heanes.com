@@ -123,30 +123,6 @@ auto_increment = 1
 default charset = `utf8`
 comment '用户额外属性字段数据映射表';
 
-#----------pre_user_login_log表--------------------------------------------------------
-/*
- * @doc 用户登录记录表
- * @author Heanes
- * @time 2015-07-05 01:02:09
-*/
-drop table if exists `pre_user_login_log`;
-create table `pre_user_login_log` (
-    `id`            int unsigned auto_increment comment '自增ID，主键',
-    `user_id`       int unsigned default 0 comment '用户ID',
-    `login_ip`      varchar(255) default '' comment '用户登陆IP',
-    `login_time`    int(10) unsigned default 0 comment '用户登陆时间',
-    `ips`           text comment 'IP所在地理位置',
-    `region_id`     int unsigned default 0 comment '地理位置表中，位置ID',
-    `create_time`   int(10) unsigned default 0 comment '添加时间',
-    `is_deleted`    tinyint unsigned default 0 comment '是否删除',
-    `create_user`   int unsigned default 0 comment '创建人',
-    primary key (`id`)
-)
-    engine = innodb
-    auto_increment = 1
-    default charset = `utf8`
-    comment '用户登录记录表';
-
 #----------pre_privilege_url--------------------------------------------------------
 /*
  * @doc 功能权限存储库表
@@ -173,14 +149,14 @@ auto_increment = 1
 default charset = `utf8`
 comment '用户权限表';
 
-#----------pre_user_privilege--------------------------------------------------------
+#----------pre_user_role_privilege 用户角色权限表--------------------------------------------------------
 /*
- * @doc 用户权限表
+ * @doc 用户角色权限表
  * @author Heanes
  * @time 2015-07-13 12:47:10
 */
-drop table if exists `pre_user_privilege`;
-create table `pre_user_privilege` (
+drop table if exists `pre_user_role_privilege`;
+create table `pre_user_role_privilege` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
     `privilege_id`  int unsigned default 0 comment '权限ID',
     `role_id`       int unsigned default 0 comment '角色ID',
@@ -249,3 +225,27 @@ auto_increment = 1
 default charset = `utf8`
 comment '用户组表';
 
+
+#----------pre_user_login_log表--------------------------------------------------------
+/*
+ * @doc 用户登录记录表
+ * @author Heanes
+ * @time 2015-07-05 01:02:09
+*/
+drop table if exists `pre_user_login_log`;
+create table `pre_user_login_log` (
+    `id`            int unsigned auto_increment comment '自增ID，主键',
+    `user_id`       int unsigned default 0 comment '用户ID',
+    `login_ip`      varchar(255) default '' comment '用户登陆IP',
+    `login_time`    int(10) unsigned default 0 comment '用户登陆时间',
+    `ips`           varchar(255) comment 'IP所在地理位置',
+    `region_id`     int unsigned default 0 comment '地理位置表中，位置ID',
+    `create_time`   int(10) unsigned default 0 comment '添加时间',
+    `is_deleted`    tinyint unsigned default 0 comment '是否删除',
+    `create_user`   int unsigned default 0 comment '创建人',
+    primary key (`id`)
+)
+engine = innodb
+auto_increment = 1
+default charset = `utf8`
+comment '用户登录记录表';
