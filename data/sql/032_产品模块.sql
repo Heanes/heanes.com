@@ -13,7 +13,7 @@ create table `pre_product` (
     `type_id`           int unsigned default 0 comment '类型ID',
     `name`              varchar(255) default '' comment '产品名称',
     `short_desc`        varchar(255) default '' comment '产品短描述',
-    `serial`            varchar(64) default '' comment '产品序列号（平台）',
+    `serial`            varchar(64) default '' comment '产品序列号(平台)',
     `shop_price`        decimal(10, 2) default 0.00 comment '产品店铺价格',
     `cost_price`        decimal(10, 2) default 0.00 comment '产品成本价',
     `market_price`      decimal(10, 2) default 0.00 comment '产品市面价格',

@@ -50,7 +50,7 @@ create table `pre_special` (
     `title`             varchar(1023) not null default '' comment '专题标题',
     `subtitle`          varchar(255) default '' comment '专题副标题',
     `cover_img_src`     varchar(255) default '' comment '专题封面图片',
-    `user_id`           int unsigned default 0 comment '专题作者（用户）ID',
+    `user_id`           int unsigned default 0 comment '专题作者(用户)ID',
     `user_link`         varchar(255) default '' comment '专题作者链接',
     `author`            varchar(127) default '' comment '专题作者笔名',
     `editor`            varchar(127) default '' comment '责任编辑',

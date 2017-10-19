@@ -11,7 +11,7 @@ create table `pre_contact` (
     `id`            int unsigned auto_increment comment '自增ID，主键',
     `type`          smallint default 0 comment '联系方式类型',
     `name`          varchar(255) default '' comment '联系方式名称',
-    `value`         varchar(255) default '' comment '联系方式途径（值）',
+    `value`         varchar(255) default '' comment '联系方式途径(值)',
     `order_number`  int unsigned default 0 comment '排序',
     `is_enable`     tinyint unsigned default 1 comment '是否有效',
     `is_deleted`    tinyint unsigned default 0 comment '是否已删除',
