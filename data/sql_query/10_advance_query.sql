@@ -54,6 +54,19 @@ SELECT auto_increment FROM `information_schema`.`TABLES` WHERE `TABLE_SCHEMA`='h
  * @time 2015-07-29 11:10:34
  */
 /*
+
+create user 'web_user_root'@'%'
+	identified by 'p()P]aHqCEfwVY@7';
+
+grant all privileges on *.* to 'web_user_root'@'%'
+identified by 'p()P]aHqCEfwVY@7'
+with grant option;
+
+ALTER USER 'web_user_root'@'%' IDENTIFIED BY 'p()P]aHqCEfwVY@7';
+
+Flush privileges;
+
+
 create user 'web_user_heanes.com'@'%'
 	identified by 'p()P]aHqCEfwVY@7';
 

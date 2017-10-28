@@ -55,7 +55,7 @@ create table `pre_article` (
     `title`             varchar(1023) default '' not null default '' comment '文章标题',
     `subtitle`          varchar(255) default '' comment '文章副标题',
     `cover_img_src`     varchar(255) default '' comment '文章封面图片',
-    `auther_id`         int unsigned default 0 comment '文章作者(用户)ID',
+    `author_id`         int unsigned default 0 comment '文章作者(用户)ID',
     `publish_time`      int(10) unsigned default 0 comment '文章发表时间',
     `editor`            varchar(127) default '' comment '责任编辑',
     `origin_source`     varchar(255) default '' comment '文章来源，为空表示原创',
